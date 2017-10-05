@@ -38,4 +38,4 @@ sudo make install
 ```
 sudo ./build.sh -v
 ```
-To rebuild it, simply remove the build and out folders and re-enter the command from step 5.
+To rebuild it, simply remove the `build` and `out` folders and re-enter the command from step 5.
