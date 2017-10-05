@@ -16,7 +16,7 @@
 
 ## Free space
 
-Please, check that you have 5GB (or more) of free harddisk space in your root partition:
+Please check that you have 5GB (or more) of free harddisk space in your root partition:
 `df -h /`
 
 ## Instructions
@@ -38,3 +38,4 @@ sudo make install
 ```
 sudo ./build.sh -v
 ```
+To rebuild it, simply remove the build and out folders and re-enter the command from step 5.
