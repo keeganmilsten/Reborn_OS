@@ -1,0 +1,10 @@
+[Desktop Entry]
+
+Terminal=false
+Icon=/usr/share/antergos/cnchi.png
+Type=Application
+Terminal=false
+Exec=sh /usr/bin/install-antergos.sh
+Name=Reborn Graphical Installer
+GenericName=Reborn Graphical Installer
+Comment=Reborn Graphical Installer.
