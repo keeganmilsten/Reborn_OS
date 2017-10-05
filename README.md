@@ -39,3 +39,7 @@ sudo make install
 sudo ./build.sh -v
 ```
 To rebuild it, simply remove the `build` and `out` folders and re-enter the command from step 5.
+
+## Create the Reborn-OS Repo (note for developer)
+
+- Run `sudo repo-add /var/lib/pacman/sync/Reborn-OS.db.tar.gz /home/$USER/Dropbox/Linux/antergos-deepin-repo/*.pkg.tar.gz`
