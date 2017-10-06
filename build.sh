@@ -2,6 +2,7 @@
 
 set -e -u
 
+
 if [ -f config ]; then
     source ./config
 else
@@ -71,7 +72,7 @@ make_packages() {
 
 # Needed packages for x86_64 EFI boot
 make_packages_efi() {
-    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "efitools efibootmgr archboot" install
+    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -p "efitools efibootmgr" install
 }
 # Copy mkinitcpio archiso hooks and build initramfs (airootfs)
 make_setup_mkinitcpio() {
@@ -109,26 +110,26 @@ make_customize_airootfs() {
 make_cnchi() {
     echo
     echo ">>> Warning! Installing Cnchi Installer from GIT (${CNCHI_GIT_BRANCH} branch)"
-    wget "${CNCHI_GIT_URL}" -O ${SCRIPT_PATH}/cnchi-git.zip
-    unzip ${SCRIPT_PATH}/cnchi-git.zip -d ${SCRIPT_PATH}
-    rm -f ${SCRIPT_PATH}/cnchi-git.zip
-    CNCHI_SRC="${SCRIPT_PATH}/Cnchi-${CNCHI_GIT_BRANCH}"
-    install -d ${ROOT_FS}/usr/share/{cnchi,locale}
-	install -Dm755 "${CNCHI_SRC}/bin/cnchi" "${ROOT_FS}/usr/bin/cnchi"
-	install -Dm755 "${CNCHI_SRC}/cnchi.desktop" "${ROOT_FS}/usr/share/applications/cnchi.desktop"
-	install -Dm644 "${CNCHI_SRC}/data/images/antergos/antergos-icon.png" "${ROOT_FS}/usr/share/pixmaps/cnchi.png"
+    wget "${CNCHI_GIT_URL}" -O ${script_path}/cnchi-git.zip
+    unzip ${script_path}/cnchi-git.zip -d ${script_path}
+    rm -f ${script_path}/cnchi-git.zip
+    CNCHI_SRC="${script_path}/Cnchi-${CNCHI_GIT_BRANCH}"
+    install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
+	install -Dm755 "${CNCHI_SRC}/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
+	install -Dm755 "${CNCHI_SRC}/cnchi.desktop" "${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop"
+	install -Dm644 "${CNCHI_SRC}/data/images/antergos/antergos-icon.png" "${work_dir}/${arch}/airootfs/usr/share/pixmaps/cnchi.png"
     # TODO: This should be included in Cnchi's src code as a separate file
     # (as both files are needed to run cnchi)
-    sed -r -i 's|\/usr.+ -v|pkexec /usr/share/cnchi/bin/cnchi -s bugsnag|g' "${ROOT_FS}/usr/bin/cnchi"
+    sed -r -i 's|\/usr.+ -v|pkexec /usr/share/cnchi/bin/cnchi -s bugsnag|g' "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
     for i in ${CNCHI_SRC}/cnchi ${CNCHI_SRC}/bin ${CNCHI_SRC}/data ${CNCHI_SRC}/scripts ${CNCHI_SRC}/ui; do
-        cp -R ${i} "${ROOT_FS}/usr/share/cnchi/"
+        cp -R ${i} "${work_dir}/${arch}/airootfs/usr/share/cnchi/"
     done
     for files in ${CNCHI_SRC}/po/*; do
         if [ -f "$files" ] && [ "$files" != 'po/cnchi.pot' ]; then
             STRING_PO=`echo ${files#*/}`
             STRING=`echo ${STRING_PO%.po}`
-            mkdir -p ${ROOT_FS}/usr/share/locale/${STRING}/LC_MESSAGES
-            msgfmt $files -o ${ROOT_FS}/usr/share/locale/${STRING}/LC_MESSAGES/cnchi.mo
+            mkdir -p ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES
+            msgfmt $files -o ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES/cnchi.mo
             echo "${STRING} installed..."
         fi
     done
@@ -163,34 +164,34 @@ make_syslinux() {
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
 # Enable services
         MKARCHISO_RUN 'systemctl -fq enable pacman-init'
-        if [ -f "${ROOTFS}/etc/systemd/system/livecd.service" ]; then
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable livecd'
         fi
         MKARCHISO_RUN 'systemctl -fq enable systemd-networkd'
-        if [ -f "${ROOTFS}/usr/lib/systemd/system/NetworkManager.service" ]; then
+        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
         fi
-        if [ -f "${ROOTFS}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable livecd-alsa-unmuter'
         fi
-        if [ -f "${ROOTFS}/etc/systemd/system/vboxservice.service" ]; then
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable vboxservice'
         fi
         MKARCHISO_RUN 'systemctl -fq enable ModemManager'
         MKARCHISO_RUN 'systemctl -fq enable upower'
-        if [ -f "${SCRIPT_PATH}/plymouthd.conf" ]; then
+        if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
             MKARCHISO_RUN 'systemctl -fq enable plymouth-start'
         fi
-        if [ -f "${ROOTFS}/etc/systemd/system/lightdm.service" ]; then
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable lightdm'
             chmod +x ${ROOTFS}/etc/lightdm/Xsession
         fi
-        if [ -f "${ROOTFS}/etc/systemd/system/gdm.service" ]; then
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
             MKARCHISO_RUN 'systemctl -fq enable gdm'
             chmod +x ${ROOTFS}/etc/gdm/Xsession
         fi
         # Disable pamac if present
-        if [ -f "${ROOTFS}/usr/lib/systemd/system/pamac.service" ]; then
+        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
             MKARCHISO_RUN 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
         fi
         # Enable systemd-timesyncd (ntp)
@@ -198,27 +199,27 @@ make_syslinux() {
         # Fix /home permissions
         MKARCHISO_RUN 'chown -R antergos:users /home/antergos'
         # Setup gsettings if gsettings folder exists
-        if [ -d ${SCRIPT_PATH}/gsettings ]; then
+        if [ -d ${script_path}/gsettings ]; then
             # Copying GSettings XML schema files
-            mkdir -p ${ROOTFS}/usr/share/glib-2.0/schemas
-            for _schema in ${SCRIPT_PATH}/gsettings/*.gschema.override; do
+            mkdir -p ${work_dir}/${arch}/usr/share/glib-2.0/schemas
+            for _schema in ${script_path}/gsettings/*.gschema.override; do
                 echo ">>> Will use ${_schema}"
-                cp ${_schema} ${ROOTFS}/usr/share/glib-2.0/schemas
+                cp ${_schema} ${work_dir}/${arch}/usr/share/glib-2.0/schemas
             done
             # Compile GSettings XML schema files
             MKARCHISO_RUN '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas'
         fi
         # BEGIN Pacstrap/Pacman bug where hooks are not run inside the chroot
-        if [ -f ${ROOTFS}/usr/bin/update-ca-trust ]; then
+        if [ -f ${work_dir}/${arch}/usr/bin/update-ca-trust ]; then
             MKARCHISO_RUN '/usr/bin/update-ca-trust'
         fi
-        if [ -f ${ROOTFS}/usr/bin/update-desktop-database ]; then
+        if [ -f ${work_dir}/${arch}/usr/bin/update-desktop-database ]; then
             MKARCHISO_RUN '/usr/bin/update-desktop-database --quiet'
         fi
-        if [ -f ${ROOTFS}/usr/bin/update-mime-database ]; then
+        if [ -f ${work_dir}/${arch}/usr/bin/update-mime-database ]; then
             MKARCHISO_RUN '/usr/bin/update-mime-database /usr/share/mime'
         fi
-        if [ -f ${ROOTFS}/usr/bin/gdk-pixbuf-query-loaders ]; then
+        if [ -f ${work_dir}/${arch}/usr/bin/gdk-pixbuf-query-loaders ]; then
             MKARCHISO_RUN '/usr/bin/gdk-pixbuf-query-loaders --update-cache'
         fi
 }
