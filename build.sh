@@ -115,8 +115,8 @@ make_cnchi() {
     rm -f ${script_path}/cnchi-git.zip
     CNCHI_SRC="${script_path}/Cnchi-${CNCHI_GIT_BRANCH}"
     install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
-	install -Dm755 "${CNCHI_SRC}/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
-	install -Dm755 "${CNCHI_SRC}/cnchi.desktop" "${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop"
+	install -Dm755 "${CNCHI_SRC}/dist/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
+	install -Dm755 "${CNCHI_SRC}/dist/cnchi.desktop" "${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop"
 	install -Dm644 "${CNCHI_SRC}/data/images/antergos/antergos-icon.png" "${work_dir}/${arch}/airootfs/usr/share/pixmaps/cnchi.png"
     # TODO: This should be included in Cnchi's src code as a separate file
     # (as both files are needed to run cnchi)
