@@ -91,29 +91,11 @@ make_setup_mkinitcpio() {
 }
 # Customize installation (airootfs)
 make_customize_airootfs() {
-    echo
-    echo ">>> Installing iso-hotfix-utility..."
-    wget "${ISO_HOTFIX_UTILITY_URL}" -O ${SCRIPT_PATH}/iso-hotfix-utility.tar.gz
-    tar xfz ${SCRIPT_PATH}/iso-hotfix-utility.tar.gz -C ${SCRIPT_PATH}
-    rm -f ${SCRIPT_PATH}/iso-hotfix-utility.tar.gz
-    mv "${SCRIPT_PATH}/iso-hotfix-utility-${ISO_HOTFIX_UTILITY_VERSION}" ${SCRIPT_PATH}/iso-hotfix-utility
-    cp "${SCRIPT_PATH}/iso-hotfix-utility/iso-hotfix-utility" "${ROOTFS}/usr/bin/pacman-boot"
-    chmod 755 "${ROOTFS}/usr/bin/pacman-boot"
-    mkdir -p "${ROOTFS}/etc/iso-hotfix-utility.d"
-    for _file in ${SCRIPT_PATH}/iso-hotfix-utility/dist/**
-    do
-        install -m755 -t "${ROOTFS}/etc/iso-hotfix-utility.d" "${_file}"
-    done
-    for fpath in ${SCRIPT_PATH}/iso-hotfix-utility/po/*; do
-        if [[ -f "${fpath}" ]] && [[ "${fpath}" != 'po/CNCHI_UPDATER.pot' ]]; then
-            STRING_PO=`echo ${fpath#*/}`
-            STRING=`echo ${STRING_PO%.po}`
-            mkdir -p "${ROOTFS}/usr/share/locale/${STRING}/LC_MESSAGES"
-            msgfmt "${fpath}" -o "${ROOTFS}/usr/share/locale/${STRING}/LC_MESSAGES/CNCHI_UPDATER.mo"
-            echo "${STRING} installed..."
-        fi
-    done
-    rm -rf ${SCRIPT_PATH}/iso-hotfix-utility
+   cp -af ${script_path}/airootfs ${work_dir}/${arch}
+    curl -o ${work_dir}/${arch}/airootfs/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
+    lynx -dump -nolist 'https://wiki.archlinux.org/index.php/Installation_Guide?action=render' >> ${work_dir}/${arch}/airootfs/root/install.txt
+    setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r '/root/customize_airootfs.sh' run
+    rm ${work_dir}/${arch}/airootfs/root/customize_airootfs.sh
 }
 ####################################################################################
 # Install cnchi installer from Git
