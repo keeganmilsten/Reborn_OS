@@ -2,6 +2,13 @@
 
 set -e -u
 
+if [ -f config ]; then
+    source ./config
+else
+    # No config file!
+    exit 1
+fi
+
 iso_name=spice
 iso_label="SPICE_$(date +%Y%m)"
 iso_version=$(date +%Y.%m.%d)
