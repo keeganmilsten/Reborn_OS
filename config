@@ -1,0 +1,4 @@
+# Install Cnchi from git
+CNCHI_GIT="y"
+CNCHI_GIT_BRANCH="0.15"
+CNCHI_GIT_URL="https://github.com/keeganmilsten/Cnchi/archive/${CNCHI_GIT_BRANCH}.zip"
