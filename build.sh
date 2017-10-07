@@ -121,7 +121,7 @@ make_cnchi() {
     # TODO: This should be included in Cnchi's src code as a separate file
     # (as both files are needed to run cnchi)
     sed -r -i 's|\/usr.+ -v|pkexec /usr/share/cnchi/bin/cnchi -s bugsnag|g' "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
-    for i in ${CNCHI_SRC}/cnchi ${CNCHI_SRC}/bin ${CNCHI_SRC}/data ${CNCHI_SRC}/scripts ${CNCHI_SRC}/ui; do
+    for i in ${CNCHI_SRC}/cnchi ${CNCHI_SRC}/dist/bin ${CNCHI_SRC}/data ${CNCHI_SRC}/scripts ${CNCHI_SRC}/cnchi/ui; do
         cp -R ${i} "${work_dir}/${arch}/airootfs/usr/share/cnchi/"
     done
     for files in ${CNCHI_SRC}/po/*; do
@@ -163,41 +163,41 @@ make_syslinux() {
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
 # Enable services
-        MKARCHISO_RUN 'systemctl -fq enable pacman-init'
+        mkarchiso_run 'systemctl -fq enable pacman-init'
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable livecd'
+            mkarchiso_run 'systemctl -fq enable livecd'
         fi
-        MKARCHISO_RUN 'systemctl -fq enable systemd-networkd'
+        mkarchiso_run 'systemctl -fq enable systemd-networkd'
         if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
+            mkarchiso_run 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable livecd-alsa-unmuter'
+            mkarchiso_run 'systemctl -fq enable livecd-alsa-unmuter'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable vboxservice'
+            mkarchiso_run 'systemctl -fq enable vboxservice'
         fi
-        MKARCHISO_RUN 'systemctl -fq enable ModemManager'
-        MKARCHISO_RUN 'systemctl -fq enable upower'
+        mkarchiso_run 'systemctl -fq enable ModemManager'
+        mkarchiso_run 'systemctl -fq enable upower'
         if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable plymouth-start'
+            mkarchiso_run 'systemctl -fq enable plymouth-start'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable lightdm'
+            mkarchiso_run 'systemctl -fq enable lightdm'
             chmod +x ${ROOTFS}/etc/lightdm/Xsession
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq enable gdm'
+            mkarchiso_run 'systemctl -fq enable gdm'
             chmod +x ${ROOTFS}/etc/gdm/Xsession
         fi
         # Disable pamac if present
         if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
-            MKARCHISO_RUN 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
+            mkarchiso_run 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
         fi
         # Enable systemd-timesyncd (ntp)
-        MKARCHISO_RUN 'systemctl -fq enable systemd-timesyncd'
+        mkarchiso_run 'systemctl -fq enable systemd-timesyncd'
         # Fix /home permissions
-        MKARCHISO_RUN 'chown -R antergos:users /home/antergos'
+        mkarchiso_run 'chown -R antergos:users /home/antergos'
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
             # Copying GSettings XML schema files
@@ -207,20 +207,20 @@ make_syslinux() {
                 cp ${_schema} ${work_dir}/${arch}/usr/share/glib-2.0/schemas
             done
             # Compile GSettings XML schema files
-            MKARCHISO_RUN '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas'
+            mkarchiso_run '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas'
         fi
         # BEGIN Pacstrap/Pacman bug where hooks are not run inside the chroot
         if [ -f ${work_dir}/${arch}/usr/bin/update-ca-trust ]; then
-            MKARCHISO_RUN '/usr/bin/update-ca-trust'
+            mkarchiso_run '/usr/bin/update-ca-trust'
         fi
         if [ -f ${work_dir}/${arch}/usr/bin/update-desktop-database ]; then
-            MKARCHISO_RUN '/usr/bin/update-desktop-database --quiet'
+            mkarchiso_run '/usr/bin/update-desktop-database --quiet'
         fi
         if [ -f ${work_dir}/${arch}/usr/bin/update-mime-database ]; then
-            MKARCHISO_RUN '/usr/bin/update-mime-database /usr/share/mime'
+            mkarchiso_run '/usr/bin/update-mime-database /usr/share/mime'
         fi
         if [ -f ${work_dir}/${arch}/usr/bin/gdk-pixbuf-query-loaders ]; then
-            MKARCHISO_RUN '/usr/bin/gdk-pixbuf-query-loaders --update-cache'
+            mkarchiso_run '/usr/bin/gdk-pixbuf-query-loaders --update-cache'
         fi
 }
 # Prepare /isolinux
