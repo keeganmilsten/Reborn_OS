@@ -166,6 +166,7 @@ make_syslinux() {
 }
 # Enable services
 make_services() {
+	echo "EXPERIMENTAL - MAY NOT WORK PROPERLY"
         mkarchiso_run 'systemctl -fq enable pacman-init'
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
             mkarchiso_run 'systemctl -fq enable livecd'
