@@ -131,6 +131,7 @@ make_cnchi() {
             mkdir -p ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES
             msgfmt $files -o ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES/cnchi.mo
             echo "${STRING} installed..."
+            echo "Cnchi is built"
         fi
     done
 }
@@ -162,7 +163,9 @@ make_syslinux() {
     mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux/hdt
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
+}
 # Enable services
+make_services() {
         mkarchiso_run 'systemctl -fq enable pacman-init'
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
             mkarchiso_run 'systemctl -fq enable livecd'
@@ -197,7 +200,7 @@ make_syslinux() {
         # Enable systemd-timesyncd (ntp)
         mkarchiso_run 'systemctl -fq enable systemd-timesyncd'
         # Fix /home permissions
-        mkarchiso_run 'chown -R antergos:users /home/antergos'
+        mkarchiso_run 'chown -R antergos:users /home/reborn'
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
             # Copying GSettings XML schema files
@@ -234,8 +237,8 @@ make_isolinux() {
 # Prepare /EFI
 make_efi() {
     mkdir -p ${work_dir}/iso/EFI/boot
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/PreLoader.efi ${work_dir}/iso/EFI/boot/bootx64.efi
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/HashTool.efi ${work_dir}/iso/EFI/boot/
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/PreLoader.efi ${work_dir}/iso/EFI/boot/bootx64.efi
+    cp ${work_dir}/x86_64/airootfs/usr/lib/share/efit/efi/HashTool.efi ${work_dir}/iso/EFI/boot/
     cp ${work_dir}/x86_64/airootfs/usr/lib/systemd/boot/efi/systemd-bootx64.efi ${work_dir}/iso/EFI/boot/loader.efi
     mkdir -p ${work_dir}/iso/loader/entries
     cp ${script_path}/efiboot/loader/loader.conf ${work_dir}/iso/loader/
@@ -261,8 +264,8 @@ make_efiboot() {
     cp ${work_dir}/iso/${install_dir}/boot/x86_64/archiso.img ${work_dir}/efiboot/EFI/archiso/archiso.img
     cp ${work_dir}/iso/${install_dir}/boot/intel_ucode.img ${work_dir}/efiboot/EFI/archiso/intel_ucode.img
     mkdir -p ${work_dir}/efiboot/EFI/boot
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/PreLoader.efi ${work_dir}/efiboot/EFI/boot/bootx64.efi
-    cp ${work_dir}/x86_64/airootfs/usr/lib/prebootloader/HashTool.efi ${work_dir}/efiboot/EFI/boot/
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/PreLoader.efi ${work_dir}/efiboot/EFI/boot/bootx64.efi
+    cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/HashTool.efi ${work_dir}/efiboot/EFI/boot/
     cp ${work_dir}/x86_64/airootfs/usr/lib/systemd/boot/efi/systemd-bootx64.efi ${work_dir}/efiboot/EFI/boot/loader.efi
     mkdir -p ${work_dir}/efiboot/loader/entries
     cp ${script_path}/efiboot/loader/loader.conf ${work_dir}/efiboot/loader/
@@ -334,6 +337,7 @@ run_once make_syslinux
 run_once make_isolinux
 run_once make_efi
 run_once make_efiboot
+run_once make_services
 
 for arch in x86_64; do
     run_once make_prepare
