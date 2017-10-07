@@ -43,11 +43,11 @@ systemctl set-default graphical.target
         fi
         if [ -f "/etc/systemd/system/lightdm.service" ]; then
             systemctl -fq enable lightdm
-            chmod +x ${ROOTFS}/etc/lightdm/Xsession
+            chmod +x /etc/lightdm/Xsession
         fi
         if [ -f "/etc/systemd/system/gdm.service" ]; then
             systemctl -fq enable gdm
-            chmod +x ${ROOTFS}/etc/gdm/Xsession
+            chmod +x /etc/gdm/Xsession
         fi
         # Disable pamac if present
         if [ -f "/usr/lib/systemd/system/pamac.service" ]; then
