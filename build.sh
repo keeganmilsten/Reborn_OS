@@ -199,6 +199,9 @@ make_services() {
         fi
         # Enable systemd-timesyncd (ntp)
         mkarchiso_run 'systemctl -fq enable systemd-timesyncd'
+}
+
+make_fixes() {
         # Fix /home permissions
         mkarchiso_run 'chown -R antergos:users /home/reborn'
         # Setup gsettings if gsettings folder exists
@@ -337,7 +340,7 @@ run_once make_syslinux
 run_once make_isolinux
 run_once make_efi
 run_once make_efiboot
-run_once make_services
+run_once make_fixes
 
 for arch in x86_64; do
     run_once make_prepare
