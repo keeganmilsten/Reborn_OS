@@ -1,7 +1,7 @@
 # Reborn-OS
 
 ## Dependencies
-- antergos-gfxboot for a graphical boot (or isolinux/syslinux)
+- isolinux/syslinux
 - arch-install-scripts
 - cpio
 - dosfstools
