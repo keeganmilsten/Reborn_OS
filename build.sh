@@ -131,7 +131,7 @@ make_cnchi() {
             mkdir -p ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES
             msgfmt $files -o ${work_dir}/${arch}/airootfs/usr/share/locale/${STRING}/LC_MESSAGES/cnchi.mo
             echo "${STRING} installed..."
-            echo "Cnchi is built"
+            echo "CNCHI IS NOW BUILT"
         fi
     done
 }
@@ -238,7 +238,7 @@ make_isolinux() {
 make_efi() {
     mkdir -p ${work_dir}/iso/EFI/boot
     cp ${work_dir}/x86_64/airootfs/usr/share/efitools/efi/PreLoader.efi ${work_dir}/iso/EFI/boot/bootx64.efi
-    cp ${work_dir}/x86_64/airootfs/usr/lib/share/efit/efi/HashTool.efi ${work_dir}/iso/EFI/boot/
+    cp ${work_dir}/x86_64/airootfs/usr/lib/share/efitools/efi/HashTool.efi ${work_dir}/iso/EFI/boot/
     cp ${work_dir}/x86_64/airootfs/usr/lib/systemd/boot/efi/systemd-bootx64.efi ${work_dir}/iso/EFI/boot/loader.efi
     mkdir -p ${work_dir}/iso/loader/entries
     cp ${script_path}/efiboot/loader/loader.conf ${work_dir}/iso/loader/
