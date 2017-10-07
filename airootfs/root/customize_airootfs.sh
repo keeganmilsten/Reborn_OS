@@ -23,35 +23,35 @@ systemctl enable pacman-init.service choose-mirror.service
 systemctl set-default graphical.target
 
 # EXPEERIMENTAL
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
+        if [ -f "/etc/systemd/system/livecd.service" ]; then
             systemctl -fq enable livecd
         fi
         mkarchiso 'systemctl -fq enable systemd-networkd'
-        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
+        if [ -f "/usr/lib/systemd/system/NetworkManager.service" ]; then
             systemctl -fq enable NetworkManager NetworkManager-wait-online
         fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
+        if [ -f "/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
             systemctl -fq enable livecd-alsa-unmuter
         fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
+        if [ -f "/etc/systemd/system/vboxservice.service" ]; then
             systemctl -fq enable vboxservice
         fi
         systemctl -fq enable ModemManager
         systemctl -fq enable upower
-        if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
+        if [ -f "/plymouthd.conf" ]; then
             systemctl -fq enable plymouth-start
         fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
+        if [ -f "/etc/systemd/system/lightdm.service" ]; then
             systemctl -fq enable lightdm
             chmod +x ${ROOTFS}/etc/lightdm/Xsession
         fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
+        if [ -f "/etc/systemd/system/gdm.service" ]; then
             systemctl -fq enable gdm
             chmod +x ${ROOTFS}/etc/gdm/Xsession
         fi
         # Disable pamac if present
-        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
+        if [ -f "/usr/lib/systemd/system/pamac.service" ]; then
             systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer
         fi
         # Enable systemd-timesyncd (ntp)
-        systemctl -fq enable systemd-timesyncd
+systemctl -fq enable systemd-timesyncd
