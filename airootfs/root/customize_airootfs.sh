@@ -26,7 +26,7 @@ systemctl set-default graphical.target
         if [ -f "/etc/systemd/system/livecd.service" ]; then
             systemctl -fq enable livecd
         fi
-        mkarchiso 'systemctl -fq enable systemd-networkd'
+        systemctl -fq enable systemd-networkd
         if [ -f "/usr/lib/systemd/system/NetworkManager.service" ]; then
             systemctl -fq enable NetworkManager NetworkManager-wait-online
         fi
