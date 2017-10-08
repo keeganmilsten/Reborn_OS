@@ -23,7 +23,7 @@ Please check that you have 5GB (or more) of free harddisk space in your root par
 
 1. Install dependencies:
 ```
-sudo pacman -S arch-install-scripts cpio dosfstools gfxboot libisoburn mkinitcpio-nfs-utils make patch squashfs-tools wget
+sudo pacman -S arch-install-scripts cpio dosfstools libisoburn mkinitcpio-nfs-utils make patch squashfs-tools wget lynx
 ```
 2. Clone this repository using `--recursive` like this:
 ```
