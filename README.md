@@ -29,10 +29,11 @@ sudo pacman -S arch-install-scripts cpio dosfstools libisoburn mkinitcpio-nfs-ut
 ```
 git clone https://github.com/keeganmilsten/Reborn-OS.git --recursive
 ```
-4. Install mkarchiso by running:
+4. Install mkarchiso and createa an out folder by running:
 ```
 cd Reborn-OS
 sudo make install
+makedir out
 ```
 5. Build it by running this command:
 ```
