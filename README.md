@@ -33,7 +33,7 @@ git clone https://github.com/keeganmilsten/Reborn-OS.git --recursive
 ```
 cd Reborn-OS
 sudo make install
-makedir out
+sudo mkdir out
 ```
 5. Build it by running this command:
 ```
