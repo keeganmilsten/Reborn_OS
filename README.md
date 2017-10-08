@@ -38,7 +38,7 @@ sudo make install
 ```
 sudo ./build.sh -v
 ```
-To rebuild it, simply remove the `build`, `Cnchi <VERSION>`, and `out` folders and re-enter the command from step 5.
+To rebuild it, simply remove the `build` folder and empty the `out` folder. Next, re-enter the command from step 5.
 
 ## Create the Reborn-OS Repo (note for developer)
 
