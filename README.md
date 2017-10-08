@@ -5,13 +5,13 @@
 - arch-install-scripts
 - cpio
 - dosfstools
-- gfxboot
 - libisoburn
 - mkinitcpio-nfs-utils
 - make
 - opendesktop-fonts
 - patch
 - squashfs-tools
+- lynx
 - wget
 
 ## Free space
