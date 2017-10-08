@@ -167,44 +167,42 @@ make_syslinux() {
 # Enable services
 make_services() {
 	echo "EXPERIMENTAL - MAY NOT WORK PROPERLY"
-        mkarchiso_run 'systemctl -fq enable pacman-init'
+        mkarchiso 'systemctl -fq enable pacman-init'
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
             mkarchiso_run 'systemctl -fq enable livecd'
         fi
-        mkarchiso_run 'systemctl -fq enable systemd-networkd'
+        mkarchiso 'systemctl -fq enable systemd-networkd'
         if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
-            mkarchiso_run 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
+            mkarchiso 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
-            mkarchiso_run 'systemctl -fq enable livecd-alsa-unmuter'
+            mkarchiso 'systemctl -fq enable livecd-alsa-unmuter'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
-            mkarchiso_run 'systemctl -fq enable vboxservice'
+            mkarchiso 'systemctl -fq enable vboxservice'
         fi
-        mkarchiso_run 'systemctl -fq enable ModemManager'
-        mkarchiso_run 'systemctl -fq enable upower'
+        mkarchiso 'systemctl -fq enable ModemManager'
+        mkarchiso 'systemctl -fq enable upower'
         if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
-            mkarchiso_run 'systemctl -fq enable plymouth-start'
+            mkarchiso 'systemctl -fq enable plymouth-start'
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
-            mkarchiso_run 'systemctl -fq enable lightdm'
+            mkarchiso 'systemctl -fq enable lightdm'
             chmod +x ${ROOTFS}/etc/lightdm/Xsession
         fi
         if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
-            mkarchiso_run 'systemctl -fq enable gdm'
+            mkarchiso 'systemctl -fq enable gdm'
             chmod +x ${ROOTFS}/etc/gdm/Xsession
         fi
         # Disable pamac if present
         if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
-            mkarchiso_run 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
+            mkarchiso 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
         fi
         # Enable systemd-timesyncd (ntp)
-        mkarchiso_run 'systemctl -fq enable systemd-timesyncd'
+        mkarchiso 'systemctl -fq enable systemd-timesyncd'
 }
 
 make_fixes() {
-        # Fix /home permissions
-        mkarchiso_run 'chown -R antergos:users /home/reborn'
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
             # Copying GSettings XML schema files
@@ -214,20 +212,7 @@ make_fixes() {
                 cp ${_schema} ${work_dir}/${arch}/usr/share/glib-2.0/schemas
             done
             # Compile GSettings XML schema files
-            mkarchiso_run '/usr/bin/glib-compile-schemas /usr/share/glib-2.0/schemas'
-        fi
-        # BEGIN Pacstrap/Pacman bug where hooks are not run inside the chroot
-        if [ -f ${work_dir}/${arch}/usr/bin/update-ca-trust ]; then
-            mkarchiso_run '/usr/bin/update-ca-trust'
-        fi
-        if [ -f ${work_dir}/${arch}/usr/bin/update-desktop-database ]; then
-            mkarchiso_run '/usr/bin/update-desktop-database --quiet'
-        fi
-        if [ -f ${work_dir}/${arch}/usr/bin/update-mime-database ]; then
-            mkarchiso_run '/usr/bin/update-mime-database /usr/share/mime'
-        fi
-        if [ -f ${work_dir}/${arch}/usr/bin/gdk-pixbuf-query-loaders ]; then
-            mkarchiso_run '/usr/bin/gdk-pixbuf-query-loaders --update-cache'
+            ${work_dir}/${arch}/airootfs/usr/bin/glib-compile-schemas ${work_dir}/${arch}/usr/share/glib-2.0/schemas
         fi
 }
 # Prepare /isolinux
@@ -344,6 +329,6 @@ run_once make_efiboot
 run_once make_fixes
 
 for arch in x86_64; do
-    run_once make_prepare
+run_once make_prepare
 done
 run_once make_iso
