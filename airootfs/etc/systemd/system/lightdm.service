@@ -1,6 +1,6 @@
 Unit]
 Description=Light Display Manager
-Documentation=man:lightdm(1)
+Documentation=man:lightdm
 After=dev-dri-card0.device systemd-user-sessions.service getty@tty1.service vboxservice.service livecd.service pacman-init.service
 
 [Service]
