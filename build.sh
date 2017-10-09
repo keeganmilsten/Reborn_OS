@@ -10,8 +10,8 @@ else
     exit 1
 fi
 
-iso_name=spice
-iso_label="SPICE_$(date +%Y%m)"
+iso_name=Reborn-OS
+iso_label="Reborn-OS_$(date +%Y%m)"
 iso_version=$(date +%Y.%m.%d)
 install_dir=arch
 work_dir=work
