@@ -42,14 +42,9 @@ systemctl set-default graphical.target
         if [ -f "/plymouthd.conf" ]; then
             systemctl -fq enable plymouth-start
         fi
-        if [ -f "/etc/systemd/system/lightdm.service" ]; then
             systemctl -fq enable lightdm
             chmod +x /etc/lightdm/Xsession
-        fi
-        if [ -f "/etc/systemd/system/gdm.service" ]; then
-            systemctl -fq enable gdm
-            chmod +x /etc/gdm/Xsession
-        fi
+       
         # Disable pamac if present
         if [ -f "/usr/lib/systemd/system/pamac.service" ]; then
             systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer
