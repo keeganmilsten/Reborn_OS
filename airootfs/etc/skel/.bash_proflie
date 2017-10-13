@@ -1,7 +1,0 @@
-#
-# ~/.bash_profile
-#
-
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
-[[-z $DISPLAY && $XDG_VTNR -eq1]]&& exec startx
