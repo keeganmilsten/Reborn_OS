@@ -43,4 +43,4 @@ To rebuild it, simply remove the `build` and `Cnchi <VERSION>` folders in additi
 
 ## Create the Reborn-OS Repo (note for Reborn OS team)
 
-- Run `sudo repo-add /var/lib/pacman/sync/Reborn-OS.db.tar.gz /home/$USER/Dropbox/Linux/antergos-deepin-repo/*.pkg.tar.xz`
+- Run `sudo repo-add /home/$USER/Dropbox/Linux/RebornOS-Repo/Reborn-OS.db.tar.xz /home/$USER/Dropbox/Linux/RebornOS-Repo/*.pkg.tar.xz`
