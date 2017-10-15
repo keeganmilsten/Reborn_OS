@@ -51,3 +51,5 @@ systemctl set-default graphical.target
         fi
         # Enable systemd-timesyncd (ntp)
 systemctl -fq enable systemd-timesyncd
+
+dkms autoinstall
