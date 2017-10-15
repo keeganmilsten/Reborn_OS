@@ -224,6 +224,56 @@ make_isolinux() {
     cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isohdpfx.bin ${work_dir}/iso/isolinux/
     cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/ldlinux.c32 ${work_dir}/iso/isolinux/
 }
+make_boot() {
+    mkdir -p ${work_dir}/iso/${install_dir}/boot/
+    if [[ -f ${work_dir}/${arch}/airootfs/boot/archiso.img ]]; then
+        cp ${work_dir}/${arch}/airootfs/boot/archiso.img ${work_dir}/iso/${install_dir}/boot/archiso.img
+        cp ${work_dir}/${arch}/airootfs/boot/vmlinuz-linux ${work_dir}/iso/${install_dir}/boot/vmlinuz
+    else
+        echo '>>> work_dir is ${WORK_DIR}'
+        ls ${work_dir} && ls ${work_dir}/${arch}/airootfs/ && ls ${work_dir}/${arch}/airootfs/boot/
+    fi
+}
+# Add other aditional/extra files to ${INSTALL_DIR}/boot/
+make_boot_extra() {
+    if [[ -f ${work_dir}/${arch}/airootfs/boot/memtest86+/memtest.bin ]]; then
+        cp ${work_dir}/${arch}/airootfs/boot/memtest86+/memtest.bin ${WORK_DIR}/iso/${install_dir}/boot/memtest
+    fi
+    if [[ -f ${work_dir}/${arch}/airootfs/usr/share/licenses/common/GPL2/license.txt ]]; then
+        cp ${work_dir}/${arch}/airootfs/usr/share/licenses/common/GPL2/license.txt ${work_dir}/iso/${install_dir}/boot/memtest.COPYING
+    fi
+    cp ${work_dir}/${arch}/airootfs/boot/intel-ucode.img ${work_dir}/iso/${install_dir}/boot/intel_ucode.img
+    cp ${work_dir}/${arch}/airootfs/usr/share/licenses/intel-ucode/LICENSE ${work_dir}/iso/${install_dir}/boot/intel_ucode.LICENSE
+}
+# Prepare /${INSTALL_DIR}/boot/syslinux
+make_syslinux() {
+    mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux
+    for _cfg in ${SCRIPT_PATH}/isolinux/*.cfg; do
+        sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+             s|%INSTALL_DIR%|${install_dir}|g;
+             s|%ARCH%|${arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
+    done
+    cp -LR ${script_path}/isolinux ${work_dir}/iso/${install_dir}/boot/syslinux
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/lpxelinux.0 ${work_dir}/iso/${install_dir}/boot/syslinux
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/memdisk ${work_dir}/iso/${install_dir}/boot/syslinux
+    mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux/hdt
+    gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
+    gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
+}
+# Prepare /isolinux
+make_isolinux() {
+    mkdir -p ${work_dir}/iso/isolinux
+    cp -LR ${script_path}/isolinux ${work_dir}/iso
+    cp -R ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/* ${work_dir}/iso/isolinux/
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/isolinux/
+    sed "s|%ARCHISO_LABEL%|${iso_label}|g;
+         s|%INSTALL_DIR%|${install_dir}|g;
+         s|%ARCH%|${arch}|g" ${script_path}/isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isolinux.bin ${work_dir}/iso/isolinux/
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isohdpfx.bin ${work_dir}/iso/isolinux/
+    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/lpxelinux.0 ${work_dir}/iso/isolinux/
+}
 # Prepare /EFI
 make_efi() {
     mkdir -p ${work_dir}/iso/EFI/boot
