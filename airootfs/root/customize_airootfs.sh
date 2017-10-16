@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 set -e -u
@@ -22,7 +23,9 @@ sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 systemctl enable pacman-init.service choose-mirror.service
 systemctl set-default graphical.target
 
-# EXPEERIMENTAL
+# EXPERIMENTAL
+
+# Enable Services
 
         if [ -f "/etc/systemd/system/livecd.service" ]; then
             systemctl -fq enable livecd
@@ -53,3 +56,31 @@ systemctl set-default graphical.target
 systemctl -fq enable systemd-timesyncd
 
 dkms autoinstall
+
+# Enable lightdm by disabling root login
+        echo "Adding autologin group"
+        groupadd -r autologin
+        echo "Adding nopasswdlogin group"
+        groupadd -r nopasswdlogin
+        echo "Adding Reborn OS user"
+        useradd -m -g users -G "audio,disk,optical,wheel,network,autologin,nopasswdlogin" reborn
+        # Set Reborn account passwordless
+        passwd -d reborn
+	chown -R reborn:users /home/reborn
+	echo "DONE FIXING ROOT LOGIN"
+#Various fixes
+        if [ -f /usr/bin/update-ca-trust ]; then
+            /usr/bin/update-ca-trust
+        fi
+        if [ -f /usr/bin/update-desktop-database ]; then
+            /usr/bin/update-desktop-database --quiet
+        fi
+        if [ -f /usr/bin/update-mime-database ]; then
+            /usr/bin/update-mime-database /usr/share/mime
+        fi
+        if [ -f /usr/bin/gdk-pixbuf-query-loaders ]; then
+            /usr/bin/gdk-pixbuf-query-loaders --update-cache
+        fi
+        # Fix sudoers
+        chown -R root:root /etc/
+        chmod 660 /etc/sudoers
