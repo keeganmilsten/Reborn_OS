@@ -105,6 +105,13 @@ make_customize_airootfs() {
     setarch ${arch} mkarchiso ${verbose} -w "${work_dir}/${arch}" -C "${work_dir}/pacman.conf" -D "${install_dir}" -r '/root/customize_airootfs.sh' run
     rm ${work_dir}/${arch}/airootfs/root/customize_airootfs.sh
     rm -f ${work_dir}/${arch}airootfs/etc/xdg/autostart/vboxclient.desktop
+        if [ -f "${work_dir}/${arch}/airootfs/etc/xdg/autostart/pamac-tray.desktop" ]; then
+            rm ${work_dir}/${arch}/airootfs/etc/xdg/autostart/pamac-tray.desktop
+        fi
+        ln -sf /usr/share/zoneinfo/UTC ${work_dir}/${arch}/airootfs/etc/localtime
+        chmod 750 ${work_dir}/${arch}/airootfs/etc/sudoers.d
+        chmod 440 ${work_dir}/${arch}/airootfs/etc/sudoers.d/g_wheel
+cp -L ${script_path}/set_password ${work_dir}/${arch}/airootfs/usr/bin
 }
 ####################################################################################
 # Install cnchi installer from Git
