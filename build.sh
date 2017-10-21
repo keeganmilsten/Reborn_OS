@@ -172,44 +172,6 @@ make_syslinux() {
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
 }
-# Enable services
-make_services() {
-	echo "EXPERIMENTAL - MAY NOT WORK PROPERLY"
-        mkarchiso 'systemctl -fq enable pacman-init'
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
-            mkarchiso_run 'systemctl -fq enable livecd'
-        fi
-        mkarchiso 'systemctl -fq enable systemd-networkd'
-        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
-            mkarchiso 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
-        fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
-            mkarchiso 'systemctl -fq enable livecd-alsa-unmuter'
-        fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
-            mkarchiso 'systemctl -fq enable vboxservice'
-        fi
-        mkarchiso 'systemctl -fq enable ModemManager'
-        mkarchiso 'systemctl -fq enable upower'
-        if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
-            mkarchiso 'systemctl -fq enable plymouth-start'
-        fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
-            mkarchiso 'systemctl -fq enable lightdm'
-            chmod +x ${ROOTFS}/etc/lightdm/Xsession
-        fi
-        if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
-            mkarchiso 'systemctl -fq enable gdm'
-            chmod +x ${ROOTFS}/etc/gdm/Xsession
-        fi
-        # Disable pamac if present
-        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
-            mkarchiso 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
-        fi
-        # Enable systemd-timesyncd (ntp)
-        mkarchiso 'systemctl -fq enable systemd-timesyncd'
-}
-
 make_fixes() {
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
