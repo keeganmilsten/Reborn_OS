@@ -1,7 +1,7 @@
 # Reborn-OS
 ![Deepin_Image](/images/deepin4.png)
 
-## Download Location ##
+## Download Locations ##
 - Comoing Soon!
 
 # To Manually Build Yourself
