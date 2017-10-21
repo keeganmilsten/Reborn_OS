@@ -1,13 +1,5 @@
 theme: jekyll-theme-cayman
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
-
 # Name of your site (displayed in the header)
 name: Reborn OS
 
