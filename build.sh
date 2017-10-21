@@ -197,8 +197,8 @@ make_fixes() {
             ${work_dir}/${arch}/airootfs/usr/bin/glib-compile-schemas ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas
         fi
 #Use lightdm.conf from local direcectory instead of default one
-#rm ${work_dir}/${arch}/etc/lightdm/lightdm.conf
-#cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/etc/lightdm/
+rm ${work_dir}/${arch}/airootfs/etc/lightdm/lightdm.conf
+cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/airootfs/etc/lightdm/
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
 make_boot() {
