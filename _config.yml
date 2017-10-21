@@ -13,3 +13,5 @@ name: Reborn OS
 
 # Short bio or description (displayed in the header)
 description: Reborn OS is an operating system with the users in mind. With Arch Liinux as the base and Deepin DE as the Live Environment, it proves as elegant as it is easy to use. But that's not all! Reborn OS makes use of Cnchi, allowing you to install whatever DE your heaert may so desire, including Deepin, i3, Enlightenment, and Budgie. Enjoy!
+
+permalink: /:title/
