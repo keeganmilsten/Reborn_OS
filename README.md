@@ -3,9 +3,10 @@
 
 ## Download Location ##
 - Comoing Soon!
-_____________
 
-## Dependencies
+# To Manually Build Yourself
+
+### Dependencies
 - isolinux/syslinux
 - arch-install-scripts
 - cpio
@@ -19,12 +20,12 @@ _____________
 - lynx
 - wget
 
-## Free space
+### Free space
 
 Please check that you have 5GB (or more) of free harddisk space in your root partition:
 `df -h /`
 
-## Instructions
+### Instructions
 
 1. Install dependencies:
 ```
@@ -48,6 +49,6 @@ sudo ./build.sh -v
 
 To rebuild the ISO, simply remove the `build` and `Cnchi <VERSION>` folders in addition to emptying the `out` folder. Next, re-enter the command from step 5.
 
-## Create the Reborn-OS Repo (note for Reborn OS team)
+### Create the Reborn-OS Repo (note for Reborn OS team)
 
 - Run `sudo repo-add /home/$USER/Dropbox/Linux/RebornOS-Repo/Reborn-OS.db.tar.xz /home/$USER/Dropbox/Linux/RebornOS-Repo/*.pkg.tar.xz`
