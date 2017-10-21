@@ -2,7 +2,7 @@
 ![Deepin_Image](/images/deepin4.png)
 
 ## Download Locations ##
-- Comoing Soon!
+- Coming Soon!
 
 # To Manually Build Yourself
 
