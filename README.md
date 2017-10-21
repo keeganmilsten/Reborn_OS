@@ -1,4 +1,9 @@
 # Reborn-OS
+![Deepin_Image](/images/deepin4.png)
+
+## Download Location ##
+- Comoing Soon!
+_____________
 
 ## Dependencies
 - isolinux/syslinux
