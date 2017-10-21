@@ -144,6 +144,62 @@ make_cnchi() {
     done
 }
 ########################################################################################
+
+
+# Enable services
+make_services() {
+	echo "EXPERIMENTAL - MAY NOT WORK PROPERLY"
+        mkarchiso 'systemctl -fq enable pacman-init'
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd.service" ]; then
+            mkarchiso_run 'systemctl -fq enable livecd'
+        fi
+        mkarchiso 'systemctl -fq enable systemd-networkd'
+        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/NetworkManager.service" ]; then
+            mkarchiso 'systemctl -fq enable NetworkManager NetworkManager-wait-online'
+        fi
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/livecd-alsa-unmuter.service" ]; then
+            mkarchiso 'systemctl -fq enable livecd-alsa-unmuter'
+        fi
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/vboxservice.service" ]; then
+            mkarchiso 'systemctl -fq enable vboxservice'
+        fi
+        mkarchiso 'systemctl -fq enable ModemManager'
+        mkarchiso 'systemctl -fq enable upower'
+        if [ -f "${work_dir}/${arch}/plymouthd.conf" ]; then
+            mkarchiso 'systemctl -fq enable plymouth-start'
+        fi
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/lightdm.service" ]; then
+            mkarchiso 'systemctl -fq enable lightdm'
+            chmod +x ${ROOTFS}/etc/lightdm/Xsession
+        fi
+        if [ -f "${work_dir}/${arch}/etc/systemd/system/gdm.service" ]; then
+            mkarchiso 'systemctl -fq enable gdm'
+            chmod +x ${ROOTFS}/etc/gdm/Xsession
+        fi
+        # Disable pamac if present
+        if [ -f "${work_dir}/${arch}/usr/lib/systemd/system/pamac.service" ]; then
+            mkarchiso 'systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer'
+        fi
+        # Enable systemd-timesyncd (ntp)
+        mkarchiso 'systemctl -fq enable systemd-timesyncd'
+}
+
+make_fixes() {
+        # Setup gsettings if gsettings folder exists
+        if [ -d ${script_path}/gsettings ]; then
+            # Copying GSettings XML schema files
+            mkdir -p ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas
+            for _schema in ${script_path}/gsettings/*.gschema.override; do
+                echo ">>> Will use ${_schema}"
+                cp ${_schema} ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas
+            done
+            # Compile GSettings XML schema files
+            ${work_dir}/${arch}/airootfs/usr/bin/glib-compile-schemas ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas
+        fi
+#Use lightdm.conf from local direcectory instead of default one
+#rm ${work_dir}/${arch}/etc/lightdm/lightdm.conf
+#cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/etc/lightdm/
+}
 # Prepare kernel/initramfs ${install_dir}/boot/
 make_boot() {
     mkdir -p ${work_dir}/iso/${install_dir}/boot/${arch}
@@ -172,19 +228,6 @@ make_syslinux() {
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
     gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
 }
-make_fixes() {
-        # Setup gsettings if gsettings folder exists
-        if [ -d ${script_path}/gsettings ]; then
-            # Copying GSettings XML schema files
-            mkdir -p ${work_dir}/${arch}/usr/share/glib-2.0/schemas
-            for _schema in ${script_path}/gsettings/*.gschema.override; do
-                echo ">>> Will use ${_schema}"
-                cp ${_schema} ${work_dir}/${arch}/usr/share/glib-2.0/schemas
-            done
-            # Compile GSettings XML schema files
-            ${work_dir}/${arch}/airootfs/usr/bin/glib-compile-schemas ${work_dir}/${arch}/usr/share/glib-2.0/schemas
-        fi
-}
 # Prepare /isolinux
 make_isolinux() {
     mkdir -p ${work_dir}/iso/isolinux
@@ -192,56 +235,6 @@ make_isolinux() {
     cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isolinux.bin ${work_dir}/iso/isolinux/
     cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isohdpfx.bin ${work_dir}/iso/isolinux/
     cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/ldlinux.c32 ${work_dir}/iso/isolinux/
-}
-make_boot() {
-    mkdir -p ${work_dir}/iso/${install_dir}/boot/
-    if [[ -f ${work_dir}/${arch}/airootfs/boot/archiso.img ]]; then
-        cp ${work_dir}/${arch}/airootfs/boot/archiso.img ${work_dir}/iso/${install_dir}/boot/archiso.img
-        cp ${work_dir}/${arch}/airootfs/boot/vmlinuz-linux ${work_dir}/iso/${install_dir}/boot/vmlinuz
-    else
-        echo '>>> work_dir is ${WORK_DIR}'
-        ls ${work_dir} && ls ${work_dir}/${arch}/airootfs/ && ls ${work_dir}/${arch}/airootfs/boot/
-    fi
-}
-# Add other aditional/extra files to ${INSTALL_DIR}/boot/
-make_boot_extra() {
-    if [[ -f ${work_dir}/${arch}/airootfs/boot/memtest86+/memtest.bin ]]; then
-        cp ${work_dir}/${arch}/airootfs/boot/memtest86+/memtest.bin ${WORK_DIR}/iso/${install_dir}/boot/memtest
-    fi
-    if [[ -f ${work_dir}/${arch}/airootfs/usr/share/licenses/common/GPL2/license.txt ]]; then
-        cp ${work_dir}/${arch}/airootfs/usr/share/licenses/common/GPL2/license.txt ${work_dir}/iso/${install_dir}/boot/memtest.COPYING
-    fi
-    cp ${work_dir}/${arch}/airootfs/boot/intel-ucode.img ${work_dir}/iso/${install_dir}/boot/intel_ucode.img
-    cp ${work_dir}/${arch}/airootfs/usr/share/licenses/intel-ucode/LICENSE ${work_dir}/iso/${install_dir}/boot/intel_ucode.LICENSE
-}
-# Prepare /${INSTALL_DIR}/boot/syslinux
-make_syslinux() {
-    mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux
-    for _cfg in ${SCRIPT_PATH}/isolinux/*.cfg; do
-        sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-             s|%INSTALL_DIR%|${install_dir}|g;
-             s|%ARCH%|${arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
-    done
-    cp -LR ${script_path}/isolinux ${work_dir}/iso/${install_dir}/boot/syslinux
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/lpxelinux.0 ${work_dir}/iso/${install_dir}/boot/syslinux
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/memdisk ${work_dir}/iso/${install_dir}/boot/syslinux
-    mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux/hdt
-    gzip -c -9 ${work_dir}/${arch}/airootfs/usr/share/hwdata/pci.ids > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/pciids.gz
-    gzip -c -9 ${work_dir}/${arch}/airootfs/usr/lib/modules/*-ARCH/modules.alias > ${work_dir}/iso/${install_dir}/boot/syslinux/hdt/modalias.gz
-}
-# Prepare /isolinux
-make_isolinux() {
-    mkdir -p ${work_dir}/iso/isolinux
-    cp -LR ${script_path}/isolinux ${work_dir}/iso
-    cp -R ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/* ${work_dir}/iso/isolinux/
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/isolinux/
-    sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-         s|%INSTALL_DIR%|${install_dir}|g;
-         s|%ARCH%|${arch}|g" ${script_path}/isolinux/isolinux.cfg > ${work_dir}/iso/isolinux/isolinux.cfg
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isolinux.bin ${work_dir}/iso/isolinux/
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/isohdpfx.bin ${work_dir}/iso/isolinux/
-    cp ${work_dir}/${arch}/airootfs/usr/lib/syslinux/bios/lpxelinux.0 ${work_dir}/iso/isolinux/
 }
 # Prepare /EFI
 make_efi() {
@@ -287,6 +280,7 @@ make_efiboot() {
     cp ${work_dir}/iso/EFI/shellx64_v1.efi ${work_dir}/efiboot/EFI/
     umount -d ${work_dir}/efiboot
 }
+
 # Build airootfs filesystem image
 make_prepare() {
     cp -a -l -f ${work_dir}/${arch}/airootfs ${work_dir}
