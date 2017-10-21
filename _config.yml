@@ -1,7 +1,1 @@
 theme: jekyll-theme-cayman
-
-# Name of your site (displayed in the header)
-name: Reborn OS
-
-include:
- - README.md
