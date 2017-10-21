@@ -20,8 +20,8 @@ sed -i 's/#\(HandleSuspendKey=\)suspend/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
-systemctl enable pacman-init.service choose-mirror.service
 systemctl set-default graphical.target
+systemctl -fq enable pacman-init.service
 
 # EXPERIMENTAL
 
@@ -42,11 +42,9 @@ systemctl set-default graphical.target
         fi
         systemctl -fq enable ModemManager
         systemctl -fq enable upower
-        if [ -f "/plymouthd.conf" ]; then
-            systemctl -fq enable plymouth-start
-        fi
-            systemctl -fq enable lightdm
-            chmod +x /etc/lightdm/Xsession
+
+        systemctl -fq enable lightdm
+        chmod +x /etc/lightdm/Xsession
        
         # Disable pamac if present
         if [ -f "/usr/lib/systemd/system/pamac.service" ]; then
@@ -68,6 +66,7 @@ dkms autoinstall
         passwd -d reborn
 	chown -R reborn:users /home/reborn
 	echo "DONE FIXING ROOT LOGIN"
+
 #Various fixes
         if [ -f /usr/bin/update-ca-trust ]; then
             /usr/bin/update-ca-trust
@@ -81,6 +80,7 @@ dkms autoinstall
         if [ -f /usr/bin/gdk-pixbuf-query-loaders ]; then
             /usr/bin/gdk-pixbuf-query-loaders --update-cache
         fi
-        # Fix sudoers
+
+# Fix sudoers
         chown -R root:root /etc/
         chmod 660 /etc/sudoers
