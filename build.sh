@@ -199,6 +199,9 @@ make_fixes() {
 #Use lightdm.conf from local direcectory instead of default one
 rm ${work_dir}/${arch}/airootfs/etc/lightdm/lightdm.conf
 cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/airootfs/etc/lightdm/
+#Copy Antergos Mirrorlist
+mkdir -p ${work_dir}/${arch}/airootfs/etc/pacman.d
+cp ${script_path}/airootfs/etc/antergos-mirrorlist ${work_dir}/${arch}/airootfs/etc/pacman.d/
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
 make_boot() {
