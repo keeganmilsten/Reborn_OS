@@ -2,7 +2,7 @@
 ![Deepin_Image](/images/deepin4.png)
 
 ## Download Locations ##
-- <a class="github-button" href="https://github.com/keeganmilsten/Reborn-OS" data-icon="octicon-cloud-download" aria-label="Download ntkme/github-buttons on GitHub">Download</a>
+- <a href="https://github.com/keeganmilsten/Reborn-OS" class="button">Coming Soon!</a> 
 
 # To Manually Build Yourself
 
