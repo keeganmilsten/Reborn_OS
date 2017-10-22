@@ -21,7 +21,7 @@ sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 systemctl set-default graphical.target
-systemctl -fq enable pacman-init.service choose-mirror.service
+systemctl enable pacman-init.service choose-mirror.service
 
 # EXPERIMENTAL
 
