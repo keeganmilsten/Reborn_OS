@@ -203,11 +203,25 @@ make_fixes() {
             ${work_dir}/${arch}/airootfs/usr/bin/glib-compile-schemas ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas
         fi
 #Use lightdm.conf from local direcectory instead of default one
+echo "Removing unnecessary lightdm.conf"
 rm ${work_dir}/${arch}/airootfs/etc/lightdm/lightdm.conf
+echo "Copying correct lightdm.conf file over"
 cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/airootfs/etc/lightdm/
+echo "DONE"
 #Copy Antergos Mirrorlist
+echo "Setting up Antergos Mirrorlist"
 mkdir -p ${work_dir}/${arch}/airootfs/etc/pacman.d
 cp ${script_path}/airootfs/etc/antergos-mirrorlist ${work_dir}/${arch}/airootfs/etc/pacman.d/
+echo "DONE"
+#Copy pacman-init.service over
+echo "Copying pacman-init.service"
+cp ${script_path}/pacman-init.service ${work_dir}/${arch}/airootfs/etc/systemd/system/
+echo "DONE"
+#Replace pacman.conf with my own
+echo "Replacing pacman.conf with my own"
+rm ${work_dir}/${arch}/airootfs/etc/pacman.conf
+cp ${script_path}/pacman.conf ${work_dir}/${arch}/airootfs/etc/
+echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
 make_boot() {
