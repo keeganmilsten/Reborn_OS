@@ -126,7 +126,7 @@ make_cnchi() {
 	rm ${CNCHI_SRC}/cnchi/features_info.py
 	cp ${script_path}/Cnchi/features_info.py ${CNCHI_SRC}/cnchi/
 	rm ${CNCHI_SRC}/data/packages.xml
-	cp ${script_path}/packages.xml ${CNCHI_SRC}/data/
+	cp ${script_path}Cnchi/packages.xml ${CNCHI_SRC}/data/
 	echo "FINISHED CUSTOMIZING"
     install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
 	install -Dm755 "${CNCHI_SRC}/dist/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
