@@ -122,6 +122,12 @@ make_cnchi() {
     unzip ${script_path}/cnchi-git.zip -d ${script_path}
     rm -f ${script_path}/cnchi-git.zip
     CNCHI_SRC="${script_path}/Cnchi-${CNCHI_GIT_BRANCH}"
+    	echo "CUSOMIZING CNCHI"
+	rm ${CNCHI_SRC}/cnchi/features_info.py
+	cp ${script_path}/Cnchi/features_info.py ${CNCHI_SRC}/cnchi/
+	rm ${CNCHI_SRC}/data/packages.xml
+	cp ${script_path}/packages.xml ${CNCHI_SRC}/data/
+	echo "FINISHED CUSTOMIZING"
     install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
 	install -Dm755 "${CNCHI_SRC}/dist/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
 	install -Dm755 "${CNCHI_SRC}/dist/cnchi.desktop" "${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop"
