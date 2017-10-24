@@ -135,7 +135,7 @@ make_cnchi() {
     # TODO: This should be included in Cnchi's src code as a separate file
     # (as both files are needed to run cnchi)
     sed -r -i 's|\/usr.+ -v|pkexec /usr/share/cnchi/bin/cnchi -s bugsnag|g' "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
-    for i in ${CNCHI_SRC}/cnchi ${CNCHI_SRC}/dist/bin ${CNCHI_SRC}/data ${CNCHI_SRC}/scripts ${CNCHI_SRC}/cnchi/ui; do
+    for i in ${CNCHI_SRC}/cnchi ${CNCHI_SRC}/bin ${CNCHI_SRC}/data ${CNCHI_SRC}/scripts ${CNCHI_SRC}/ui; do
         cp -R ${i} "${work_dir}/${arch}/airootfs/usr/share/cnchi/"
     done
     for files in ${CNCHI_SRC}/po/*; do
