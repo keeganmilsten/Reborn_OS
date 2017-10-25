@@ -1,6 +1,6 @@
 [Desktop Entry]
 Comment=Updates pacman repos at first boot.
-Exec=/etc/skel/.config/autostart/internet.sh
+Exec=/home/$USER/.config/autostart/internet.sh
 GenericName=Repository Updater
 Name=refresh.desktop
 Terminal=false
