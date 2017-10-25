@@ -1,0 +1,11 @@
+[Desktop Entry]
+Comment=Updates pacman repos at first boot.
+Exec=/etc/skel/.config/autostart/internet.sh
+GenericName=Repository Updater
+Name=refresh.desktop
+Terminal=false
+Type=Application
+NoDisplay=true
+X-DEEPIN-Autostart-Delay=1
+X-GNOME-Autostart-Delay=1
+X-MATE-Autostart-Delay=1
