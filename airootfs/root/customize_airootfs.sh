@@ -52,6 +52,9 @@ systemctl enable pacman-init.service choose-mirror.service
         fi
         # Enable systemd-timesyncd (ntp)
 systemctl -fq enable systemd-timesyncd
+	
+	#Enable Repository Configuration
+	systemctl -fq enable internet.service
 
 dkms autoinstall
 
