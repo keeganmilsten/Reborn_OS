@@ -71,15 +71,15 @@ LIBS = {
 }
 
 ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash",
-                "games", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual"]
+                "games", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
     'base': ["bluetooth", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games",
-             "graphic_drivers", "office", "visual"],
-    'cinnamon': ["lamp", "visual"],
+             "graphic_drivers", "office", "visual", "nautilus", "nemo"],
+    'cinnamon': ["lamp", "visual", "nemo"],
     'deepin': ["lamp", "visual"],
-    'gnome': ["lamp", "visual"],
+    'gnome': ["lamp", "visual", "nautilus"],
     'kde': ["lamp", "visual"],
     'mate': ["lamp", "visual"],
     'openbox': ["lamp"],
@@ -114,7 +114,7 @@ def _(message):
 DESCRIPTIONS = {
     'base': _("This option will install Reborn OS as command-line only system, "
               "without any type of graphical interface. After the installation you can "
-              "customize Antergos by installing packages with the command-line package manager."),
+              "customize Reborn OS by installing packages with the command-line package manager."),
 
     'cinnamon': _("Cinnamon is a Linux desktop which provides advanced, "
                   "innovative features and a traditional desktop user experience. "
