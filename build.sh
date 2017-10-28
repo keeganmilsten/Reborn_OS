@@ -56,7 +56,7 @@ run_once() {
 make_pacman_conf() {
     local _cache_dirs
     _cache_dirs=($(pacman -v 2>&1 | grep '^Cache Dirs:' | sed 's/Cache Dirs:\s*//g'))
-    sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${work_dir}/pacman.conf
+sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${work_dir}/pacman.conf
 }
 
 # Base installation, plus needed packages (airootfs)
@@ -122,13 +122,13 @@ make_cnchi() {
     unzip ${script_path}/cnchi-git.zip -d ${script_path}
     rm -f ${script_path}/cnchi-git.zip
     CNCHI_SRC="${script_path}/Cnchi-${CNCHI_GIT_BRANCH}"
-    	echo "CUSOMIZING CNCHI"
+	echo "CUSOMIZING CNCHI"
 	rm ${CNCHI_SRC}/cnchi/features_info.py
 	cp ${script_path}/Cnchi/features_info.py ${CNCHI_SRC}/cnchi/
 	rm ${CNCHI_SRC}/data/packages.xml
-	cp ${script_path}Cnchi/packages.xml ${CNCHI_SRC}/data/
+	cp ${script_path}/Cnchi/packages.xml ${CNCHI_SRC}/data/
 	echo "FINISHED CUSTOMIZING"
-    install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
+        install -d ${work_dir}/${arch}/airootfs/usr/share/{cnchi,locale}
 	install -Dm755 "${CNCHI_SRC}/bin/cnchi" "${work_dir}/${arch}/airootfs/usr/bin/cnchi"
 	install -Dm755 "${CNCHI_SRC}/cnchi.desktop" "${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop"
 	install -Dm644 "${CNCHI_SRC}/data/images/antergos/antergos-icon.png" "${work_dir}/${arch}/airootfs/usr/share/pixmaps/cnchi.png"
@@ -182,6 +182,25 @@ echo "DONE"
 echo "Replacing pacman.conf with my own"
 rm ${work_dir}/${arch}/airootfs/etc/pacman.conf
 cp ${script_path}/pacman.conf ${work_dir}/${arch}/airootfs/etc/
+echo "DONE"
+#Editting Cnchi
+echo "Moving Cnchi files over"
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/packages.xml
+cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/features_info.py
+cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/features.py
+cp ${script_path}/Cnchi/features.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/desktop_info.py
+cp ${script_path}/Cnchi/desktop_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/encfs.py
+cp ${script_path}/Cnchi/encfs.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/grub2.py
+cp ${script_path}/Cnchi/grub2.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/systemd_boot.py
+cp ${script_path}/Cnchi/systemd_boot.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/postinstall.sh
+cp ${script_path}/Cnchi/postinstall.sh ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/
 echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
