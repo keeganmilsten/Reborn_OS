@@ -23,3 +23,5 @@ export QT_SELECT=qt5
 if [[ $LANG = '' ]]; then
 	export LANG=en_US.UTF-8
 fi
+
+path() ( IFS=: ; printf '%s\n' $PATH ; )
