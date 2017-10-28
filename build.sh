@@ -201,6 +201,16 @@ rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/systemd_
 cp ${script_path}/Cnchi/systemd_boot.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/postinstall.sh
 cp ${script_path}/Cnchi/postinstall.sh ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/main_window.py
+cp ${script_path}/Cnchi/main_window.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/show_message.py
+cp ${script_path}/Cnchi/show_message.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/slides.py
+cp ${script_path}/Cnchi/slides.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/timezone.py
+cp ${script_path}/Cnchi/timezone.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/welcome.py
+cp ${script_path}/Cnchi/welcome.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
 echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
