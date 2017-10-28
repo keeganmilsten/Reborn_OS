@@ -685,11 +685,11 @@
             <pkgname>compton</pkgname>
             <pkgname>paranoid</pkgname>
         </feature>
-	<feature name="Nemo">
+	<feature name="nemo">
             <pkgname>nemo</pkgname>
         </feature>
-	<feature name="Nautilus">
-	    <pkgname>nautilus</pkgname
+	<feature name="nautilus">
+	    <pkgname>nautilus</pkgname>
 	</feature>
     </features>
 
@@ -735,6 +735,7 @@
             <pkgname>grub</pkgname>
             <pkgname>os-prober</pkgname>
             <pkgname>grub2-theme-antergos</pkgname>
+	    <pkgname>grub2-theme-vimix-git</pkgname>
         </bootloader>
         <bootloader name="systemd-boot">
             <!-- previously called gummiboot, now comes with systemd -->
