@@ -90,7 +90,7 @@ DESCRIPTIONS = {
     'lts': _("Long term support (LTS) Linux kernel and modules."),
     'smb': _("Provides client access to shared files and printers."),
     'nemo': _("Default file manager for the Cinnamon desktop."),
-    'nautilus': _("Default fiel manager for the Gnome desktop.")}
+    'nautilus': _("Default file manager for the Gnome desktop.")}
 
 TOOLTIPS = {
     'aur': _("Use yaourt to install AUR packages.\n"
