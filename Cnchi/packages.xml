@@ -46,7 +46,6 @@
             <packages>
                 <pkgname>accountsservice</pkgname>
                 <pkgname lib="gtk">antergos-gsettings</pkgname>
-                <pkgname>antergos-wallpapers</pkgname>
                 <!--<pkgname>antergos-welcome</pkgname>-->
                 <pkgname>cdrtools</pkgname>
                 <pkgname lib="gtk">dconf-editor</pkgname>
@@ -94,6 +93,7 @@
                 <pkgname>xorg-server</pkgname>
                 <pkgname>xorg-xinit</pkgname>
                 <pkgname>xorg-xkill</pkgname>
+		<pkgname>pyakm</pkgname>
             </packages>
         </edition>
 
@@ -162,6 +162,11 @@
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xscreensaver</pkgname>
 		<pkgname>gnome-software</pkgname>
+		<pkgname>reborn-gnome-schemas</pkgname>
+		<pkgname>gtk-theme-macos-sierra-archers-git</pkgname>
+		<pkgname>gnome-software<pkgname>
+		<pkgname>flatplat-blue-theme</pkgname>
+			    
             </packages>
         </edition>
 
@@ -213,6 +218,8 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>zuki-themes</pkgname>
+		<pkgname>reborn-cinnamon-schemas</pkgname>
+		<pkgname>flatplat-blue-theme</pkgname>
             </packages>
         </edition>
 
@@ -251,6 +258,7 @@
                 <pkgname>xfce4-pulseaudio-plugin</pkgname>
                 <pkgname>xfce4-screenshooter</pkgname>
                 <pkgname>xfce4-taskmanager</pkgname>
+		<pkgname>thunar-root</pkgname>
             </packages>
         </edition>
 
@@ -288,6 +296,8 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xfburn</pkgname>
+		<pkgname>reborn-mate-schemas</pkgname>
+		<pkgname>flatplat-blue-theme</pkgname>
             </packages>
         </edition>
 
@@ -507,6 +517,7 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xscreensaver</pkgname>
+		<pkgname>flatplat-blue-theme</pkgname>
             </packages>
         </edition>
 
@@ -571,6 +582,9 @@
                <pkgname>noto-fonts-emoji</pkgname>
                <pkgname>pamac</pkgname>
                <pkgname>unicode-character-database</pkgname>
+               <pkgname>reborn-deepin-schemas</pkgname>
+	       <pkgname>deepin-file-manager-root</pkgname>
+		<pkgname>flatplat-blue-theme</pkgname>
            </packages>
        </edition>
     </editions>
