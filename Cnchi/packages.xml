@@ -166,6 +166,7 @@
 		<pkgname>gtk-theme-macos-sierra-archers-git</pkgname>
 		<pkgname>gnome-software<pkgname>
 		<pkgname>flatplat-blue-theme</pkgname>
+		<pkgname>nautilus-root</pkgname>
 			    
             </packages>
         </edition>
@@ -705,6 +706,7 @@
         </feature>
 	<feature name="nautilus">
 	    <pkgname>nautilus</pkgname>
+	    <pkgname>nautilus-root</pkgname
 	</feature>
     </features>
 
