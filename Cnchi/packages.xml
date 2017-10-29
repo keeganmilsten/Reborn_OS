@@ -59,7 +59,7 @@
                 <pkgname>gstreamer-vaapi</pkgname>
                 <pkgname lang="de">hunspell-de</pkgname> <!-- German hunspell dictionaries -->
                 <pkgname lang="en">hunspell-en</pkgname> <!-- English hunspell dictionaries -->
-                <pkgname lang="es">hunspell-es</pkgname> <!-- Spanish hunspell dictionaries -->
+                <pkgname lang=numix-icon-theme-circle"es">hunspell-es</pkgname> <!-- Spanish hunspell dictionaries -->
                 <pkgname lang="fr">hunspell-fr</pkgname> <!-- French (modern) hunspell dictionaries -->
                 <pkgname lang="he">hunspell-he</pkgname> <!-- Hebrew hunspell dictionary -->
                 <pkgname lang="it">hunspell-it</pkgname> <!-- Italian dictionary for Hunspell -->
@@ -77,7 +77,7 @@
                 <pkgname>mesa-vdpau</pkgname>
                 <pkgname>numix-frost-themes</pkgname>
                 <pkgname>numix-icon-theme</pkgname>
-                <pkgname>numix-icon-theme-square</pkgname>
+                <pkgname>numix-icon-theme-circle</pkgname>
                 <pkgname>pavucontrol</pkgname>
                 <pkgname>pulseaudio</pkgname>
                 <pkgname>pulseaudio-alsa</pkgname>
@@ -391,7 +391,7 @@
                 <pkgname>milou</pkgname>
                 <pkgname>nm-connection-editor</pkgname>
                 <pkgname>numix-frost-themes</pkgname>
-                <pkgname>numix-icon-theme-square</pkgname>
+                <pkgname>numix-icon-theme-circle</pkgname>
                 <pkgname>okular</pkgname>
                 <pkgname>oxygen</pkgname>
                 <pkgname>pamac-tray-appindicator</pkgname>
