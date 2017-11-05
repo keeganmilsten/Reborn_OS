@@ -1,3 +1,2 @@
 #!/bin/bash
-
-sudo -E cnchi -dvz --disable-update
+sudo -E /usr/bin/python -Wall /usr/share/cnchi/src/cnchi.py -dvz --disable-update
