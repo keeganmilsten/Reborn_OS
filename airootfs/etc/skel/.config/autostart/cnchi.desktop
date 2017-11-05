@@ -1,11 +1,12 @@
 [Desktop Entry]
-Comment=Updates Cnchi at first boot.
-Exec=/usr/bin/pacman-boot
-GenericName=Cnchi Updater
+Comment=Opens Cnchi at first boot.
+Exec=/usr/bin/cnchi-start.sh
+GenericName=Reborn Installer
 Icon=/usr/share/applications/cnchi.png
 Name=cnchi.desktop
+Name[en_US]=cnchi.desktop
 Terminal=false
 Type=Application
-X-DEEPIN-Autostart-Delay=5
-X-GNOME-Autostart-Delay=5
-X-MATE-Autostart-Delay=5
+X-DEEPIN-Autostart-enabled=true
+X-GNOME-Autostart-enabled=true
+X-MATE-Autostart-enabled=true
