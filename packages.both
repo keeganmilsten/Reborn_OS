@@ -45,7 +45,6 @@ partimage
 ppp
 pptpclient
 refind-efi
-rfkill
 rp-pppoe
 rsync
 sdparm
@@ -64,7 +63,6 @@ wpa_actiond
 wvdial
 xl2tpd
 zd1211-firmware
-
 
 
 antergos-keyring
@@ -126,17 +124,15 @@ xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
 pyakm
-flatplat-blue-theme
 
 
 
 adwaita-icon-theme
-numix-frost-themes
-numix-icon-theme-square
 deepin-icon-theme
 deepin-gtk-theme
 gtk-theme-paper
 gtk-theme-adapta
+flatplat-blue-theme
 
 
 
@@ -171,7 +167,6 @@ mtools
 ntfs-3g
 squashfs-tools
 xfsprogs
-zfs
 
 
 
@@ -199,7 +194,6 @@ git
 gksu
 pamac
 pkgfile
-plymouth
 powerpill
 reflector
 sudo
@@ -212,6 +206,7 @@ xz
 
 
 
+iso-hotfix-utility
 b43-firmware
 b43-fwcutter
 broadcom-wl-dkms
@@ -262,6 +257,9 @@ nvidia-settings
 light-locker
 light-locker-settings
 
+
+
+
 python
 pyalpm
 python-gobject
@@ -282,5 +280,4 @@ python-lxml
 python-mock
 python-requests
 upower
-cnchi-fonts
 cnchi
