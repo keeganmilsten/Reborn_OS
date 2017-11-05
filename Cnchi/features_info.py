@@ -61,6 +61,7 @@ TITLES = {
     'cups': _("Printing Support"),
     'chromium': _("Chromium Web Browser"),
     'firefox': _("Firefox Web Browser"),
+    'opera':_("Opera Web Browser"),
     'vivaldi': _("Vivaldi Web Browser"),
     'firewall': _("Uncomplicated Firewall"),
     'flash': _("Flash plugins"),
@@ -81,8 +82,8 @@ DESCRIPTIONS = {
     'bluetooth': _("Enables your system to make wireless connections via Bluetooth."),
     'chromium': _("Open-source web browser from Google."),
     'firefox': _("A popular open-source graphical web browser from Mozilla."),
+    'opera':_("Opera is an inovative, minimilistic web brower from Opera.Inc"),
     'vivaldi': _("Vivaldi is a free, fast web browser designed for power-users."),
-    'firefox': _("A popular open-source graphical web browser from Mozilla."),
     'flash': _("Freeware software normally used for multimedia."),
     'fonts': _("TrueType fonts from the Google Fonts project."),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
@@ -120,19 +121,15 @@ TOOLTIPS = {
                  "layout engine to render web pages, which implements current and\n"
                  "anticipated web standards.  Enable this option to install Firefox\n"
                  "instead of Chromium"),
+    'opera':_("Opera is a freeware, cross-platform web browser developed by\n"
+              "Opera.Inc. The browser is aimed at conventinal internet users\n" 
+              "and those who enjoy simplicity"),
     'vivaldi': _("Vivaldi is a freeware, cross-platform web browser developed by\n"
                  "Vivaldi Technologies. It was officially launched on April 12, 2016.\n"
                  "The browser is aimed at staunch technologists, heavy Internet users,\n"
                  "and previous Opera web browser users disgruntled by Opera's transition\n"
                  "from the Presto layout engine to the Blink layout engine, which\n"
                  "removed many popular features."),
-    'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
-                 "open-source web browser developed for Windows, OS X, and Linux,\n"
-                 "with a mobile version for Android, by the Mozilla Foundation and\n"
-                 "its subsidiary, the Mozilla Corporation. Firefox uses the Gecko\n"
-                 "layout engine to render web pages, which implements current and\n"
-                 "anticipated web standards.  Enable this option to install Firefox\n"
-                 "instead of Chromium"),
     'firewall': _("Ufw stands for Uncomplicated Firewall, and is a program for\n"
                   "managing a netfilter firewall. It provides a command line\n"
                   "interface and aims to be uncomplicated and easy to use."),
@@ -174,7 +171,9 @@ TOOLTIPS = {
                 "suitable for use with window managers that do not natively\n"
                 "provide compositing functionality. Compton itself is a fork\n"
                 "of xcompmgr-dana, which in turn is a fork of xcompmgr.\n"
-                "See the compton github page for further information.")}
+                "See the compton github page for further information."),
+    'nemo': _("Default file manager for the Cinnamon desktop."),
+    'nautilus': _("Default file manager for the Gnome desktop.")}
 
 # Delete previous _() dummy declaration
 del _
