@@ -46,7 +46,7 @@ ICON_NAMES = {
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
     'office': 'accessories-text-editor',
-    'smb': 'gnome-mime-x-directory-smb-share',
+    'sshd': 'gnome-mime-x-directory-smb-share',
     'visual': 'video-display'}
 
 
@@ -55,11 +55,13 @@ def _(message):
     return message
 
 TITLES = {
+    'a11y': _("Adds accessibility packages"),
     'aur': _("Arch User Repository (AUR) Support"),
     'bluetooth': _("Bluetooth Support"),
     'cups': _("Printing Support"),
     'chromium': _("Chromium Web Browser"),
     'firefox': _("Firefox Web Browser"),
+    'vivaldi': _("Vivaldi Web Browser"),
     'firewall': _("Uncomplicated Firewall"),
     'flash': _("Flash plugins"),
     'fonts': _("Extra Truetype Fonts"),
@@ -68,15 +70,18 @@ TITLES = {
     'lamp': _("Apache (or Nginx) + Mariadb + PHP"),
     'lts': _("Kernel (LTS version)"),
     'office': _("LibreOffice"),
-    'smb': _("Windows sharing SMB"),
+    'sshd': _("Windows sharing SMB"),
     'visual': _("Visual Effects"),
     'nemo': _("Nemo File Manager"),
     'nautilus': _("Nautilus File Manager")}
 
 DESCRIPTIONS = {
+    'a11y': _("Useful packages for individuals who are blind or visually impaired."),
     'aur': _("The AUR is a community-driven repository for Arch users."),
     'bluetooth': _("Enables your system to make wireless connections via Bluetooth."),
     'chromium': _("Open-source web browser from Google."),
+    'firefox': _("A popular open-source graphical web browser from Mozilla."),
+    'vivaldi': _("Vivaldi is a free, fast web browser designed for power-users."),
     'firefox': _("A popular open-source graphical web browser from Mozilla."),
     'flash': _("Freeware software normally used for multimedia."),
     'fonts': _("TrueType fonts from the Google Fonts project."),
@@ -88,11 +93,12 @@ DESCRIPTIONS = {
     'visual': _("Enable transparency, shadows, and other desktop effects."),
     'firewall': _("Control the incoming and outgoing network traffic."),
     'lts': _("Long term support (LTS) Linux kernel and modules."),
-    'smb': _("Provides client access to shared files and printers."),
+    'sshd': _("Provides client access to shared files and printers."),
     'nemo': _("Default file manager for the Cinnamon desktop."),
     'nautilus': _("Default file manager for the Gnome desktop.")}
 
 TOOLTIPS = {
+    'a11y': _("Useful packages for individuals who are blind or visually impaired."),
     'aur': _("Use yaourt to install AUR packages.\n"
              "The AUR was created to organize and share new packages\n"
              "from the community and to help expedite popular packages'\n"
@@ -107,6 +113,19 @@ TOOLTIPS = {
     'chromium': _("Chromium is an open-source browser project that aims to build a\n"
                   "safer, faster, and more stable way for all users to experience the web.\n"
                   "(this is the default)"),
+    'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
+                 "open-source web browser developed for Windows, OS X, and Linux,\n"
+                 "with a mobile version for Android, by the Mozilla Foundation and\n"
+                 "its subsidiary, the Mozilla Corporation. Firefox uses the Gecko\n"
+                 "layout engine to render web pages, which implements current and\n"
+                 "anticipated web standards.  Enable this option to install Firefox\n"
+                 "instead of Chromium"),
+    'vivaldi': _("Vivaldi is a freeware, cross-platform web browser developed by\n"
+                 "Vivaldi Technologies. It was officially launched on April 12, 2016.\n"
+                 "The browser is aimed at staunch technologists, heavy Internet users,\n"
+                 "and previous Opera web browser users disgruntled by Opera's transition\n"
+                 "from the Presto layout engine to the Blink layout engine, which\n"
+                 "removed many popular features."),
     'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
                  "open-source web browser developed for Windows, OS X, and Linux,\n"
                  "with a mobile version for Android, by the Mozilla Foundation and\n"
@@ -149,7 +168,7 @@ TOOLTIPS = {
                 "and Linux, that gives you six feature-rich applications\n"
                 "for all your document production and data processing\n"
                 "needs: Writer, Calc, Impress, Draw, Math and Base."),
-    'smb': _("Most usage of SMB involves computers running Microsoft Windows.\n"
+    'sshd': _("Most usage of SMB involves computers running Microsoft Windows.\n"
              "Use this option to be able to browse SMB shares from your computer."),
     'visual': _("Compton is a lightweight, standalone composite manager,\n"
                 "suitable for use with window managers that do not natively\n"
