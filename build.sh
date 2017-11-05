@@ -147,7 +147,7 @@ make_cnchi() {
 
 make_cnchi_git() {
     echo
-    echo ">>> Warning! Installing Cnchi Installer directly from GIT Repo"
+    echo ">>> Warning! Installing Cnchi Installer from GIT (${CNCHI_GIT_BRANCH} branch)"
     git clone https://github.com/keeganmilsten/Cnchi cnchi-${CNCHI_GIT_BRANCH}
     CNCHI_SRC="${script_path}/cnchi-${CNCHI_GIT_BRANCH}"
 	(cd ${script_path}/cnchi-${CNCHI_GIT_BRANCH}/;  git checkout 0.14.x)
@@ -172,7 +172,6 @@ make_cnchi_git() {
         fi
     done
 }
-
 
 make_fixes() {
         # Setup gsettings if gsettings folder exists
@@ -210,30 +209,30 @@ echo "DONE"
 echo "Moving Cnchi files over"
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/packages.xml
 cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/features_info.py
-cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/features.py
-cp ${script_path}/Cnchi/features.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/desktop_info.py
-cp ${script_path}/Cnchi/desktop_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/encfs.py
-cp ${script_path}/Cnchi/encfs.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/grub2.py
-cp ${script_path}/Cnchi/grub2.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/systemd_boot.py
-cp ${script_path}/Cnchi/systemd_boot.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/installation/boot/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/features_info.py
+cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/features.py
+cp ${script_path}/Cnchi/features.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/desktop_info.py
+cp ${script_path}/Cnchi/desktop_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/encfs.py
+cp ${script_path}/Cnchi/encfs.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/grub2.py
+cp ${script_path}/Cnchi/grub2.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/systemd_boot.py
+cp ${script_path}/Cnchi/systemd_boot.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/postinstall.sh
 cp ${script_path}/Cnchi/postinstall.sh ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/main_window.py
-cp ${script_path}/Cnchi/main_window.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/show_message.py
-cp ${script_path}/Cnchi/show_message.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/slides.py
-cp ${script_path}/Cnchi/slides.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/timezone.py
-cp ${script_path}/Cnchi/timezone.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
-rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/welcome.py
-cp ${script_path}/Cnchi/welcome.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/main_window.py
+cp ${script_path}/Cnchi/main_window.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/show_message.py
+cp ${script_path}/Cnchi/show_message.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/slides.py
+cp ${script_path}/Cnchi/slides.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/timezone.py
+cp ${script_path}/Cnchi/timezone.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/welcome.py
+cp ${script_path}/Cnchi/welcome.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
 echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
@@ -360,7 +359,6 @@ run_once make_pacman_conf
 for arch in x86_64; do
     run_once make_basefs
     run_once make_packages
-    run_once make_cnchi
 done
 run_once make_packages_efi
 for arch in x86_64; do
