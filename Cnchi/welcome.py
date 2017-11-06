@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -33,9 +34,17 @@ import os
 import logging
 import sys
 import queue
+
 import misc.extra as misc
-from gtkbasebox import GtkBaseBox
+from pages.gtkbasebox import GtkBaseBox
 from gi.repository import GdkPixbuf
+
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
+if __debug__:
+    def _(x): return x
 
 
 class Welcome(GtkBaseBox):
@@ -69,12 +78,12 @@ class Welcome(GtkBaseBox):
         self.filenames = {
             'tryit': {
                 'path': os.path.join(welcome_dir, "try-it.svg"),
-                'width': 165,
-                'height': 189},
+                'width': 211,
+                'height': 185},
             'graph': {
                 'path': os.path.join(welcome_dir, "install-it.svg"),
-                'width': 243,
-                'height': 174}}
+                'width': 211,
+                'height': 185}}
 
         # a11y
         self.labels['tryit'].set_mnemonic_widget(self.buttons['tryit'])
@@ -91,13 +100,13 @@ class Welcome(GtkBaseBox):
     def translate_ui(self):
         """ Translates all ui elements """
         if not self.disable_tryit:
-            txt = _("Use Reborn OS without making any changes to your system.") + "\n"
+            txt = _("Use Reborn without making any changes to your system.")
         else:
             txt = ""
         self.labels['tryit'].set_markup(txt)
         self.labels['tryit'].set_name('tryit_label')
 
-        txt = _("Create a permanent place for Reborn OS on your system.")
+        txt = _("Create a permanent place for Reborn on your system.")
         self.labels['installit'].set_markup(txt)
         self.labels['installit'].set_name('installit_label')
 
@@ -160,8 +169,3 @@ class Welcome(GtkBaseBox):
             self.buttons['tryit'].set_sensitive(False)
         if direction == "backwards":
             self.show_loading_message(do_show=False)
-
-
-if __name__ == '__main__':
-    from test_screen import _, run
-    run('Welcome')
