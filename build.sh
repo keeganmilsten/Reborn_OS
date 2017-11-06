@@ -215,7 +215,7 @@ cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnch
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/features_info.py
 cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/features.py
-cp ${script_path}/Cnchi/features.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
+cp ${script_path}/Cnchi/features.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/desktop_info.py
 cp ${script_path}/Cnchi/desktop_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/encfs.py
