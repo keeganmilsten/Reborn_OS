@@ -174,6 +174,9 @@ make_cnchi_git() {
 }
 
 make_fixes() {
+	# Remove Antergos gsettings file
+	rm ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas/90_deepin-default-gsettings.gschema.override
+	echo "ANTERGOS GSETTINGS REMOVED"
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
             # Copying GSettings XML schema files
