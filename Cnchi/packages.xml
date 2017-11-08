@@ -45,7 +45,6 @@
         <edition name="graphic" description="Common to all graphic desktops">
             <packages>
                 <pkgname>accountsservice</pkgname>
-                <pkgname lib="gtk">antergos-gsettings</pkgname>
                 <!--<pkgname>antergos-welcome</pkgname>-->
                 <pkgname>cdrtools</pkgname>
                 <pkgname lib="gtk">dconf-editor</pkgname>
@@ -113,42 +112,13 @@
         <edition name="Gnome" description="Gnome Desktop">
             <packages>
                 <pkgname>antergos-gnome-defaults-list</pkgname>
-                <pkgname>baobab</pkgname>  <!-- Disk usage -->
-                <pkgname>brasero</pkgname>
-                <pkgname>evince</pkgname>
-                <pkgname>eog</pkgname>
-                <pkgname>file-roller</pkgname>
+		<pkgname>gnome</pkgname>
+		<pkgname>gnome-extra</pkgname>
                 <pkgname>gedit</pkgname>
-                <pkgname>gnome-backgrounds</pkgname>
-                <pkgname>gnome-calculator</pkgname>
-                <pkgname>gnome-calendar</pkgname>
-                <pkgname>gnome-contacts</pkgname>
-                <pkgname>gnome-control-center</pkgname>
-                <pkgname>gnome-documents</pkgname>
-                <pkgname>gnome-disk-utility</pkgname>
-                <pkgname>gnome-font-viewer</pkgname>
-                <pkgname>gnome-keyring</pkgname>
-                <pkgname>gnome-logs</pkgname>
-                <pkgname>gnome-maps</pkgname>
-                <pkgname>gnome-music</pkgname>
-                <pkgname>gnome-photos</pkgname>
-                <pkgname>gnome-screenshot</pkgname>
-                <pkgname>gnome-shell</pkgname>
                 <pkgname>gnome-shell-extensions</pkgname>
-                <pkgname>gnome-shell-extension-dash-to-dock</pkgname>
                 <pkgname>gnome-shell-extension-status-menu-buttons</pkgname>
-                <pkgname>gnome-sound-recorder</pkgname>
-                <pkgname>gnome-system-monitor</pkgname>
-                <pkgname>gnome-terminal</pkgname>
-                <pkgname>gnome-themes-standard</pkgname>
-                <pkgname>gnome-tweak-tool</pkgname>
-                <pkgname>gnome-weather</pkgname>
-                <pkgname>gvfs-google</pkgname>
-                <pkgname>gvfs-mtp</pkgname>
-                <pkgname>gvfs-smb</pkgname>
                 <pkgname>hicolor-icon-theme</pkgname>
                 <pkgname>libgnome-keyring</pkgname>
-                <pkgname>nautilus</pkgname>
                 <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                 <pkgname>networkmanager-openvpn</pkgname>
                 <pkgname>networkmanager-pptp</pkgname>
@@ -176,14 +146,7 @@
                 <pkgname>antergos-gnome-defaults-list</pkgname>
                 <pkgname>baobab</pkgname>  <!-- Disk usage -->
                 <pkgname>brasero</pkgname>
-                <pkgname>cinnamon</pkgname>
-                <pkgname>cinnamon-control-center</pkgname>
-                <pkgname>cinnamon-desktop</pkgname>
-                <pkgname>cinnamon-menus</pkgname>
-                <pkgname>cinnamon-session</pkgname>
-                <pkgname>cinnamon-settings-daemon</pkgname>
-                <pkgname>cinnamon-screensaver</pkgname>
-                <pkgname>cjs</pkgname>
+                <pkgname>cinnamon</pkgname>>
                 <pkgname>eog</pkgname>
                 <pkgname>evince</pkgname>
                 <pkgname>file-roller</pkgname>
@@ -205,10 +168,6 @@
                 <pkgname>hicolor-icon-theme</pkgname>
                 <pkgname>libgnome-keyring</pkgname>
                 <pkgname>muffin</pkgname>
-                <pkgname>nemo</pkgname>
-                <pkgname>nemo-fileroller</pkgname>
-                <pkgname>nemo-preview</pkgname>
-                <pkgname>nemo-share</pkgname>
                 <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                 <pkgname>networkmanager-openvpn</pkgname>
                 <pkgname>networkmanager-pptp</pkgname>
@@ -277,14 +236,8 @@
                 <pkgname>gvfs-mtp</pkgname>
                 <pkgname>gvfs-smb</pkgname>
                 <pkgname>mate</pkgname> <!-- Group -->
-                <pkgname>mate-applets</pkgname>
-                <pkgname>mate-media</pkgname>
+                <pkgname>mate-extra</pkgname>
                 <pkgname>mate-mint-menu</pkgname>
-                <pkgname>mate-power-manager</pkgname>
-                <pkgname>mate-screensaver</pkgname>
-                <pkgname>mate-system-monitor</pkgname>
-                <pkgname>mate-terminal</pkgname>
-                <pkgname>mate-utils</pkgname>
                 <pkgname>mozo</pkgname>
                 <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                 <pkgname>networkmanager-openvpn</pkgname>
@@ -359,7 +312,6 @@
 
         <edition name="KDE" description="KDE Desktop">
             <packages>
-                <pkgname>antergos-kde-setup</pkgname>
                 <pkgname>ark</pkgname>
                 <pkgname>aspell-en</pkgname>
                 <pkgname>breeze</pkgname>
@@ -367,18 +319,16 @@
                 <pkgname>breeze-kde4</pkgname>
                 <pkgname>cdrdao</pkgname>
                 <pkgname>clementine</pkgname>
-                <pkgname>dolphin</pkgname>
+                <pkgname>kdebase</pkgname>
                 <pkgname>dolphin-plugins</pkgname>
                 <pkgname>dvd+rw-tools</pkgname>
                 <pkgname>ffmpegthumbs</pkgname>
                 <pkgname>gwenview</pkgname>
                 <pkgname>k3b</pkgname>
-                <pkgname>kate</pkgname>
                 <pkgname>kcalc</pkgname>
                 <pkgname>kde-gtk-config</pkgname>
                 <pkgname>kde-servicemenus-rootactions</pkgname>
                 <pkgname>kdialog</pkgname>
-                <pkgname>kfind</pkgname>
                 <pkgname>kdeconnect</pkgname>
                 <pkgname>kdegraphics-thumbnailers</pkgname>
                 <pkgname>kdenetwork-filesharing</pkgname>
@@ -388,7 +338,6 @@
                 <pkgname>kdelibs4support</pkgname>
                 <pkgname>kfaenza-icon-theme</pkgname>
                 <pkgname>kipi-plugins</pkgname>
-                <pkgname>khelpcenter</pkgname>
                 <pkgname>kinfocenter</pkgname>
                 <pkgname>kmenuedit</pkgname>
                 <pkgname>konsole</pkgname>
@@ -405,8 +354,8 @@
                 <pkgname>numix-frost-themes</pkgname>
                 <pkgname>numix-icon-theme-circle</pkgname>
                 <pkgname>okular</pkgname>
+		<pkgname>octopi</pkgname>
                 <pkgname>oxygen</pkgname>
-                <pkgname>pamac-tray-appindicator</pkgname>
                 <pkgname>plasma-desktop</pkgname>
                 <pkgname>plasma-nm</pkgname>
                 <pkgname>plasma-pa</pkgname>
@@ -532,9 +481,7 @@
                 <pkgname>gvfs-google</pkgname>
                 <pkgname>gvfs-mtp</pkgname>
                 <pkgname>gvfs-smb</pkgname>
-                <pkgname>i3-wm</pkgname>
-                <pkgname>i3lock</pkgname>
-                <pkgname>i3status</pkgname>
+                <pkgname>i3</pkgname>
                 <pkgname>kalu</pkgname>
                 <pkgname>lxappearance-gtk3</pkgname>
                 <pkgname>lxinput-gtk3</pkgname>
@@ -560,7 +507,6 @@
 
         <edition name="Deepin" description="Deepin Desktop">
            <packages>
-               <pkgname>antergos-wallpapers-deepin</pkgname>
                <pkgname>adwaita-icon-theme</pkgname>
                <pkgname>brasero</pkgname>
                <pkgname>deepin</pkgname>
