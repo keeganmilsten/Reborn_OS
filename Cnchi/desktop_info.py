@@ -62,7 +62,7 @@ NAMES = {
     'budgie': "Budgie",
     'enlightenment': "Enlightenment",
     'i3': "i3",
-    'lxqt': "LXQt"
+    'lxqt': "LXQt",
     'pantheon': "Pantheon"
 }
 
@@ -122,10 +122,11 @@ DESCRIPTIONS = {
                   "innovative features and a traditional desktop user experience. "
                   "Cinnamon aims to make users feel at home by providing them with "
                   "an easy-to-use and comfortable desktop experience."),
-    'deepin': _("Deepin desktop is a lightweight, elegant desktop environment. "
-                "It was originally created for Linux Deepin distribution. Now, "
-                "DDE will support most Linux operating systems such as Arch Linux, "
-                "Ubuntu, Fedora, openSUSE etc."),
+    'deepin': _("Deepin desktop is a lightweight, elegant desktop environment that "
+                "has been commented as a mix between Windows and Macs by many of its' "
+                "users. It was originally created for the Linux Deepin distribution. "
+                "Now, DDE will support most Linux operating systems such as Arch "
+                "Linux, Ubuntu, Fedora, openSUSE etc."),
 
     'gnome': _("GNOME 3 is an easy and elegant way to use your "
                "computer. It features the Activities Overview which "
@@ -169,8 +170,8 @@ DESCRIPTIONS = {
     'pantheon': _("Pantheon is the Desktop Environment produced by Elementary OS. "
                   "It is ideal for Mac users and those who enjoy Apple's "
                   "look and feel, but wish to use Linux. It's team of developers "
-                  "focus on elegance, minimalism, and visual effects. If you love"
-                  "eyecandy, this desktop is for you")
+                  "focus on elegance, minimalism, and visual effects. If you love "
+                  "eye candy, this desktop is for you")
 }
 
 # Delete previous _() dummy declaration
