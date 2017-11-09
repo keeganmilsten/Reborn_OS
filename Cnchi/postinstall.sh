@@ -367,7 +367,7 @@ postinstall() {
         cp "${FONTCONFIG_FILE}" "${FONTCONFIG_DIR}"
     fi
 
-    # Set Rebron OS name in filesystem files
+    # Set Reborn OS name in filesystem files
     cp /etc/arch-release "${CN_DESTDIR}/etc"
     cp /etc/os-release "${CN_DESTDIR}/etc"
     sed -i 's|Arch|Reborn OS|g' "${CN_DESTDIR}/etc/issue"
@@ -406,8 +406,53 @@ postinstall() {
     # Most users are building packages to install them locally so there's no need for compression.
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
-    # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
-    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+if [ -f "/usr/share/dde/data" ]; then
+    sed -i 's|#greeter-session=deepin|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/etc/gdm/Xsession" ]; then
+    systemctl -fq enable gdm
+fi
+
+if [ -f "/etc/sddm/Xsession" ]; then
+    systemctl -fq enable sddm
+fi
+
+if [ -f "/usr/bin/pantheon-files" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/budgie-daemon" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/etc/i3/config" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/enlightenment" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/lxqt-config" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/lxsession" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/caja" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/xfburn" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
+
+if [ -f "/usr/bin/muffin" ]; then
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+fi
 
     # Ensure user permissions are set in /home
     chroot "${CN_DESTDIR}" chown -R "${CN_USER_NAME}:users" "/home/${CN_USER_NAME}"
