@@ -7,14 +7,17 @@ show-ratings=true
 [com.deepin.dde.dock]
 docked-apps=['/S@cnchi', '/S@deepin-toggle-desktop', '/S@deepin-wm-multitaskingview', '/S@dde-file-manager', '/S@deepin-music', '/S@chromium', '/S@gnome-software', '/S@dde-control-center']
 
-
-[com.deepin.dde.keyboard]
-layout='us;'
-user-layout-list=['us;']
+[com.deepin.dde.appearance]
+background-uris=['file:///usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Reflection_of_the_Kanas%20Lake_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Autumn_in_Kanas_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Maple_Leaf_by_Aaron_Burden.jpg']
 
 [com.deepin.wrap.gnome.desktop.background]
 primary-color = '#000000'
 secondary-color = '#023c88'
+picture-uri = 'file:///usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg'
+
+[com.deepin.dde.keyboard]
+layout='us;'
+user-layout-list=['us;']
 
 [com.deepin.wrap.gnome.desktop.sound]
 theme-name = 'deepin'
