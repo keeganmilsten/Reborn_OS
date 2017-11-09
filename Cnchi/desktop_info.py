@@ -34,7 +34,7 @@
 DESKTOPS = ["base", "cinnamon", "deepin",
             "gnome", "kde", "mate", "openbox", "xfce"]
 
-DESKTOPS_DEV = DESKTOPS + ["budgie", "enlightenment", "i3", "lxqt"]
+DESKTOPS_DEV = DESKTOPS + ["budgie", "enlightenment", "i3", "lxqt", "pantheon"]
 
 DESKTOPS_A11Y = ["gnome", "mate"]
 
@@ -63,15 +63,15 @@ NAMES = {
     'enlightenment': "Enlightenment",
     'i3': "i3",
     'lxqt': "LXQt"
+    'pantheon': "Pantheon"
 }
 
 LIBS = {
-    'gtk': ["cinnamon", "deepin", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3"],
+    'gtk': ["cinnamon", "deepin", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3", "pantheon"],
     'qt': ["kde", "lxqt"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash",
-                "games", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
@@ -87,7 +87,8 @@ EXCLUDED_FEATURES = {
     'budgie': ["lamp", "visual"],
     'enlightenment': ["lamp", "visual"],
     'i3': ["lamp"],
-    'lxqt': ["lamp", "visual"]
+    'lxqt': ["lamp", "visual"],
+    'pantheon': ["lamp", "visual"]
 }
 
 # Session names for lightDM setup (/usr/share/xsessions)
@@ -102,7 +103,8 @@ SESSIONS = {
     'budgie': 'budgie-desktop',
     'enlightenment': 'enlightenment',
     'i3': 'i3',
-    'lxqt': 'lxsession'
+    'lxqt': 'lxsession',
+    'pantheon': 'pantheon'
 }
 
 
@@ -163,7 +165,12 @@ DESCRIPTIONS = {
 
     'lxqt': _("LXQt is the next-generation of LXDE, the Lightweight Desktop "
               "Environment. It is lightweight, modular, blazing-fast, and "
-              "user-friendly.")
+              "user-friendly."),
+    'pantheon': _("Pantheon is the Desktop Environment produced by Elementary OS. "
+                  "It is ideal for Mac users and those who enjoy Apple's "
+                  "look and feel, but wish to use Linux. It's team of developers "
+                  "focus on elegance, minimalism, and visual effects. If you love"
+                  "eyecandy, this desktop is for you")
 }
 
 # Delete previous _() dummy declaration
