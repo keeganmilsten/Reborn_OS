@@ -3,3 +3,4 @@ Type=Application
 Name=Reborn Installer
 Exec=/usr/bin/cnchi-start.sh
 Icon=/usr/share/applications/cnchi.png
+Terminal=True
