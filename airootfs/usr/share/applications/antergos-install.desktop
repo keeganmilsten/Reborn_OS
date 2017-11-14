@@ -1,12 +1,14 @@
 [Desktop Entry]
-Comment=Opens Cnchi at first boot.
+Comment=Install the operating system to disk
+Comment[pl]=Zainstaluj system Reborn OS
+Comment[sk]=Nainštaluje operačný systém na disk
 Exec=/usr/bin/cnchi-start.sh
 GenericName=Reborn Installer
-Icon=/usr/share/applications/cnchi.png
-Name=cnchi.desktop
-Name[en_US]=cnchi.desktop
-Terminal=false
+Icon=cnchi
+Name=Reborn Installer
+Name[en_US]=Reborn Installer
+Name[pl]=Zainstaluj Reborn OS
+Name[sk]=Inštalovať Reborn OS
+Terminal=True
 Type=Application
-X-DEEPIN-Autostart-enabled=true
-X-GNOME-Autostart-enabled=true
-X-MATE-Autostart-enabled=true
+Categories=System;
