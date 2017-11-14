@@ -213,6 +213,7 @@ echo "Moving Cnchi files over"
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/packages.xml
 cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/pacman.tmpl
+rm ${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop
 cp ${script_path}/Cnchi/pacman.tmpl ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/features_info.py
 cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
