@@ -67,7 +67,6 @@
                 <pkgname lang="nl">hunspell-nl</pkgname> <!-- Dutch hunspell dictionaries -->
                 <pkgname lang="pl">hunspell-pl</pkgname> <!-- Polish dictionary for Hunspell -->
                 <pkgname>libdvdcss</pkgname>
-                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
                 <pkgname>lightdm-webkit2-greeter</pkgname>
                 <pkgname>light-locker</pkgname>
                 <pkgname>light-locker-settings</pkgname>
@@ -137,6 +136,7 @@
 		<pkgname>gnome-software<pkgname>
 		<pkgname>flatplat-blue-theme</pkgname>
 		<pkgname>nautilus-root</pkgname>
+		<pkgname>gdm</pkgname>
 			    
             </packages>
         </edition>
@@ -180,6 +180,7 @@
                 <pkgname>zuki-themes</pkgname>
 		<pkgname>reborn-cinnamon-schemas</pkgname>
 		<pkgname>flatplat-blue-theme</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -219,6 +220,7 @@
                 <pkgname>xfce4-screenshooter</pkgname>
                 <pkgname>xfce4-taskmanager</pkgname>
 		<pkgname>thunar-root</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -252,6 +254,7 @@
                 <pkgname>xfburn</pkgname>
 		<pkgname>reborn-mate-schemas</pkgname>
 		<pkgname>flatplat-blue-theme</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -307,6 +310,7 @@
                 <pkgname>waldorf-ui-theme</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xfburn</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -372,6 +376,7 @@
                 <pkgname>user-manager</pkgname>
                 <pkgname>vlc</pkgname>
                 <pkgname>xdg-user-dirs</pkgname>
+		<pkgname>sddm</pkgname>
             </packages>
         </edition>
 
@@ -392,6 +397,7 @@
                 <pkgname>lxqt-session</pkgname>
                 <pkgname>openbox</pkgname>
                 <pkgname>pcmanfm-qt</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -413,6 +419,7 @@
                 <pkgname>udisks2</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>vlc</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -468,6 +475,7 @@
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xscreensaver</pkgname>
 		<pkgname>flatplat-blue-theme</pkgname>
+		<pkgname>gdm</pkgname>
             </packages>
         </edition>
 
@@ -502,6 +510,7 @@
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xfburn</pkgname>
                 <pkgname>xscreensaver</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
 
@@ -532,6 +541,8 @@
                <pkgname>reborn-deepin-schemas</pkgname>
 	       <pkgname>deepin-file-manager-root</pkgname>
 	       <pkgname>flatplat-blue-theme</pkgname>
+	       <pkgname>gtk3-print-backends</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
        </edition>
 
@@ -559,6 +570,7 @@
                <pkgname>ttf-dejavu</pkgname>
                <pkgname>ttf-google-fonts-typewolf</pkgname>
                <pkgname>ttf-opensans</pkgname>
+                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
        </edition>
     </editions>
@@ -680,7 +692,7 @@
         </feature>
 	<feature name="nautilus">
 	    <pkgname>nautilus</pkgname>
-		<pkgname>nautilus-root</pkgname>
+	    <pkgname>nautilus-root</pkgname
 	</feature>
     </features>
 
