@@ -19,6 +19,9 @@ picture-uri = 'file:///usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wan
 layout='us;'
 user-layout-list=['us;']
 
+[com.deepin.dde.mouse]
+middle-button-enabled=true
+
 [com.deepin.wrap.gnome.desktop.sound]
 theme-name = 'deepin'
 event-sounds = true
