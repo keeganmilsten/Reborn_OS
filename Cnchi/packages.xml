@@ -57,7 +57,7 @@
                 <pkgname>gstreamer-vaapi</pkgname>
                 <pkgname lang="de">hunspell-de</pkgname> <!-- German hunspell dictionaries -->
                 <pkgname lang="en">hunspell-en</pkgname> <!-- English hunspell dictionaries -->
-                <pkgname lang=numix-icon-theme-circle"es">hunspell-es</pkgname> <!-- Spanish hunspell dictionaries -->
+                <pkgname lang="es">hunspell-es</pkgname> <!-- Spanish hunspell dictionaries -->
                 <pkgname lang="fr">hunspell-fr</pkgname> <!-- French (modern) hunspell dictionaries -->
                 <pkgname lang="he">hunspell-he</pkgname> <!-- Hebrew hunspell dictionary -->
                 <pkgname lang="it">hunspell-it</pkgname> <!-- Italian dictionary for Hunspell -->
@@ -92,6 +92,7 @@
                 <pkgname>xorg-xinit</pkgname>
                 <pkgname>xorg-xkill</pkgname>
                 <pkgname>pyakm</pkgname>
+                <pkgname>numix-icon-theme-circle</pkgname>
             </packages>
         </edition>
 
@@ -133,10 +134,10 @@
                 <pkgname>gnome-software</pkgname>
                 <pkgname>reborn-gnome-schemas</pkgname>
                 <pkgname>gtk-theme-macos-sierra-archers-git</pkgname>
-                <pkgname>gnome-software<pkgname>
+                <pkgname>gnome-software</pkgname>
                 <pkgname>flatplat-blue-theme</pkgname>
                 <pkgname>nautilus-root</pkgname>
-                <pkgname>gdm</pkgname>	    
+                <pkgname>gdm</pkgname>
             </packages>
         </edition>
 
