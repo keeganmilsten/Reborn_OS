@@ -5,7 +5,7 @@ allow-updates=false
 show-ratings=true
 
 [com.deepin.dde.dock]
-docked-apps=['/S@cnchi', '/S@deepin-toggle-desktop', '/S@deepin-wm-multitaskingview', '/S@dde-file-manager', '/S@deepin-music', '/S@chromium', '/S@org.gnome.Software', '/S@dde-control-center']
+docked-apps=['/S@cnchi', '/S@deepin-toggle-desktop', '/S@deepin-wm-multitaskingview', '/S@dde-file-manager', '/S@deepin-music', '/S@chromium', '/S@org.gnome.Software', '/D@w:735ca9d62e01073a919e7d40e0b0904d', '/S@dde-control-center']
 
 [com.deepin.dde.appearance]
 background-uris=['file:///usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Reflection_of_the_Kanas%20Lake_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Autumn_in_Kanas_by_Wang_Jinyu.jpg', 'file:///usr/share/wallpapers/deepin/Maple_Leaf_by_Aaron_Burden.jpg']
