@@ -91,7 +91,7 @@
                 <pkgname>xorg-server</pkgname>
                 <pkgname>xorg-xinit</pkgname>
                 <pkgname>xorg-xkill</pkgname>
-		<pkgname>pyakm</pkgname>
+                <pkgname>pyakm</pkgname>
             </packages>
         </edition>
 
@@ -111,8 +111,8 @@
         <edition name="Gnome" description="Gnome Desktop">
             <packages>
                 <pkgname>antergos-gnome-defaults-list</pkgname>
-		<pkgname>gnome</pkgname>
-		<pkgname>gnome-extra</pkgname>
+                <pkgname>gnome</pkgname>
+                <pkgname>gnome-extra</pkgname>
                 <pkgname>gedit</pkgname>
                 <pkgname>gnome-shell-extensions</pkgname>
                 <pkgname>gnome-shell-extension-status-menu-buttons</pkgname>
@@ -130,13 +130,13 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xscreensaver</pkgname>
-		<pkgname>gnome-software</pkgname>
-		<pkgname>reborn-gnome-schemas</pkgname>
-		<pkgname>gtk-theme-macos-sierra-archers-git</pkgname>
-		<pkgname>gnome-software<pkgname>
-		<pkgname>flatplat-blue-theme</pkgname>
-		<pkgname>nautilus-root</pkgname>
-		<pkgname>gdm</pkgname>		    
+                <pkgname>gnome-software</pkgname>
+                <pkgname>reborn-gnome-schemas</pkgname>
+                <pkgname>gtk-theme-macos-sierra-archers-git</pkgname>
+                <pkgname>gnome-software<pkgname>
+                <pkgname>flatplat-blue-theme</pkgname>
+                <pkgname>nautilus-root</pkgname>
+                <pkgname>gdm</pkgname>	    
             </packages>
         </edition>
 
@@ -177,8 +177,8 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>zuki-themes</pkgname>
-		<pkgname>reborn-cinnamon-schemas</pkgname>
-		<pkgname>flatplat-blue-theme</pkgname>
+                <pkgname>reborn-cinnamon-schemas</pkgname>
+                <pkgname>flatplat-blue-theme</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
@@ -191,7 +191,7 @@
                 <pkgname>gnome-calculator</pkgname>
                 <pkgname>gnome-disk-utility</pkgname>
                 <pkgname>gnome-keyring</pkgname>
-		<pkgname>gtk-engine-murrine</pkgname>
+                <pkgname>gtk-engine-murrine</pkgname>
                 <pkgname>gvfs-google</pkgname>
                 <pkgname>gvfs-mtp</pkgname>
                 <pkgname>mousepad</pkgname>
@@ -218,7 +218,7 @@
                 <pkgname>xfce4-pulseaudio-plugin</pkgname>
                 <pkgname>xfce4-screenshooter</pkgname>
                 <pkgname>xfce4-taskmanager</pkgname>
-		<pkgname>thunar-root</pkgname>
+                <pkgname>thunar-root</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
@@ -251,8 +251,8 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xfburn</pkgname>
-		<pkgname>reborn-mate-schemas</pkgname>
-		<pkgname>flatplat-blue-theme</pkgname>
+                <pkgname>reborn-mate-schemas</pkgname>
+                <pkgname>flatplat-blue-theme</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
             </packages>
         </edition>
@@ -357,7 +357,7 @@
                 <pkgname>numix-frost-themes</pkgname>
                 <pkgname>numix-icon-theme-circle</pkgname>
                 <pkgname>okular</pkgname>
-		<pkgname>octopi</pkgname>
+                <pkgname>octopi</pkgname>
                 <pkgname>oxygen</pkgname>
                 <pkgname>plasma-desktop</pkgname>
                 <pkgname>plasma-nm</pkgname>
@@ -375,7 +375,7 @@
                 <pkgname>user-manager</pkgname>
                 <pkgname>vlc</pkgname>
                 <pkgname>xdg-user-dirs</pkgname>
-		<pkgname>sddm</pkgname>
+                <pkgname>sddm</pkgname>
             </packages>
         </edition>
 
@@ -473,8 +473,8 @@
                 <pkgname>transmission-gtk</pkgname>
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xscreensaver</pkgname>
-		<pkgname>flatplat-blue-theme</pkgname>
-		<pkgname>gdm</pkgname>
+                <pkgname>flatplat-blue-theme</pkgname>
+                <pkgname>gdm</pkgname>
             </packages>
         </edition>
 
@@ -538,9 +538,9 @@
                <pkgname>pamac</pkgname>
                <pkgname>unicode-character-database</pkgname>
                <pkgname>reborn-deepin-schemas</pkgname>
-	       <pkgname>deepin-file-manager-root</pkgname>
-	       <pkgname>flatplat-blue-theme</pkgname>
-	       <pkgname>gtk3-print-backends</pkgname>
+               <pkgname>deepin-file-manager-root</pkgname>
+               <pkgname>flatplat-blue-theme</pkgname>
+               <pkgname>gtk3-print-backends</pkgname>
                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
        </edition>
@@ -562,7 +562,7 @@
                <pkgname>networkmanager-openvpn</pkgname>
                <pkgname>pamac</pkgname>
                <pkgname>unicode-character-database</pkgname>
-	       <pkgname>flatplat-blue-theme</pkgname>
+               <pkgname>flatplat-blue-theme</pkgname>
                <pkgname>ttf-droid</pkgname>
                <pkgname>ttf-freefont</pkgname>
                <pkgname>ttf-liberation</pkgname>
@@ -634,7 +634,7 @@
         <feature name="firefox">
             <pkgname>firefox</pkgname>
         </feature>
-	     <feature name="vivaldi">
+        <feature name="vivaldi">
             <pkgname>vivaldi</pkgname>
         </feature>
         <feature name="opera">
@@ -691,7 +691,7 @@
         </feature>
 	<feature name="nautilus">
 	    <pkgname>nautilus</pkgname>
-	    <pkgname>nautilus-root</pkgname>
+            <pkgname>nautilus-root</pkgname>
 	</feature>
     </features>
 
@@ -737,7 +737,7 @@
             <pkgname>grub</pkgname>
             <pkgname>os-prober</pkgname>
             <pkgname>grub2-theme-antergos</pkgname>
-	    <pkgname>grub2-theme-vimix-git</pkgname>
+            <pkgname>grub2-theme-vimix-git</pkgname>
         </bootloader>
         <bootloader name="systemd-boot">
             <!-- previously called gummiboot, now comes with systemd -->
