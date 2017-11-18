@@ -71,24 +71,23 @@ LIBS = {
     'qt': ["kde", "lxqt"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "gtk-play", "qt-play", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
     'base': ["bluetooth", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games",
-             "graphic_drivers", "office", "visual", "nautilus", "nemo"],
-    'cinnamon': ["lamp", "visual", "nemo"],
-    'deepin': ["lamp", "visual"],
-    'gnome': ["lamp", "visual", "nautilus"],
-    'kde': ["lamp", "visual"],
-    'mate': ["lamp", "visual"],
-    'openbox': ["lamp"],
-    'xfce': ["lamp", "visual"],
-    'budgie': ["lamp", "visual"],
-    'enlightenment': ["lamp", "visual"],
-    'i3': ["lamp"],
-    'lxqt': ["lamp", "visual"],
-    'pantheon': ["lamp", "visual"]
+             "graphic_drivers", "office", "visual", "nautilus", "nemo", "qt-play"],
+    'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
+    'deepin': ["lamp", "visual", "qt-play"],
+    'gnome': ["lamp", "visual", "nautilus", "qt-play"],
+    'kde': ["lamp", "visual", "gtk-play"],
+    'mate': ["lamp", "visual", "qt-play"],
+    'openbox': ["lamp", "qt-play"],
+    'xfce': ["lamp", "visual", "qt-play"],
+    'budgie': ["lamp", "visual", "qt-play"],
+    'enlightenment': ["lamp", "visual", "qt-play"],
+    'i3': ["lamp", "qt-play"],
+    'lxqt': ["lamp", "visual", "gtk-play"]
 }
 
 # Session names for lightDM setup (/usr/share/xsessions)
