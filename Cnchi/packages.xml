@@ -530,6 +530,38 @@
             <pkgname>playonlinux</pkgname>
             <pkgname arch="x86_64">lib32-libldap</pkgname>
         </feature>
+        <feature name="gtk-play">
+            <pkgname>0ad</pkgname>
+            <pkgname>megaglest</pkgname>
+            <pkgname>supertux</pkgname>
+            <pkgname>supertuxkart</pkgname>
+            <pkgname>wesnoth</pkgname>
+            <pkgname>xonotic</pkgname>
+            <pkgname>aisleriot</pkgname>
+            <pkgname>astromenace</pkgname>
+            <pkgname>fltk-games</pkgname>
+            <pkgname>extremetuxracer</pkgname>
+            <pkgname>gnome-chess</pkgname>
+            <pkgname>gnome-mines</pkgname>
+            <pkgname>gnome-sudoku</pkgname>
+            <pkgname>mahjong</pkgname>
+        </feature>
+        <feature name="qt-play">
+            <pkgname>0ad</pkgname>
+            <pkgname>megaglest</pkgname>
+            <pkgname>supertux</pkgname>
+            <pkgname>supertuxkart</pkgname>
+            <pkgname>wesnoth</pkgname>
+            <pkgname>xonotic</pkgname>
+            <pkgname>aisleriot</pkgname>
+            <pkgname>astromenace</pkgname>
+            <pkgname>kcheckers</pkgname>
+            <pkgname>extremetuxracer</pkgname>
+            <pkgname>knights</pkgname>
+            <pkgname>kmines</pkgname>
+            <pkgname>ksudoku</pkgname>
+            <pkgname>kmahjongg</pkgname>
+        </feature>
         <feature name="lamp">
             <pkgname>apache</pkgname>
             <pkgname>php</pkgname>
