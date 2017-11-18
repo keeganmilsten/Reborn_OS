@@ -448,34 +448,6 @@
                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
        </edition>
-
-        <edition name="Pantheon" description="Pantheon Desktop">
-           <packages>
-               <pkgname>adwaita-icon-theme</pkgname>
-               <pkgname>brasero</pkgname>
-               <pkgname>pantheon</pkgname>
-               <pkgname>pantheon-unstable</pkgname>
-               <pkgname>gedit</pkgname>
-               <pkgname>gnome-calculator</pkgname>
-               <pkgname>gnome-disk-utility</pkgname>
-               <pkgname>gnome-font-viewer</pkgname>
-               <pkgname>gnome-software</pkgname>
-               <pkgname>gtk-theme-paper</pkgname>
-               <pkgname>gtk-theme-adapta</pkgname>
-               <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
-               <pkgname>networkmanager-openvpn</pkgname>
-               <pkgname>pamac</pkgname>
-               <pkgname>unicode-character-database</pkgname>
-               <pkgname>flatplat-blue-theme</pkgname>
-               <pkgname>ttf-droid</pkgname>
-               <pkgname>ttf-freefont</pkgname>
-               <pkgname>ttf-liberation</pkgname>
-               <pkgname>ttf-dejavu</pkgname>
-               <pkgname>ttf-google-fonts-typewolf</pkgname>
-               <pkgname>ttf-opensans</pkgname>
-               <pkgname dm='true' name='lightdm'>lightdm</pkgname>
-           </packages>
-       </edition>
     </editions>
 
     <!-- User desired features -->
