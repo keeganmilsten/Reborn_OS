@@ -516,32 +516,10 @@
 
         <edition name="Deepin" description="Deepin Desktop">
            <packages>
-               <pkgname>adwaita-icon-theme</pkgname>
-               <pkgname>brasero</pkgname>
-               <pkgname>deepin</pkgname>
-               <pkgname>deepin-extra</pkgname>
-               <pkgname>deepin-cogl</pkgname>
-               <pkgname>deepin-mutter</pkgname>
-               <pkgname>deepin-polkit-agent</pkgname>
-               <pkgname>dtkwm</pkgname>
-               <pkgname>gedit</pkgname>
-               <pkgname>gnome-calculator</pkgname>
-               <pkgname>gnome-disk-utility</pkgname>
-               <pkgname>gnome-font-viewer</pkgname>
-               <pkgname>gnome-software</pkgname>
-               <pkgname>gtk-theme-paper</pkgname>
-               <pkgname>gtk-theme-adapta</pkgname>
                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
-               <pkgname>networkmanager-openvpn</pkgname>
-               <pkgname>noto-fonts</pkgname>
-               <pkgname>noto-fonts-cjk</pkgname>
-               <pkgname>noto-fonts-emoji</pkgname>
-               <pkgname>pamac</pkgname>
-               <pkgname>unicode-character-database</pkgname>
                <pkgname>reborn-deepin-schemas</pkgname>
                <pkgname>deepin-file-manager-root</pkgname>
                <pkgname>flatplat-blue-theme</pkgname>
-               <pkgname>gtk3-print-backends</pkgname>
                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
        </edition>
