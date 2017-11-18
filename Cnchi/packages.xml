@@ -3,58 +3,14 @@
     <editions>
         <edition name="common" description="Packages common to all DE and base">
             <packages>
-                <pkgname>acpid</pkgname>
-                <pkgname>alsa-utils</pkgname>
-                <pkgname>antergos-keyring</pkgname>
-                <pkgname>antergos-mirrorlist</pkgname>
-                <pkgname>b43-fwcutter</pkgname>
-                <pkgname>base</pkgname> <!-- Group -->
-                <pkgname>base-devel</pkgname> <!-- Group -->
-                <pkgname>bash-completion</pkgname>
-                <pkgname>crda</pkgname>
-                <pkgname>bind-tools</pkgname>
-                <pkgname>dosfstools</pkgname>
-                <pkgname>haveged</pkgname>
-                <pkgname>gzip</pkgname>
-                <pkgname>intel-ucode</pkgname>
-                <pkgname>ipw2100-fw</pkgname>
-                <pkgname>ipw2200-fw</pkgname>
-                <pkgname>mlocate</pkgname>
-                <pkgname>modemmanager</pkgname>
-                <pkgname>net-tools</pkgname>
-                <pkgname>networkmanager</pkgname>
-                <pkgname>ntfs-3g</pkgname>
-                <pkgname>openssh</pkgname>
-                <pkgname>pkgfile</pkgname>
-                <pkgname>reflector</pkgname>
-                <pkgname>sudo</pkgname>
-                <pkgname>terminus-font</pkgname>
-                <pkgname>tlp</pkgname>
-                <pkgname>tar</pkgname>
-                <pkgname>unzip</pkgname>
-                <pkgname>unrar</pkgname>
-                <pkgname>usb_modeswitch</pkgname>
-                <pkgname>wget</pkgname>
-                <pkgname>whois</pkgname>
-                <pkgname>wireless_tools</pkgname>
-                <pkgname>wpa_actiond</pkgname>
-                <pkgname>zd1211-firmware</pkgname>
+                <pkgname>common-cosmic-reborn</pkgname>
             </packages>
         </edition>
 
         <edition name="graphic" description="Common to all graphic desktops">
             <packages>
-                <pkgname>accountsservice</pkgname>
                 <!--<pkgname>antergos-welcome</pkgname>-->
-                <pkgname>cdrtools</pkgname>
                 <pkgname lib="gtk">dconf-editor</pkgname>
-                <pkgname>ffmpegthumbnailer</pkgname>
-                <pkgname>gst-libav</pkgname>
-                <pkgname>gst-plugins-bad</pkgname>
-                <pkgname>gst-plugins-base</pkgname>
-                <pkgname>gst-plugins-good</pkgname>
-                <pkgname>gst-plugins-ugly</pkgname>
-                <pkgname>gstreamer-vaapi</pkgname>
                 <pkgname lang="de">hunspell-de</pkgname> <!-- German hunspell dictionaries -->
                 <pkgname lang="en">hunspell-en</pkgname> <!-- English hunspell dictionaries -->
                 <pkgname lang="es">hunspell-es</pkgname> <!-- Spanish hunspell dictionaries -->
@@ -66,46 +22,14 @@
                 <pkgname lang="hu">hunspell-hu</pkgname> <!-- Hungarian hunspell dictionary -->
                 <pkgname lang="nl">hunspell-nl</pkgname> <!-- Dutch hunspell dictionaries -->
                 <pkgname lang="pl">hunspell-pl</pkgname> <!-- Polish dictionary for Hunspell -->
-                <pkgname>libdvdcss</pkgname>
-                <pkgname>lightdm-webkit2-greeter</pkgname>
-                <pkgname>light-locker</pkgname>
-                <pkgname>light-locker-settings</pkgname>
-                <pkgname>mesa</pkgname>
-                <pkgname>mesa-vdpau</pkgname>
-                <pkgname>numix-frost-themes</pkgname>
-                <pkgname>numix-icon-theme</pkgname>
-                <pkgname>numix-icon-theme-circle</pkgname>
-                <pkgname>pavucontrol</pkgname>
-                <pkgname>pulseaudio</pkgname>
-                <pkgname>pulseaudio-alsa</pkgname>
                 <pkgname lib="gtk">qt5-styleplugins</pkgname>
-                <pkgname>ttf-bitstream-vera</pkgname>
-                <pkgname>ttf-dejavu</pkgname>
-                <pkgname>ttf-liberation</pkgname>
-                <pkgname>upower</pkgname>
-                <pkgname>xf86-input-synaptics</pkgname>
-                <pkgname>xf86-video-fbdev</pkgname>
-                <pkgname>xf86-video-vesa</pkgname>
-                <pkgname>xorg-apps</pkgname>
-                <pkgname>xorg-fonts</pkgname>
-                <pkgname>xorg-server</pkgname>
-                <pkgname>xorg-xinit</pkgname>
-                <pkgname>xorg-xkill</pkgname>
-                <pkgname>pyakm</pkgname>
-                <pkgname>numix-icon-theme-circle</pkgname>
+                <pkgname>graphic-cosmic-reborn</pkgname>
             </packages>
         </edition>
 
         <edition name="base" description="Without X">
             <packages>
-                <pkgname>cabextract</pkgname>
-                <pkgname>bzip2</pkgname>
-                <pkgname>dialog</pkgname>
-                <pkgname>rsync</pkgname>
-                <pkgname>sharutils</pkgname>
-                <pkgname>uudeview</pkgname>
-                <pkgname>xz</pkgname>
-                <pkgname>zip</pkgname>
+                <pkgname>base-cosmic-reborn</pkgname>
             </packages>
         </edition>
 
