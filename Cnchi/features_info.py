@@ -42,6 +42,8 @@ ICON_NAMES = {
     'flash': 'flash',
     'fonts': 'preferences-desktop-font',
     'games': 'applications-games',
+    'gtk-play': 'applications-games',
+    'qt-play': 'applications-games',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
@@ -67,6 +69,8 @@ TITLES = {
     'flash': _("Flash plugins"),
     'fonts': _("Extra Truetype Fonts"),
     'games': _("Steam + PlayonLinux"),
+    'gtk-play': _("Popular Games for Linux"),
+    'qt-play': _("Popular Games for Linux"),
     'graphic_drivers': _("Graphic drivers (Proprietary)"),
     'lamp': _("Apache (or Nginx) + Mariadb + PHP"),
     'lts': _("Kernel (LTS version)"),
@@ -88,6 +92,8 @@ DESCRIPTIONS = {
     'fonts': _("TrueType fonts from the Google Fonts project."),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
+    'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
+    'qt-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'lamp': _("Apache (or Nginx) + Mariadb + PHP installation and setup."),
     'cups': _("Installation of printer drivers and management tools."),
     'office': _("Open source office suite. Supports editing MS Office files."),
@@ -122,7 +128,7 @@ TOOLTIPS = {
                  "anticipated web standards.  Enable this option to install Firefox\n"
                  "instead of Chromium"),
     'opera':_("Opera is a freeware, cross-platform web browser developed by\n"
-              "Opera.Inc. The browser is aimed at conventinal internet users\n" 
+              "Opera.Inc. The browser is aimed at conventinal internet users\n"
               "and those who enjoy simplicity"),
     'vivaldi': _("Vivaldi is a freeware, cross-platform web browser developed by\n"
                  "Vivaldi Technologies. It was officially launched on April 12, 2016.\n"
@@ -148,6 +154,8 @@ TOOLTIPS = {
                "linux in technology and gaming, while PlayOnLinux\n"
                "is a very easy manager to setting up games to play\n"
                "through wine, instead of doing it manually."),
+    'gtk-play': _("Popular games for Linux, all tailored for a gtk environemt"),
+    'qt-play': _("Popular games for Linux, all tailored for a qt environment"),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
                          "of the open-source variant. Do NOT install this if you have a\n"
                          "Nvidia Optimus laptop"),
