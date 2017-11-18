@@ -516,6 +516,7 @@
 
         <edition name="Deepin" description="Deepin Desktop">
            <packages>
+               <pkgname>deepin-cosmic-reborn</pkgname>
                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                <pkgname>reborn-deepin-schemas</pkgname>
                <pkgname>deepin-file-manager-root</pkgname>
