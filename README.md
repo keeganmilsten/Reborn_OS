@@ -41,8 +41,10 @@ cd Reborn-OS
 sudo make install
 sudo mkdir out
 ```
-5. Build it by running this command:
+5. Build it by running these commands:
 ```
+chmod +x /home/$USER/Reborn-OS/run.sh
+sudo /home/$USER/Reborn-OS/run.sh
 sudo ./build.sh -v
 ```
 
