@@ -54,7 +54,7 @@ class SystemdBoot(object):
         os.makedirs(menu_dir, mode=0o755, exist_ok=True)
         menu_path = os.path.join(menu_dir, "loader.conf")
         with open(menu_path, 'w') as menu_file:
-            menu_file.write("default antergos\n")
+            menu_file.write("default Reborn\n")
             menu_file.write("timeout 3\n")
 
         # Setup boot entries
@@ -108,7 +108,7 @@ class SystemdBoot(object):
         conf['default'].append("options\t{0}\n\n".format(options))
 
         conf['fallback'] = []
-        conf['fallback'].append("title\tReborn (fallback)\n")
+        conf['fallback'].append("title\tReborn OS (fallback)\n")
         conf['fallback'].append("linux\t/vmlinuz-linux\n")
         conf['fallback'].append("initrd\t/intel-ucode.img\n")
         conf['fallback'].append("initrd\t/initramfs-linux-fallback.img\n")
@@ -116,14 +116,14 @@ class SystemdBoot(object):
 
         if self.settings.get('feature_lts'):
             conf['lts'] = []
-            conf['lts'].append("title\tReborn LTS\n")
+            conf['lts'].append("title\tReborn OS LTS\n")
             conf['lts'].append("linux\t/vmlinuz-linux-lts\n")
             conf['lts'].append("initrd\t/intel-ucode.img\n")
             conf['lts'].append("initrd\t/initramfs-linux-lts.img\n")
             conf['lts'].append("options\t{0}\n\n".format(options))
 
             conf['lts_fallback'] = []
-            conf['lts_fallback'].append("title\tReborn LTS (fallback)\n")
+            conf['lts_fallback'].append("title\tReborn OS LTS (fallback)\n")
             conf['lts_fallback'].append("linux\t/vmlinuz-linux-lts\n")
             conf['lts_fallback'].append("initrd\t/intel-ucode.img\n")
             conf['lts_fallback'].append(
