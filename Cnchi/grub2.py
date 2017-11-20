@@ -104,7 +104,7 @@ class Grub2(object):
             cmdline_linux_default)
 
         pattern = re.compile(
-            "menuentry 'Reborn Linux'[\s\S]*initramfs-linux.img\n}")
+            "menuentry 'Reborn OS'[\s\S]*initramfs-linux.img\n}")
 
         cfg = os.path.join(self.dest_dir, "boot/grub/grub.cfg")
         with open(cfg) as grub_file:
@@ -320,7 +320,7 @@ class Grub2(object):
 
         grub_cfg_path = os.path.join(self.dest_dir, "boot/grub/grub.cfg")
         with open(grub_cfg_path) as grub_cfg:
-            if "Antergos" in grub_cfg.read():
+            if "Reborn" in grub_cfg.read():
                 txt = _("GRUB(2) BIOS has been successfully installed.")
                 logging.info(txt)
                 self.settings.set('bootloader_installation_successful', True)
@@ -334,9 +334,9 @@ class Grub2(object):
         uefi_arch = "x86_64"
         spec_uefi_arch = "x64"
         spec_uefi_arch_caps = "X64"
-        fpath = '/install/boot/efi/EFI/grub_reborn'
-        bootloader_id = 'grub_reborn' if not os.path.exists(fpath) else \
-            'grub_reborn_{0}'.format(random_generator())
+        fpath = '/install/boot/efi/EFI/antergos_grub'
+        bootloader_id = 'antergos_grub' if not os.path.exists(fpath) else \
+            'antergos_grub_{0}'.format(random_generator())
 
         # grub2 in efi needs efibootmgr
         if not os.path.exists("/usr/bin/efibootmgr"):
