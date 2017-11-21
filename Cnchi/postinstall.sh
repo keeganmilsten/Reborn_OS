@@ -466,7 +466,8 @@ fi
     
     # Copy correct pacman.conf file over
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
-    # Fix Grub
+    # Fix Grub                                                                                     
+    sudo os-prober
     grub-mkconfig -o ${CN_DESTDIR}/boot/grub/grub.cfg
     echo "GRUB FIXED"
 }
