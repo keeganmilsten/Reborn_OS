@@ -465,10 +465,12 @@ fi
     fi
     
     # Copy correct pacman.conf file over
+    rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
-    # Fix Grub                                                                                     
-    chroot ${CN_DESTDIR} sudo os-prober
-    chroot ${CN_DESTDIR} sudo grub-mkconfig -o /boot/grub/grub.cfg
+    chroot ${CN_DESTDIR} "sudo pacman -Syy"
+    # Fix Grub
+    chroot ${CN_DESTDIR} "sudo os-prober"
+    chroot ${CN_DESTDIR} "sudo grub-mkconfig -o /boot/grub/grub.cfg"
     echo "GRUB FIXED"
 }
 
