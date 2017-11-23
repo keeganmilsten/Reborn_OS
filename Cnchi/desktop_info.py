@@ -76,7 +76,7 @@ ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "oper
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
     'base': ["bluetooth", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games",
-             "graphic_drivers", "office", "visual", "nautilus", "nemo", "qt-play"],
+             "graphic_drivers", "graphics", "office", "visual", "nautilus", "nemo", "gtk-play", "qt-play"],
     'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
     'deepin': ["lamp", "visual", "qt-play"],
     'gnome': ["lamp", "visual", "nautilus", "qt-play"],
