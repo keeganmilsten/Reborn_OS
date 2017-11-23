@@ -186,7 +186,7 @@ class Grub2(object):
         # Modify /etc/default/grub
         self.set_grub_option(
             "GRUB_THEME", "/boot/grub/themes/Vimix/theme.txt")
-        self.set_grub_option("GRUB_DISTRIBUTOR", "Reborn")
+        self.set_grub_option("GRUB_DISTRIBUTOR", "Antergos")
         self.set_grub_option("GRUB_CMDLINE_LINUX_DEFAULT", cmd_linux_default)
         self.set_grub_option("GRUB_CMDLINE_LINUX", cmd_linux)
 
@@ -320,7 +320,7 @@ class Grub2(object):
 
         grub_cfg_path = os.path.join(self.dest_dir, "boot/grub/grub.cfg")
         with open(grub_cfg_path) as grub_cfg:
-            if "Reborn" in grub_cfg.read():
+            if "Antergos" in grub_cfg.read():
                 txt = _("GRUB(2) BIOS has been successfully installed.")
                 logging.info(txt)
                 self.settings.set('bootloader_installation_successful', True)
