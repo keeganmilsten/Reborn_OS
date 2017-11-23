@@ -159,7 +159,7 @@ TOOLTIPS = {
                   "Mines, and Soduku - all tailored for a gtk environemt"),
     'qt-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                  "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
-                 "Mines, and Soduku - all tailored for a gtk environemt"),
+                 "Mines, and Soduku - all tailored for a qt environemt"),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
                          "of the open-source variant. Do NOT install this if you have a\n"
                          "Nvidia Optimus laptop"),
