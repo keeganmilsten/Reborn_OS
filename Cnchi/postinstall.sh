@@ -463,15 +463,6 @@ fi
         # TODO: This should be done differently
         sed -i 's|echo "X|/usr/bin/VBoxClient-all \&\necho "X|g' "${CN_DESTDIR}/etc/lightdm/Xsession"
     fi
-    
-    # Copy correct pacman.conf file over
-    rm ${CN_DESTDIR}/etc/pacman.conf
-    cp /etc/pacman.conf ${CN_DESTDIR}/etc/
-    chroot ${CN_DESTDIR} "sudo pacman -Syy"
-    # Fix Grub
-    chroot ${CN_DESTDIR} "sudo os-prober"
-    chroot ${CN_DESTDIR} "sudo grub-mkconfig -o /boot/grub/grub.cfg"
-    echo "GRUB FIXED"
 }
 
 touch /tmp/.postinstall.lock
