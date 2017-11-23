@@ -71,7 +71,7 @@ LIBS = {
     'qt': ["kde", "lxqt"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "gtk-play", "qt-play", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "graphics", "gtk-play", "qt-play", "graphic_drivers", "lamp", "lts", "office", "sshd", "visual", "nautilus", "nemo"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
