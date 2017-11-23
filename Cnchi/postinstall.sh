@@ -27,7 +27,7 @@
 #  along with Cnchi; If not, see <http://www.gnu.org/licenses/>.
 
 # Set xorg config files
-set_xorg() {
+set_xorg_touchpad() {
     cp /usr/share/cnchi/scripts/postinstall/50-synaptics.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/50-synaptics.conf
     cp /usr/share/cnchi/scripts/postinstall/99-killX.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/99-killX.conf
 
@@ -76,20 +76,37 @@ set_gsettings() {
     glib-compile-schemas "${CN_DESTDIR}/usr/share/glib-2.0/schemas"
 }
 
+set_dmrc() {
+    # Set session in .dmrc
+    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
+    echo "Session=$1" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
+    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
+}
+
+common_settings() {
+    # Set skel directory (not needed, antergos-desktop-settings does this)
+    #cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
+
+    # Set .bashrc (antergos-desktop-settings can't set it because it's already in bash package)
+    if [[ -f "${CN_DESTDIR}/etc/skel/bashrc" ]]; then
+        cp ${CN_DESTDIR}/etc/skel/bashrc ${CN_DESTDIR}/etc/skel/.bashrc
+        cp ${CN_DESTDIR}/etc/skel/bashrc ${CN_DESTDIR}/home/${CN_USER_NAME}/.bashrc
+    fi
+
+    # Setup root defaults
+    cp -R ${CN_DESTDIR}/etc/skel/. ${CN_DESTDIR}/root
+}
+
 gnome_settings() {
-    # Set gsettings
     set_gsettings
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-
-    # xscreensaver config
     set_xscreensaver
+
+    set_dmrc gnome
 }
 
 cinnamon_settings() {
-    # Set gsettings
     set_gsettings
+    set_xscreensaver
 
     # Copy menu@cinnamon.org.json to set menu icon
     mkdir -p ${CN_DESTDIR}/home/${CN_USER_NAME}/.cinnamon/configs/menu@cinnamon.org/
@@ -106,16 +123,14 @@ cinnamon_settings() {
     mkdir -p ${CN_DESTDIR}/home/${CN_USER_NAME}/.cinnamon/configs/panel-launchers@cinnamon.org/
     cp -f /usr/share/cnchi/scripts/postinstall/panel-launchers@cinnamon.org.json ${CN_DESTDIR}/home/${CN_USER_NAME}/.cinnamon/configs/panel-launchers@cinnamon.org/
 
-    # Set Cinnamon in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=cinnamon" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/home/${CN_USER_NAME}/.cinnamon ${CN_DESTDIR}/etc/skel
+    set_dmrc cinnamon
+}
 
 xfce_settings() {
-    # Set settings
+    set_gsettings
+    set_xscreensaver
+
+    # Set XFCE settings
     mkdir -p ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/xfce4/xfconf/xfce-perchannel-xml
     cp -R ${CN_DESTDIR}/etc/xdg/xfce4/panel ${CN_DESTDIR}/etc/xdg/xfce4/helpers.rc ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/xfce4
 
@@ -126,65 +141,40 @@ xfce_settings() {
         sed -i "s/WebBrowser=firefox//" ${HELPERS_RC}
     fi
 
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-    chroot ${CN_DESTDIR} chown -R ${CN_USER_NAME}:users /home/${CN_USER_NAME}
-
-    set_gsettings
-
-    # Set xfce in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=xfce" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
+    set_dmrc xfce
 
     # Add lxpolkit to autostart apps
     cp /etc/xdg/autostart/lxpolkit.desktop ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/autostart
-
-    # xscreensaver config
-    cp /usr/share/cnchi/scripts/postinstall/xscreensaver ${CN_DESTDIR}/home/${CN_USER_NAME}/.xscreensaver
-    cp ${CN_DESTDIR}/home/${CN_USER_NAME}/.xscreensaver ${CN_DESTDIR}/etc/skel
-
-    rm ${CN_DESTDIR}/etc/xdg/autostart/xscreensaver.desktop
 }
 
 openbox_settings() {
-    # Set gsettings
     set_gsettings
-
-    # Setup user defaults
-    #chroot ${CN_DESTDIR} /usr/share/antergos-openbox-setup/install.sh ${CN_USER_NAME}
-    chroot ${CN_DESTDIR} /usr/bin/antergos-desktop openbox ${CN_USER_NAME}
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-
-    # Set openbox in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=openbox" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
-
-    # xscreensaver config
     set_xscreensaver
+
+    set_dmrc openbox
+
+    # Set Numix theme in oblogout
+    if [[ -f /etc/oblogout.conf ]]; then
+        sed -i 's|buttontheme = oxygen|buttontheme = Numix|g' "${CN_DESTDIR}/etc/oblogout.conf"
+    fi
 }
 
 kde_settings() {
-    # Set KDE in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=kde-plasma" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
+    set_gsettings
+    set_xscreensaver
+
+    set_dmrc kde-plasma
 
     # Force QtCurve to use our theme
     rm -R ${CN_DESTDIR}/usr/share/kstyle/themes/qtcurve.themerc
 
     # Setup user defaults
-    if [ -f "${CN_DESTDIR}/usr/share/antergos-kde-setup/install.sh" ]; then
-        chroot ${CN_DESTDIR} /usr/share/antergos-kde-setup/install.sh ${CN_USER_NAME}
-    else
-        chroot ${CN_DESTDIR} /usr/bin/antergos-desktop plasma ${CN_USER_NAME}
-    fi
+    #if [ -f "${CN_DESTDIR}/usr/share/antergos-kde-setup/install.sh" ]; then
+    #    chroot ${CN_DESTDIR} /usr/share/antergos-kde-setup/install.sh ${CN_USER_NAME}
+    #elif [ -f "${CN_DESTDIR}/usr/share/antergos-desktop" ]; then
+    #    chroot ${CN_DESTDIR} /usr/bin/antergos-desktop plasma ${CN_USER_NAME}
+    #fi
 
-    # Setup root defaults
-    cp -R ${CN_DESTDIR}/etc/skel/.config ${CN_DESTDIR}/root
     cp ${CN_DESTDIR}/etc/skel/.gtkrc-2.0-kde4 ${CN_DESTDIR}/root
     chroot ${CN_DESTDIR} "ln -s /root/.gtkrc-2.0-kde4 /root/.gtkrc-2.0"
 
@@ -193,12 +183,10 @@ kde_settings() {
 }
 
 mate_settings() {
-    # Set MATE in .dmrc
-    echo "[Desktop]" > "${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc"
-    echo "Session=mate-session" >> "${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc"
-
-    # Set gsettings
     set_gsettings
+    set_xscreensaver
+
+    set_dmrc mate
 
     # Set MintMenu Favorites
     APP_LIST="/usr/share/cnchi/scripts/postinstall/applications.list"
@@ -209,13 +197,6 @@ mate_settings() {
     fi
 
     cp ${APP_LIST} "${CN_DESTDIR}/usr/lib/linuxmint/mintMenu/applications.list"
-
-    # Copy panel layout and make it the default
-    cd "${CN_DESTDIR}/usr/share/mate-panel/layouts"
-    cp /usr/share/cnchi/scripts/antergos.layout .
-    rm default.layout
-    ln -sr antergos.layout default.layout
-    cd -
 
     # Work-around for bug in mate-panel
     CN_POST_INSTALL_DIR=/usr/share/cnchi/scripts/postinstall
@@ -234,45 +215,21 @@ nox_settings() {
 # Experimental DE's
 
 lxqt_settings() {
-    # Set theme
-    mkdir -p ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel
-    echo "[General]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor.conf
-    echo "__userfile__=true" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor.conf
-    echo "icon_theme=Numix" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor.conf
-    echo "theme=ambiance" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor.conf
+    set_gsettings
+    set_xscreensaver
 
-    # Set panel launchers
-    echo "[quicklaunch]" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel/panel.conf
-    echo "apps\1\desktop=/usr/share/applications/razor-config.desktop" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel/panel.conf
-    echo "apps\size=3" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel/panel.conf
-    echo "apps\2\desktop=/usr/share/applications/kde4/konsole.desktop" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel/panel.conf
-    echo "apps\3\desktop=/usr/share/applications/chromium.desktop" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/razor-panel/panel.conf
-
-    # Set Wallpaper
-    echo "[razor]" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-    echo "screens\size=1" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-    echo "screens\1\desktops\1\wallpaper_type=pixmap" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-    echo "screens\1\desktops\1\wallpaper=/usr/share/antergos/wallpapers/antergos-wallpaper.png" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-    echo "screens\1\desktops\1\keep_aspect_ratio=false" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-    echo "screens\1\desktops\size=1" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/razor/desktop.conf
-
-    # Set Razor in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=razor" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
-
-    chroot ${CN_DESTDIR} chown -R ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.config
+    set_dmrc razor
 }
 
 enlightenment_settings() {
-    # Set gsettings
     set_gsettings
+    set_xscreensaver
 
     # http://git.enlightenment.org/core/enlightenment.git/plain/data/tools/enlightenment_remote
 
     # Setup user defaults
     #chroot ${CN_DESTDIR} /usr/share/antergos-enlightenment-setup/install.sh ${CN_USER_NAME}
-    chroot ${CN_DESTDIR} /usr/bin/antergos-desktop enlightenment ${CN_USER_NAME}
+    #chroot ${CN_DESTDIR} /usr/bin/antergos-desktop enlightenment ${CN_USER_NAME}
 
     # Set Keyboard layout
     E_CFG="/home/${CN_USER_NAME}/.e/e/config/standard/e.cfg"
@@ -285,46 +242,26 @@ enlightenment_settings() {
     fi
     ${CN_DESTDIR}/usr/bin/eet -e ${E_CFG} config ${E_SRC} 1
 
-    # Set settings
-    set_gsettings
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-
-    # Set enlightenment in .dmrc
-    echo "[Desktop]" > ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    echo "Session=enlightenment" >> ${CN_DESTDIR}/home/${CN_USER_NAME}/.dmrc
-    chroot ${CN_DESTDIR} chown ${CN_USER_NAME}:users /home/${CN_USER_NAME}/.dmrc
+    set_dmrc enlightenment
 
     echo "QT_STYLE_OVERRIDE=gtk" >> ${CN_DESTDIR}/etc/environment
 
     # Add lxpolkit to autostart apps
     cp /etc/xdg/autostart/lxpolkit.desktop ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/autostart
-
-    # xscreensaver config
-    set_xscreensaver
 }
 
 budgie_settings() {
-    # Set gsettings
     set_gsettings
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-
-    # xscreensaver config
     set_xscreensaver
+
+    set_dmrc budgie
 }
 
 i3_settings() {
-    # Set gsettings
     set_gsettings
-
-    # Set skel directory
-    cp -R ${CN_DESTDIR}/home/${CN_USER_NAME}/.config ${CN_DESTDIR}/etc/skel
-
-    # xscreensaver config
     set_xscreensaver
+
+    set_dmrc i3
 }
 
 postinstall() {
@@ -345,7 +282,7 @@ postinstall() {
 
     # Configure touchpad. Skip with base installs
     if [[ "base" != "${CN_DESKTOP}" ]]; then
-        set_xorg
+        set_xorg_touchpad
     fi
 
     # Fix ugly styles for Qt applications when running under GTK-based desktops and Qt 5.7+
@@ -367,21 +304,13 @@ postinstall() {
         cp "${FONTCONFIG_FILE}" "${FONTCONFIG_DIR}"
     fi
 
-    # Set Reborn OS name in filesystem files
+    # Set Reborn name in filesystem files
     cp /etc/arch-release "${CN_DESTDIR}/etc"
     cp /etc/os-release "${CN_DESTDIR}/etc"
-    sed -i 's|Arch|Reborn OS|g' "${CN_DESTDIR}/etc/issue"
+    sed -i 's|Arch|Reborn|g' "${CN_DESTDIR}/etc/issue"
 
-    #for _size in "22" "24" "32"
-    #do
-    #	_icon="antergos-ball-26.png"
-    #	[[ "32" = "${_size}" ]] && _icon="antergos-menu-logo-dark-bg.png"
-
-    #	cd "${CN_DESTDIR}/usr/share/icons/Numix/${_size}/places" \
-    #		&& mv start-here.svg start-here-numix.svg \
-    #		&& cp "/usr/share/cnchi/data/images/antergos/${_icon}" start-here.png \
-    #		&& cd -
-    #done
+    # Set common desktop settigns
+    common_settings
 
     # Set desktop-specific settings
     ${CN_DESKTOP}_settings
@@ -406,6 +335,7 @@ postinstall() {
     # Most users are building packages to install them locally so there's no need for compression.
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
+    # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
 if [ -f "${CN_DESTDIR}/usr/share/dde/data" ]; then
     sed -i 's|#greeter-session=deepin|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
@@ -453,7 +383,6 @@ fi
 if [ -f "${CN_DESTDIR}/usr/bin/muffin" ]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
-
 
     # Ensure user permissions are set in /home
     chroot "${CN_DESTDIR}" chown -R "${CN_USER_NAME}:users" "/home/${CN_USER_NAME}"
