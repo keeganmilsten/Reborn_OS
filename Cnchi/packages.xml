@@ -562,6 +562,14 @@
             <pkgname>ksudoku</pkgname>
             <pkgname>kmahjongg</pkgname>
         </feature>
+        <feature name="graphics">
+            <pkgname>gimp</pkgname>
+            <pkgname>blender</pkgname>
+            <pkgname>inkscape</pkgname>
+            <pkgname>mypaint</pkgname>
+            <pkgname>rawtherapee</pkgname>
+            <pkgname>darktable</pkgname>
+        </feature>
         <feature name="lamp">
             <pkgname>apache</pkgname>
             <pkgname>php</pkgname>
