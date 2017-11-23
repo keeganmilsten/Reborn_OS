@@ -42,14 +42,19 @@ ICON_NAMES = {
     'flash': 'flash',
     'fonts': 'preferences-desktop-font',
     'games': 'applications-games',
+    'graphics': 'package_graphics',
     'gtk-play': 'applications-games',
     'qt-play': 'applications-games',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
+    'nemo': 'system-file-manager',
+    'nautilus': 'system-file-manager',
     'office': 'accessories-text-editor',
     'sshd': 'gnome-mime-x-directory-smb-share',
-    'visual': 'video-display'}
+    'visual': 'video-display',
+    'vivaldi': 'vivaldi',
+    'opera': 'opera'}
 
 
 # See http://docs.python.org/2/library/gettext.html "22.1.3.4. Deferred translations"
@@ -71,6 +76,7 @@ TITLES = {
     'games': _("Steam + PlayonLinux"),
     'gtk-play': _("Popular Games for Linux"),
     'qt-play': _("Popular Games for Linux"),
+    'graphics': _("Common Photo editing Programs for Linux"),
     'graphic_drivers': _("Graphic drivers (Proprietary)"),
     'lamp': _("Apache (or Nginx) + Mariadb + PHP"),
     'lts': _("Kernel (LTS version)"),
@@ -94,6 +100,7 @@ DESCRIPTIONS = {
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'qt-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
+    'graphics': _("Common Photo editing Programs for Linux"),
     'lamp': _("Apache (or Nginx) + Mariadb + PHP installation and setup."),
     'cups': _("Installation of printer drivers and management tools."),
     'office': _("Open source office suite. Supports editing MS Office files."),
@@ -160,6 +167,8 @@ TOOLTIPS = {
     'qt-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                  "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                  "Mines, and Soduku - all tailored for a qt environemt"),
+    'graphics': _("Common Photo editing Programs for Linux, such as Gimp, Blender, Inkscape,\n"
+                  "MyPaint, Rawtherapee, and DarkTable"),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
                          "of the open-source variant. Do NOT install this if you have a\n"
                          "Nvidia Optimus laptop"),
