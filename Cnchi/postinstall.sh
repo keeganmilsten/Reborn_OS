@@ -411,11 +411,11 @@ if [ -f "${CN_DESTDIR}/usr/share/dde/data" ]; then
 fi
 
 if [ -f "${CN_DESTDIR}/etc/gdm/Xsession" ]; then
-    systemctl -fq enable gdm
+    chroot ${CN_DESTDIR} "systemctl -fq enable gdm"
 fi
 
 if [ -f "${CN_DESTDIR}/etc/sddm/Xsession" ]; then
-    systemctl -fq enable sddm
+    chroot ${CN_DESTDIR} "systemctl -fq enable sddm"
 fi
 
 if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
