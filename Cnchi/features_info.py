@@ -51,7 +51,7 @@ ICON_NAMES = {
     'nemo': 'system-file-manager',
     'nautilus': 'system-file-manager',
     'office': 'accessories-text-editor',
-    'power': 'preferences-system-power',
+    'power': 'battery-full-charged',
     'sshd': 'gnome-mime-x-directory-smb-share',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
