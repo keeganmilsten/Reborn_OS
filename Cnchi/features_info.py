@@ -42,7 +42,7 @@ ICON_NAMES = {
     'flash': 'flash',
     'fonts': 'preferences-desktop-font',
     'games': 'applications-games',
-    'graphics': 'gnome-graphics',
+    'graphics': 'apps.com.pixlr',
     'gtk-play': 'applications-games',
     'qt-play': 'applications-games',
     'graphic_drivers': 'gnome-system',
