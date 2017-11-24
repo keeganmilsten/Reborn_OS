@@ -51,6 +51,7 @@ ICON_NAMES = {
     'nemo': 'system-file-manager',
     'nautilus': 'system-file-manager',
     'office': 'accessories-text-editor',
+    'power': 'preferences-system-power',
     'sshd': 'gnome-mime-x-directory-smb-share',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
@@ -81,6 +82,7 @@ TITLES = {
     'lamp': _("Apache (or Nginx) + Mariadb + PHP"),
     'lts': _("Kernel (LTS version)"),
     'office': _("LibreOffice"),
+    'power': _("Power Saving"),
     'sshd': _("Windows sharing SMB"),
     'visual': _("Visual Effects"),
     'nemo': _("Nemo File Manager"),
@@ -107,6 +109,7 @@ DESCRIPTIONS = {
     'visual': _("Enable transparency, shadows, and other desktop effects."),
     'firewall': _("Control the incoming and outgoing network traffic."),
     'lts': _("Long term support (LTS) Linux kernel and modules."),
+    'power': _("Power Saving Tools Geared Specifically for Laptops"),
     'sshd': _("Provides client access to shared files and printers."),
     'nemo': _("Default file manager for the Cinnamon desktop."),
     'nautilus': _("Default file manager for the Gnome desktop.")}
@@ -186,6 +189,11 @@ TOOLTIPS = {
                 "and Linux, that gives you six feature-rich applications\n"
                 "for all your document production and data processing\n"
                 "needs: Writer, Calc, Impress, Draw, Math and Base."),
+    'power': _("Two programs are installed through this, namely TLP and Thermald.\n"
+               "TLP will automatically adjust your laptop to optimize your battery\n"
+               "performance in the background without interferring with your daily use at all,\n"
+               "and Thermald will conveniently ensure that your fans and CPU both remain\n"
+               "at acceptable levels"),
     'sshd': _("Most usage of SMB involves computers running Microsoft Windows.\n"
              "Use this option to be able to browse SMB shares from your computer."),
     'visual': _("Compton is a lightweight, standalone composite manager,\n"
