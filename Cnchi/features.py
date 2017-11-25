@@ -281,8 +281,24 @@ class Features(GtkBaseBox):
             row = self.listbox_rows['chromium']
             row[Features.COL_SWITCH].set_active(True)
 
+        if 'aur' in self.features:
+            row = self.listbox_rows['aur']
+            row[Features.COL_SWITCH].set_active(True)
+
+        if 'flash' in self.features:
+            row = self.listbox_rows['flash']
+            row[Features.COL_SWITCH].set_active(True)
+
+        if 'lts' in self.features:
+            row = self.listbox_rows['lts']
+            row[Features.COL_SWITCH].set_active(True)
+
         if 'a11y' in self.features and self.a11y:
             row = self.listbox_rows['a11y']
+            row[Features.COL_SWITCH].set_active(True)
+
+        if 'firewall' in self.features:
+            row = self.listbox_rows['firewall']
             row[Features.COL_SWITCH].set_active(True)
 
     def show_disclaimer_messages(self):
