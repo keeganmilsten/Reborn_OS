@@ -239,6 +239,8 @@ rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/timezone.py
 cp ${script_path}/Cnchi/timezone.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/welcome.py
 cp ${script_path}/Cnchi/welcome.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/antergos/antergos-logo-mini2.png
+cp ${script_path}/Cnchi/antergos-logo-mini2.png ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/antergos/
 echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
