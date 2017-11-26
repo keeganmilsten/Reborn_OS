@@ -43,12 +43,15 @@ from gi.repository import Gtk, GLib, WebKit2
 import show_message as show
 import misc.extra as misc
 
-from gtkbasebox import GtkBaseBox
+from pages.gtkbasebox import GtkBaseBox
 
 from logging_utils import ContextFilter
 
+if __debug__:
+    def _(x): return x
+
 # There is a bug (I guess its a bug) where webkit2 renders local html files as plain text.
-SLIDES_URI = 'https://antergoscommunityeditions.wordpress.com/'
+SLIDES_URI = 'https://rebornos.wordpress.com'
 
 
 class Slides(GtkBaseBox):
