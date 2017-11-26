@@ -186,7 +186,7 @@ class Grub2(object):
         # Modify /etc/default/grub
         self.set_grub_option(
             "GRUB_THEME", "/boot/grub/themes/Vimix/theme.txt")
-        self.set_grub_option("GRUB_DISTRIBUTOR", "Antergos")
+        self.set_grub_option("GRUB_DISTRIBUTOR", "Reborn")
         self.set_grub_option("GRUB_CMDLINE_LINUX_DEFAULT", cmd_linux_default)
         self.set_grub_option("GRUB_CMDLINE_LINUX", cmd_linux)
 
@@ -463,7 +463,7 @@ if __name__ == '__main__':
     dest_dir = "/install"
     settings = {}
     settings["zfs"] = True
-    settings["zfs_pool_name"] = "Antergos_d3sq"
+    settings["zfs_pool_name"] = "Reborn_d3sq"
     settings["use_luks"] = True
     uuids = {}
     uuids["/"] = "ABCD"
