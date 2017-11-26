@@ -27,7 +27,7 @@
 #  along with Cnchi; If not, see <http://www.gnu.org/licenses/>.
 
 
-""" Configures Reborn to encrypt user's home with encFS """
+""" Configures Antergos to encrypt user's home with encFS """
 
 import os
 import shutil
