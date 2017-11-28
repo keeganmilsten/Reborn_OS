@@ -25,6 +25,9 @@ hdparm
 ipw2100-fw
 ipw2200-fw
 irssi
+iptables
+iputils
+iproute2
 lftp
 linux-atm
 lsscsi
