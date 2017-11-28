@@ -223,8 +223,8 @@ rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/desktop_info.py
 cp ${script_path}/Cnchi/desktop_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/encfs.py
 cp ${script_path}/Cnchi/encfs.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
-#rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/grub2.py
-#cp ${script_path}/Cnchi/grub2.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/grub2.py
+cp ${script_path}/Cnchi/grub2.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/10_antergos
 cp ${script_path}/Cnchi/10_antergos ${work_dir}/${arch}/airootfs/usr/share/cnchi/scripts/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/installation/boot/systemd_boot.py
