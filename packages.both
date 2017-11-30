@@ -164,8 +164,9 @@ unicode-character-database
 btrfs-progs
 dosfstools
 f2fs-tools
-linux-lts
-linux-lts-headers
+linux
+linux-headers
+linux-api-headers
 lvm2
 mdadm
 mtools
