@@ -4,6 +4,9 @@
         <edition name="common" description="Packages common to all DE and base">
             <packages>
                 <pkgname>common-cosmic-reborn</pkgname>
+                <pkgname>linux</pkgname>
+                <pkgname>linux-headers</pkgname>
+                <pkgname>linux-firmware</pkgname>
             </packages>
         </edition>
 
