@@ -2,7 +2,6 @@ arch-install-scripts
 b43-fwcutter
 btrfs-progs
 clonezilla
-crda
 darkhttpd
 ddrescue
 dhclient
@@ -10,7 +9,6 @@ dialog
 dmraid
 dnsmasq
 dnsutils
-dosfstools
 elinks
 ethtool
 exfat-utils
@@ -28,7 +26,6 @@ irssi
 iptables
 iputils
 iproute2
-iptables-nftables
 lftp
 linux-atm
 lsscsi
@@ -38,10 +35,8 @@ ndisc6
 nfs-utils
 nilfs-utils
 nmap
-ntfs-3g
 ntp
 openconnect
-openssh
 openvpn
 partclone
 parted
@@ -50,7 +45,6 @@ ppp
 pptpclient
 refind-efi
 rp-pppoe
-rsync
 sdparm
 sg3_utils
 smartmontools
@@ -61,50 +55,33 @@ testdisk
 usb_modeswitch
 vim-minimal
 vpnc
-wget
 wireless_tools
 wpa_actiond
 wvdial
 xl2tpd
 zd1211-firmware
-base
-base-devel
 
 
-antergos-keyring
+common-cosmic-reborn
+base-cosmic-reborn
+graphic-cosmic-reborn
+deepin-cosmic-reborn
 appstream-glib
 archlinux-appstream-data
 blur-effect
-brasero
 bubblewrap
-cdrtools
 chromium
 chromium-widevine
 colord
 dconf-editor
-deepin
-deepin-extra
-deepin-mutter
-deepin-polkit-agent
-dtkwm
 elfutils
 flatpak
 fwupd
 fwupdate
 gcab
-gedit
 gksu
 gnome-keyring
-gnome-calculator
-gnome-software
-gnome-font-viewer
 gnome-logs
-gst-libav
-gst-plugins-bad
-gst-plugins-base
-gst-plugins-good
-gst-plugins-ugly
-gstreamer-vaapi
 gtkspell
 gvfs-mtp
 libgusb
@@ -129,36 +106,24 @@ transmission-gtk
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
-pyakm
 
 
 
-adwaita-icon-theme
 deepin-icon-theme
 deepin-gtk-theme
-gtk-theme-paper
-gtk-theme-adapta
 flatplat-blue-theme
 
 
 
 divehi-fonts
 opendesktop-fonts
-terminus-font
-noto-fonts
-noto-fonts-cjk
-noto-fonts-emoji
 ttf-aboriginal-sans
 ttf-arphic-uming
 ttf-baekmuk
-ttf-bitstream-vera
-ttf-dejavu
 ttf-droid
 ttf-freefont
-ttf-liberation
 ttf-opensans
 ttf-ubuntu-font-family
-unicode-character-database
 
 
 
@@ -179,7 +144,6 @@ xfsprogs
 
 arch-install-scripts
 crda
-dialog
 dmraid
 efibootmgr
 efitools
@@ -187,7 +151,6 @@ fakeroot
 gparted
 gptfdisk
 grub
-haveged
 hwdetect
 hwinfo
 ntp
@@ -199,44 +162,22 @@ parted
 expect
 git
 gksu
-pamac
-pkgfile
 powerpill
-reflector
-sudo
-tlp
-unrar
-unzip
 wget
 xdg-user-dirs-gtk
-xz
 
 
 
 iso-hotfix-utility
 b43-firmware
-b43-fwcutter
 broadcom-wl-dkms
 dnsutils
-intel-ucode
-ipw2100-fw
-ipw2200-fw
 linux-firmware
-modemmanager
 netctl
-net-tools
-networkmanager
-networkmanager-openvpn
 nss-mdns
-usb_modeswitch
-whois
-wireless_tools
-wpa_actiond
-zd1211-firmware
 
 
 
-mesa
 virtualbox-guest-modules-arch
 virtualbox-guest-utils
 xf86-input-libinput
@@ -244,8 +185,6 @@ xf86-video-amdgpu
 xf86-video-ati
 xf86-video-intel
 xf86-video-dummy
-xf86-video-vesa
-xorg-server
 xterm
 
 
@@ -258,11 +197,6 @@ nvidia
 nvidia-utils
 nvidia-libgl
 nvidia-settings
-
-
-
-light-locker
-light-locker-settings
 
 
 
@@ -279,7 +213,6 @@ upower
 python-mako
 iso-codes
 gptfdisk
-python-bugsnag
 upower
 python-whither
 python-bugsnag
