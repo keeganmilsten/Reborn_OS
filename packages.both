@@ -28,6 +28,7 @@ irssi
 iptables
 iputils
 iproute2
+iptables-nftables
 lftp
 linux-atm
 lsscsi
