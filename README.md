@@ -46,10 +46,11 @@ cd Reborn-OS
 sudo make install
 sudo mkdir out
 ```
-5. Build it by running these commands:
+5. Begin building it:
 ```
 sudo ./build.sh -v
 ```
+### Done
 
 To rebuild the ISO, simply remove the `build` folder in addition to emptying the `out` folder. Next, re-enter the command from step 5.
 
