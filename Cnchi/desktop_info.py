@@ -34,7 +34,7 @@
 DESKTOPS = ["base", "cinnamon", "deepin",
             "gnome", "kde", "mate", "openbox", "xfce"]
 
-DESKTOPS_DEV = DESKTOPS + ["budgie", "enlightenment", "i3", "lxqt", "pantheon"]
+DESKTOPS_DEV = DESKTOPS + ["budgie", "enlightenment", "i3", "lxqt"]
 
 DESKTOPS_A11Y = ["gnome", "mate"]
 
@@ -63,20 +63,19 @@ NAMES = {
     'enlightenment': "Enlightenment",
     'i3': "i3",
     'lxqt': "LXQt",
-    'pantheon': "Pantheon"
 }
 
 LIBS = {
-    'gtk': ["cinnamon", "deepin", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3", "pantheon"],
+    'gtk': ["cinnamon", "deepin", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3"],
     'qt': ["kde", "lxqt"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "graphics", "gtk-play", "qt-play", "graphic_drivers", "lamp", "lts", "office", "power", "sshd", "visual", "nautilus", "nemo"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games", "graphics", "gtk-play", "qt-play", "music", "graphic_drivers", "lamp", "lts", "office", "power", "sshd", "visual", "nautilus", "nemo"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
     'base': ["bluetooth", "chromium", "firefox", "opera", "vivaldi", "firewall", "flash", "games",
-             "graphic_drivers", "graphics", "office", "visual", "nautilus", "nemo", "gtk-play", "qt-play", "power"],
+             "graphic_drivers", "graphics", "office", "visual", "nautilus", "nemo","qt-play", "music", "gtk-play", "qt-play", "power"],
     'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
     'deepin': ["lamp", "visual", "qt-play"],
     'gnome': ["lamp", "visual", "nautilus", "qt-play"],
@@ -102,8 +101,7 @@ SESSIONS = {
     'budgie': 'budgie-desktop',
     'enlightenment': 'enlightenment',
     'i3': 'i3',
-    'lxqt': 'lxsession',
-    'pantheon': 'pantheon'
+    'lxqt': 'lxsession'
 }
 
 
@@ -165,12 +163,7 @@ DESCRIPTIONS = {
 
     'lxqt': _("LXQt is the next-generation of LXDE, the Lightweight Desktop "
               "Environment. It is lightweight, modular, blazing-fast, and "
-              "user-friendly."),
-    'pantheon': _("Pantheon is the Desktop Environment produced by Elementary OS. "
-                  "It is ideal for Mac users and those who enjoy Apple's "
-                  "look and feel, but wish to use Linux. It's team of developers "
-                  "focus on elegance, minimalism, and visual effects. If you love "
-                  "eye candy, this desktop is for you")
+              "user-friendly.")
 }
 
 # Delete previous _() dummy declaration
