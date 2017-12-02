@@ -50,7 +50,7 @@ sudo mkdir out
 ```
 sudo ./build.sh -v
 ```
-### Done!
+### That's it!
 
 To rebuild the ISO, simply remove the `build` folder in addition to emptying the `out` folder. Next, re-enter the command from step 5.
 
