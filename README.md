@@ -31,9 +31,9 @@ Please check that you have 5GB (or more) of free harddisk space in your root par
 ```
 sudo pacman -S arch-install-scripts cpio dosfstools libisoburn mkinitcpio-nfs-utils make patch squashfs-tools wget lynx
 ```
-2. Clone this repository using `--recursive` like this:
+2. Clone this repository using like this:
 ```
-git clone https://github.com/keeganmilsten/Reborn-OS.git --recursive
+git clone https://github.com/keeganmilsten/Reborn-OS
 ```
 4. Install mkarchiso and create an `out` folder by running:
 ```
