@@ -337,7 +337,7 @@ postinstall() {
 
     # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
 if [ -f "${CN_DESTDIR}/usr/share/dde/data" ]; then
-    sed -i 's|#greeter-session=deepin|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
 if [ -f "${CN_DESTDIR}/etc/gdm/Xsession" ]; then
