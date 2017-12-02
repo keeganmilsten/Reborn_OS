@@ -565,6 +565,13 @@
             <pkgname>ksudoku</pkgname>
             <pkgname>kmahjongg</pkgname>
         </feature>
+        <feature name="movie">
+            <pkgname>openshot</pkgname>
+            <pkgname>kdenlive</pkgname>
+            <pkgname>pitivi</pkgname>
+            <pkgname>cinelerra-cv</pkgname>
+            <pkgname>avidemux-cli</pkgname>
+        </feature>
         <feature name="graphics">
             <pkgname>gimp</pkgname>
             <pkgname>blender</pkgname>
