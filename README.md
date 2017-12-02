@@ -35,6 +35,11 @@ sudo pacman -S arch-install-scripts cpio dosfstools libisoburn mkinitcpio-nfs-ut
 ```
 git clone https://github.com/keeganmilsten/Reborn-OS
 ```
+3. Fix file permissions in order to successfully build the ISO:
+```
+chmod +x /home/$USER/Reborn-OS/run.sh
+sudo /home/$USER/Reborn-OS/run.sh
+```
 4. Install mkarchiso and create an `out` folder by running:
 ```
 cd Reborn-OS
@@ -43,8 +48,6 @@ sudo mkdir out
 ```
 5. Build it by running these commands:
 ```
-chmod +x /home/$USER/Reborn-OS/run.sh
-sudo /home/$USER/Reborn-OS/run.sh
 sudo ./build.sh -v
 ```
 
