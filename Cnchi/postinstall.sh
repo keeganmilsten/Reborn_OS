@@ -291,6 +291,8 @@ postinstall() {
     if [[ "gnome" = "${CN_DESKTOP}" ]]; then
        chroot ${CN_DESTDIR} "sudo pacman -Rdd gnome-cosmic-reborn"
     fi
+    # Remove antergos-wallpapers
+    chroot ${CN_DESTDIR} "sudo pacman -Rdd antergos-wallpapers"
 
     # Fix ugly styles for Qt applications when running under GTK-based desktops and Qt 5.7+
     if [[ kde != "${CN_DESKTOP}" && lxqt != "${CN_DESKTOP}" ]]; then
