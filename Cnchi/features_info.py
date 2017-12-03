@@ -45,7 +45,7 @@ ICON_NAMES = {
     'graphics': 'apps.com.pixlr',
     'gtk-play': 'applications-games',
     'qt-play': 'applications-games',
-    'music': 'deepin-movie',
+    'movie': 'deepin-movie',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
@@ -173,7 +173,7 @@ TOOLTIPS = {
     'qt-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                  "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                  "Mines, and Soduku - all tailored for a qt environemt"),
-    'music': _("Common video editing programs for Linux, such as Open Shot, KdenLive,\n"
+    'movie': _("Common video editing programs for Linux, such as Open Shot, KdenLive,\n"
                "Pitivi, Cinelerra, and Avidemux"),
     'graphics': _("Common Photo editing Programs for Linux, such as Gimp, Blender, Inkscape,\n"
                   "MyPaint, Rawtherapee, and DarkTable"),
