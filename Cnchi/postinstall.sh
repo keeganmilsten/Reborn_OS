@@ -284,6 +284,13 @@ postinstall() {
     if [[ "base" != "${CN_DESKTOP}" ]]; then
         set_xorg_touchpad
     fi
+    # Remove Cosmic packages
+    if [[ "deepin" = "${CN_DESKTOP}" ]]; then
+       chroot ${CN_DESTDIR} "sudo pacman -Rdd deepin-cosmic-reborn"
+    fi
+    if [[ "gnome" = "${CN_DESKTOP}" ]]; then
+       chroot ${CN_DESTDIR} "sudo pacman -Rdd gnome-cosmic-reborn"
+    fi
 
     # Fix ugly styles for Qt applications when running under GTK-based desktops and Qt 5.7+
     if [[ kde != "${CN_DESKTOP}" && lxqt != "${CN_DESKTOP}" ]]; then
