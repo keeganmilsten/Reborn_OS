@@ -384,6 +384,10 @@ if [ -f "${CN_DESTDIR}/usr/bin/muffin" ]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
+    # Copy pacman.conf file over
+    rm ${CN_DESTDIR}/etc/pacman.conf
+    cp /etc/pacman.conf ${CN_DESTDIR}/etc/
+
     # Ensure user permissions are set in /home
     chroot "${CN_DESTDIR}" chown -R "${CN_USER_NAME}:users" "/home/${CN_USER_NAME}"
 
