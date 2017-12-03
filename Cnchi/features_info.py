@@ -206,8 +206,16 @@ TOOLTIPS = {
                 "provide compositing functionality. Compton itself is a fork\n"
                 "of xcompmgr-dana, which in turn is a fork of xcompmgr.\n"
                 "See the compton github page for further information."),
-    'nemo': _("Default file manager for the Cinnamon desktop."),
-    'nautilus': _("Default file manager for the Gnome desktop.")}
+    'nemo': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NEMO IS, IT IS ADVISED TO\n"
+              "NOT ENABLE THIS FEATURE.\n"
+              "That said, Nemo is the default file manager for the Cinnamon desktop.\n"
+              "It is praised for it's features, but does not compare to Konquerer,\n"
+              "the KDE file manager."),
+    'nautilus': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NAUTILUS IS, IT IS ADVISED TO\n"
+              "NOT ENABLE THIS FEATURE.\n"
+              "That said, Nautilus is the default file manager for the Gnome desktop.\n"
+              "It is praised for it's ease of use, and currently has a few more\n"
+              "features than Deepin's file manager.")}
 
 # Delete previous _() dummy declaration
 del _
