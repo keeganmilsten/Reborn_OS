@@ -285,10 +285,10 @@ postinstall() {
         set_xorg_touchpad
     fi
     # Remove Cosmic packages
-    if [[ "deepin" = "${CN_DESKTOP}" ]]; then
+    if [[ deepin = "${CN_DESKTOP}" ]]; then
        chroot ${CN_DESTDIR} "sudo pacman -Rdd deepin-cosmic-reborn"
     fi
-    if [[ "gnome" = "${CN_DESKTOP}" ]]; then
+    if [[ gnome = "${CN_DESKTOP}" ]]; then
        chroot ${CN_DESTDIR} "sudo pacman -Rdd gnome-cosmic-reborn"
     fi
     # Remove antergos-wallpapers
@@ -345,15 +345,15 @@ postinstall() {
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
     # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
-if [ -f "${CN_DESTDIR}/usr/share/dde/data" ]; then
+if [[ deepin = "${CN_DESKTOP}" ]]; then
     sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/etc/gdm/Xsession" ]; then
+if [[ gnome = "${CN_DESKTOP}" ]]; then
     chroot ${CN_DESTDIR} "systemctl -fq enable gdm"
 fi
 
-if [ -f "${CN_DESTDIR}/etc/sddm/Xsession" ]; then
+if [[ kde = "${CN_DESKTOP}" ]]; then
     chroot ${CN_DESTDIR} "systemctl -fq enable sddm"
 fi
 
@@ -361,11 +361,11 @@ if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/budgie-daemon" ]; then
+if [[ budgie = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/etc/i3/config" ]; then
+if [[ i3 = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
@@ -373,7 +373,7 @@ if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/lxqt-config" ]; then
+if [[ lxqt = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
@@ -381,15 +381,15 @@ if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/caja" ]; then
+if [[ mate = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/xfburn" ]; then
+if [[ xfce = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/muffin" ]; then
+if [[ cinnamon = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
 fi
 
