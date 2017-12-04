@@ -2,7 +2,7 @@
 ![Deepin_Image](/images/deepin4.png)
 
 ## Download Locations ##
-- <a href="https://github.com/keeganmilsten/Reborn-OS" class="button">Coming VERY Soon</a> 
+- <a href="https://github.com/keeganmilsten/Reborn-OS" class="button">Coming Very Soon</a> 
 
 # To Manually Build Yourself
 
