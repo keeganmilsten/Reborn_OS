@@ -7,6 +7,8 @@
                 <pkgname>linux</pkgname>
                 <pkgname>linux-headers</pkgname>
                 <pkgname>linux-firmware</pkgname>
+               <pkgname>base</pkgname>
+               <pkgname>base-devel</pkgname>
             </packages>
         </edition>
 
@@ -65,6 +67,7 @@
                 <pkgname>flatplat-blue-theme</pkgname>
                 <pkgname>nautilus-root</pkgname>
                 <pkgname>gdm</pkgname>
+               <pkgname>gnome</pkgname>
             </packages>
         </edition>
 
@@ -449,6 +452,8 @@
                <pkgname>deepin-file-manager-root</pkgname>
                <pkgname>flatplat-blue-theme</pkgname>
                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
+               <pkgname>deepin</pkgname>
+               <pkgname>deepin-extra</pkgname>
            </packages>
        </edition>
     </editions>
