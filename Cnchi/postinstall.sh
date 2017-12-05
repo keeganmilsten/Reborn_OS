@@ -284,15 +284,14 @@ postinstall() {
     if [[ "base" != "${CN_DESKTOP}" ]]; then
         set_xorg_touchpad
     fi
+
     # Remove Cosmic packages
     if [[ deepin = "${CN_DESKTOP}" ]]; then
-       chroot ${CN_DESTDIR} "sudo pacman -Rdd deepin-cosmic-reborn"
+       chroot ${CN_DESTDIR} sudo pacman -Rdd deepin-cosmic-reborn
     fi
     if [[ gnome = "${CN_DESKTOP}" ]]; then
-       chroot ${CN_DESTDIR} "sudo pacman -Rdd gnome-cosmic-reborn"
+       chroot ${CN_DESTDIR} sudo pacman -Rdd gnome-cosmic-reborn
     fi
-    # Remove antergos-wallpapers
-    chroot ${CN_DESTDIR} "sudo pacman -Rdd antergos-wallpapers"
 
     # Fix ugly styles for Qt applications when running under GTK-based desktops and Qt 5.7+
     if [[ kde != "${CN_DESKTOP}" && lxqt != "${CN_DESKTOP}" ]]; then
@@ -346,7 +345,7 @@ postinstall() {
 
     # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
 if [[ deepin = "${CN_DESKTOP}" ]]; then
-    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ gnome = "${CN_DESKTOP}" ]]; then
@@ -358,39 +357,39 @@ if [[ kde = "${CN_DESKTOP}" ]]; then
 fi
 
 if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ budgie = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ i3 = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ lxqt = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ mate = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' "${CN_DESTDIR}/etc/lightdm/lightdm.conf"
+   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
 
     # Copy pacman.conf file over
