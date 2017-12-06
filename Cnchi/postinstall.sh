@@ -344,45 +344,46 @@ postinstall() {
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
     # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
-if [[ deepin = "${CN_DESKTOP}" ]]; then
-    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-deepin-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [[ deepin = "${CN_DESKTOP}" ]]; then
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+    fi
 
-if [[ gnome = "${CN_DESKTOP}" ]]; then
-    chroot ${CN_DESTDIR} "systemctl -fq enable gdm"
-fi
+    if [[ gnome = "${CN_DESKTOP}" ]]; then
+        chroot ${CN_DESTDIR} systemctl -fq enable gdm
+    fi
 
-if [[ kde = "${CN_DESKTOP}" ]]; then
-    chroot ${CN_DESTDIR} "systemctl -fq enable sddm"
-fi
+    if [[ kde = "${CN_DESKTOP}" ]]; then
+        chroot ${CN_DESTDIR} systemctl -fq enable sddm
+    fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [[ budgie = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [[ budgie = "${CN_DESKTOP}" ]]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [[ i3 = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [[ i3 = "${CN_DESKTOP}" ]]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [[ lxqt = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [[ lxqt = "${CN_DESKTOP}" ]]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
-if [[ mate = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-fi
+    if [[ mate = "${CN_DESKTOP}" ]]; then
+        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+    fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
