@@ -2,7 +2,7 @@
 ![Deepin_Image](/images/deepin4.png)
 
 ## Download Locations ##
-- <a href="https://sourceforge.net/projects/antergos-deepin/" class="button">Coming Very Soon</a> 
+- <a href="https://sourceforge.net/projects/antergos-deepin/" class="button">Sourceforge</a> 
 
 # To Manually Build Yourself
 
