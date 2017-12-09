@@ -54,6 +54,8 @@ ICON_NAMES = {
     'office': 'accessories-text-editor',
     'power': 'battery-full-charged',
     'sshd': 'gnome-mime-x-directory-smb-share',
+    'spotify': 'spotify-client',
+    'skype': 'skype',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
     'opera': 'opera'}
@@ -86,6 +88,8 @@ TITLES = {
     'office': _("LibreOffice"),
     'power': _("Power Saving"),
     'sshd': _("Windows sharing SMB"),
+    'skype': _("A User Friendly Video Chat Tool"),
+    'spotify': _("A Common Music Player For the Cloud"),
     'visual': _("Visual Effects"),
     'nemo': _("Nemo File Manager"),
     'nautilus': _("Nautilus File Manager")}
@@ -114,6 +118,8 @@ DESCRIPTIONS = {
     'lts': _("Long term support (LTS) Linux kernel and modules."),
     'power': _("Power Saving Tools Geared Specifically for Laptops"),
     'sshd': _("Provides client access to shared files and printers."),
+    'skype': _("A User Friendly Video Chat Tool Made By Microsoft"),
+    'spotify': _("A widely popular music, podcast, and video streaming service"),
     'nemo': _("Default file manager for the Cinnamon desktop."),
     'nautilus': _("Default file manager for the Gnome desktop.")}
 
@@ -201,6 +207,14 @@ TOOLTIPS = {
                "at acceptable levels"),
     'sshd': _("Most usage of SMB involves computers running Microsoft Windows.\n"
              "Use this option to be able to browse SMB shares from your computer."),
+    'skype': _("Skype is a user-friendly video chat tool made by Microsoft for all ages.\n"
+               "While it's Linux support often drags behind the latest version,\n"
+               "it is still widely popular and well-known, allowing you to converse\n"
+               "with the ones you love"),
+    'spotify': _("Spotify is a widely popular music, podcast, and video streaming service.\n"
+                 "It offers milions of songs and sound tracks, all available for free.\n"
+                 "However, a paid subscription is required to download the songs and listen to them\n"
+                 "offline."),
     'visual': _("Compton is a lightweight, standalone composite manager,\n"
                 "suitable for use with window managers that do not natively\n"
                 "provide compositing functionality. Compton itself is a fork\n"
