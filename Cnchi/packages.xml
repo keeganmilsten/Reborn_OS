@@ -577,6 +577,16 @@
             <pkgname>cinelerra-cv</pkgname>
             <pkgname>avidemux-cli</pkgname>
         </feature>
+        <feature name="skype">
+            <pkgname>skype</pkgname>
+            <pkgname>skype-call-recorder</pkgname>
+            <pkgname>skypeforlinux-bin</pkgname>
+        </feature>
+        <feature name="spotify">
+            <pkgname>sportify</pkgname>
+            <pkgname>spotify-adkiller</pkgname>
+            <pkgname>blockify</pkgname>
+        </feature>
         <feature name="graphics">
             <pkgname>gimp</pkgname>
             <pkgname>blender</pkgname>
