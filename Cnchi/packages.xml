@@ -143,11 +143,7 @@
                 <pkgname>xdg-user-dirs-gtk</pkgname>
                 <pkgname>xfce4</pkgname>
                 <pkgname>xfburn</pkgname>
-                <pkgname>xfce4-battery-plugin</pkgname>
-                <pkgname>xfce4-datetime-plugin</pkgname>
-                <pkgname>xfce4-notifyd</pkgname>
-                <pkgname>xfce4-pulseaudio-plugin</pkgname>
-                <pkgname>xfce4-screenshooter</pkgname>
+                <pkgname>xfce4-goodies</pkgname>
                 <pkgname>xfce4-taskmanager</pkgname>
                 <pkgname>thunar-root</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
