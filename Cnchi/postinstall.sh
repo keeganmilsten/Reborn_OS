@@ -343,7 +343,7 @@ postinstall() {
     # Most users are building packages to install them locally so there's no need for compression.
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
-    # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
+        # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
     if [[ deepin = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
@@ -358,27 +358,39 @@ postinstall() {
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-pantheon-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [[ budgie = "${CN_DESKTOP}" ]]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
-        sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
@@ -386,13 +398,14 @@ postinstall() {
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
-   sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
+        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
    sed -i 's|#greeter-session=example-gtk-gnome|greeter-session=lightdm-webkit2-greeter|g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
 fi
-
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
