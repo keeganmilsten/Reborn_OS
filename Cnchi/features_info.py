@@ -88,8 +88,8 @@ TITLES = {
     'office': _("LibreOffice"),
     'power': _("Power Saving"),
     'sshd': _("Windows sharing SMB"),
-    'skype': _("A User Friendly Video Chat Tool"),
-    'spotify': _("A Common Music Player For the Cloud"),
+    'skype': _("Skype"),
+    'spotify': _("Spotify"),
     'visual': _("Visual Effects"),
     'nemo': _("Nemo File Manager"),
     'nautilus': _("Nautilus File Manager")}
