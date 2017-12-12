@@ -42,7 +42,6 @@
 
         <edition name="Gnome" description="Gnome Desktop">
             <packages>
-                <pkgname>reborn-gnome-schemas</pkgname>
                 <pkgname>gnome-cosmic-reborn</pkgname>
                 <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                 <pkgname>gnome-shell-extensions</pkgname>
@@ -54,10 +53,6 @@
             <packages>
                 <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
                 <pkgname>cinnamon-cosmic-reborn</pkgname>
-                <pkgname>reborn-cinnamon-schemas</pkgname>
-                <pkgname>flatplat-blue-theme</pkgname>
-                <pkgname>gnome-software</pkgname>
-                <pkgname>pamac</pkgname>
             </packages>
         </edition>
 
@@ -68,23 +63,16 @@
                 <pkgname>xfce4</pkgname>
                 <pkgname>thunar-root</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
-                <pkgname>light-locker-settings</pkgname>
-                <pkgname>gnome-software</pkgname>
-                <pkgname>reborn-xfce-schemas</pkgname>
-                <pkgname>pamac</pkgname>
             </packages>
         </edition>
 
         <edition name="Mate" description="MATE Desktop">
             <packages>
                 <pkgname>mate-cosmic-reborn</pkgname>
-                <pkgname>reborn-mate-schemas</pkgname>
-                <pkgname>flatplat-blue-theme</pkgname>
                 <pkgname dm='true' name='lightdm'>lightdm</pkgname>
                 <pkgname>light-locker-settings</pkgname>
                 <pkgname>mate</pkgname>
                 <pkgname>mate-extra</pkgname>
-                <pkgname>pamac</pkgname>
             </packages>
         </edition>
 
@@ -198,11 +186,6 @@
         <edition name="Budgie" description="Solus desktop">
             <packages>
                 <pkgname>budgie-cosmic-reborn</pkgname>
-                <pkgname>reborn-budgie-schemas</pkgname>
-                <pkgname>flatplat-blue-theme</pkgname>
-                <pkgname>gdm</pkgname>
-                <pkgname>gnome-software</pkgname>
-                <pkgname>pamac</pkgname>
             </packages>
         </edition>
 
