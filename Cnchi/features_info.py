@@ -181,8 +181,8 @@ TOOLTIPS = {
                  "Mines, and Soduku - all tailored for a qt environemt"),
     'movie': _("Common video editing programs for Linux, such as Open Shot, KdenLive,\n"
                "Pitivi, Cinelerra, and Avidemux"),
-    'graphics': _("Common Photo editing Programs for Linux, such as Gimp, Blender, Inkscape,\n"
-                  "MyPaint, Rawtherapee, and DarkTable"),
+    'graphics': _("Common Photo editing Programs for Linux, such as Gimp, GtThumb,\n"
+                  "Rapid Photo Downloader, Rawtherapee, and DarkTable"),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
                          "of the open-source variant. Do NOT install this if you have a\n"
                          "Nvidia Optimus laptop"),
