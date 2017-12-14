@@ -358,76 +358,58 @@ postinstall() {
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
 
     fi
 
     if [[ budgie = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
-        cp /usr/share/cnchi/20-intel.conf ${CN_DESTDIR}/etc/X11/xorg.conf.d/
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type d -exec chmod 666 {} \;
-        find ${CN_DESTDIR}/var/lib/lightdm-data -type f -exec chmod 666 {} \;
+        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
 fi
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
