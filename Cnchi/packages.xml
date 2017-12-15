@@ -372,7 +372,7 @@
             <pkgname>skypeforlinux-bin</pkgname>
         </feature>
         <feature name="spotify">
-            <pkgname>sportify</pkgname>
+            <pkgname>spotify</pkgname>
             <pkgname>spotify-adkiller</pkgname>
             <pkgname>blockify</pkgname>
         </feature>
