@@ -347,14 +347,17 @@ postinstall() {
     if [[ deepin = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+        chroot ${CN_DESTDIR} sudo pacman -Rdd deepin-cosmic-reborn --noconfirm
     fi
 
     if [[ gnome = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
+        chroot ${CN_DESTDIR} sudo pacman -Rdd gnome-cosmic-reborn --noconfirm
     fi
 
     if [[ kde = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
+        chroot ${CN_DESTDIR} sudo pacman -Rdd kde-cosmic-reborn --noconfirm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
@@ -368,22 +371,26 @@ postinstall() {
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd budgie-cosmic-reborn --noconfirm
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd i3-cosmic-reborn --noconfirm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd enlightenment-cosmic-reborn --noconfirm
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
+        chroot ${CN_DESTDIR} sudo pacman -Rdd lxqt-cosmic-reborn --noconfirm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
@@ -391,24 +398,28 @@ postinstall() {
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
         chroot ${CN_DESTDIR} systemctl -fq enable lxdm
+        chroot ${CN_DESTDIR} sudo pacman -Rdd openbox-cosmic-reborn --noconfirm
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd mate-cosmic-reborn --noconfirm
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd xfce-cosmic-reborn --noconfirm
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} sudo pacman -Rdd cinnamon-cosmic-reborn --noconfirm
 fi
 
     # Copy pacman.conf file over
