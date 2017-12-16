@@ -383,9 +383,7 @@ postinstall() {
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
-        rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
-        cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} systemctl -fq enable sddm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
