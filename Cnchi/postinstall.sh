@@ -343,7 +343,7 @@ postinstall() {
     # Most users are building packages to install them locally so there's no need for compression.
     sed -i "s|^PKGEXT='.pkg.tar.xz'|PKGEXT='.pkg.tar'|g" "${CN_DESTDIR}/etc/makepkg.conf"
 
-        # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
+    # Set lightdm-webkit2-greeter in lightdm.conf. This should have been done here (not in the pkg) all along.
     if [[ deepin = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
@@ -390,6 +390,7 @@ postinstall() {
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
+        chroot ${CN_DESTDIR} systemctl -fq enable lxdm
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
@@ -409,6 +410,7 @@ if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         cp /usr/share/cnchi/lightdm-webkit2-greeter.conf ${CN_DESTDIR}/etc/lightdm/
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
 fi
+
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
