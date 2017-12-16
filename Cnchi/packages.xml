@@ -197,6 +197,9 @@
             <pkgname>chromium</pkgname>
             <pkgname>chromium-widevine</pkgname>
         </feature>
+        <feature name="dropbox">
+            <pkgname>dropbox</pkgname>
+        </feature>
         <feature name="firefox">
             <pkgname>firefox</pkgname>
         </feature>
