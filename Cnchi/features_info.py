@@ -37,6 +37,7 @@ ICON_NAMES = {
     'bluetooth': 'bluetooth',
     'cups': 'printer',
     'chromium': 'chromium',
+    'dropbox': 'dropbox',
     'firefox': 'firefox',
     'firewall': 'network-server',
     'flash': 'flash',
@@ -71,6 +72,7 @@ TITLES = {
     'bluetooth': _("Bluetooth Support"),
     'cups': _("Printing Support"),
     'chromium': _("Chromium Web Browser"),
+    'dropbox': _("Dropbox"),
     'firefox': _("Firefox Web Browser"),
     'opera':_("Opera Web Browser"),
     'vivaldi': _("Vivaldi Web Browser"),
@@ -99,6 +101,7 @@ DESCRIPTIONS = {
     'aur': _("The AUR is a community-driven repository for Arch users."),
     'bluetooth': _("Enables your system to make wireless connections via Bluetooth."),
     'chromium': _("Open-source web browser from Google."),
+    'dropbox': _("Free file hosting service for Linux"),
     'firefox': _("A popular open-source graphical web browser from Mozilla."),
     'opera':_("Opera is an inovative, minimilistic web brower from Opera.Inc"),
     'vivaldi': _("Vivaldi is a free, fast web browser designed for power-users."),
@@ -139,6 +142,8 @@ TOOLTIPS = {
     'chromium': _("Chromium is an open-source browser project that aims to build a\n"
                   "safer, faster, and more stable way for all users to experience the web.\n"
                   "(this is the default)"),
+    'dropbox': _("Dropbox is a free file hosting synchronization service for Linux\n"
+                 "that integrates fully into your file manager - all for free"),
     'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
                  "open-source web browser developed for Windows, OS X, and Linux,\n"
                  "with a mobile version for Android, by the Mozilla Foundation and\n"
