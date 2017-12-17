@@ -142,7 +142,7 @@ TOOLTIPS = {
     'chromium': _("Chromium is an open-source browser project that aims to build a\n"
                   "safer, faster, and more stable way for all users to experience the web.\n"
                   "(this is the default)"),
-    'dropbox': _("Dropbox is a free file hosting synchronization service for Linux\n"
+    'dropbox': _("Dropbox is a free file hosting and synchronization service for Linux\n"
                  "that integrates fully into your file manager - all for free"),
     'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
                  "open-source web browser developed for Windows, OS X, and Linux,\n"
