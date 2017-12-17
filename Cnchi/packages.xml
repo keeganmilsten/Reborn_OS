@@ -315,6 +315,9 @@
             <pkgname>compton</pkgname>
             <pkgname>paranoid</pkgname>
         </feature>
+        <feature name="vlc">
+            <pkgname>vlc</pkgname>
+        </feature>
 	<feature name="nemo">
             <pkgname>nemo</pkgname>
             <pkgname>nemo-root</pkgname>
