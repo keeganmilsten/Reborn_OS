@@ -59,6 +59,7 @@ ICON_NAMES = {
     'skype': 'skype',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
+    'vlc': 'vlc',
     'opera': 'opera'}
 
 
@@ -93,6 +94,7 @@ TITLES = {
     'skype': _("Skype"),
     'spotify': _("Spotify"),
     'visual': _("Visual Effects"),
+    'vlc': _("VLC"),
     'nemo': _("Nemo File Manager"),
     'nautilus': _("Nautilus File Manager")}
 
@@ -117,6 +119,7 @@ DESCRIPTIONS = {
     'cups': _("Installation of printer drivers and management tools."),
     'office': _("Open source office suite. Supports editing MS Office files."),
     'visual': _("Enable transparency, shadows, and other desktop effects."),
+    'vlc': _("Ultimate Media Player For Linux"),
     'firewall': _("Control the incoming and outgoing network traffic."),
     'lts': _("Long term support (LTS) Linux kernel and modules."),
     'power': _("Power Saving Tools Geared Specifically for Laptops"),
@@ -225,6 +228,10 @@ TOOLTIPS = {
                 "provide compositing functionality. Compton itself is a fork\n"
                 "of xcompmgr-dana, which in turn is a fork of xcompmgr.\n"
                 "See the compton github page for further information."),
+    'vlc': _("VLC is often considered the ultimate media player, no matter\n"
+             "what system you use. It is highly versitile, and can play almost any\n"
+             "media format imaginable, even damaged ones. If you ever have a problem\n"
+             "with videos or music, VLC can likely solve it."),
     'nemo': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NEMO IS, IT IS ADVISED TO\n"
               "NOT ENABLE THIS FEATURE.\n"
               "That said, Nemo is the default file manager for the Cinnamon desktop.\n"
