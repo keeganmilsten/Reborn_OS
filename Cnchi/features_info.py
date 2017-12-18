@@ -180,7 +180,7 @@ TOOLTIPS = {
                "pt-sans, roboto, sil-fonts, sortsmillgoudy, source-code-pro\n"
                "source-sans-pro, ubuntu-font-family, vollkorn, fira-mono\n"
                "fira-sans and lato."),
-    'firewire': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NEMO IS, IT IS ADVISED TO\n"
+    'firewire': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT FIREWIRE IS, IT IS ADVISED TO\n"
                   "NOT ENABLE THIS FEATURE.\n"
                   "That said, firewire is an alternative introduced by Apple to USB devices\n"
                   "that offers a much faster data exchange rate. It is often used in cameras\n"
