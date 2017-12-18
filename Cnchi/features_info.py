@@ -42,6 +42,7 @@ ICON_NAMES = {
     'firewall': 'network-server',
     'flash': 'flash',
     'fonts': 'preferences-desktop-font',
+    'firewire': 'drive-harddisk-ieee1394',
     'games': 'applications-games',
     'graphics': 'apps.com.pixlr',
     'gtk-play': 'applications-games',
@@ -80,6 +81,7 @@ TITLES = {
     'firewall': _("Uncomplicated Firewall"),
     'flash': _("Flash plugins"),
     'fonts': _("Extra Truetype Fonts"),
+    'firewire': _("Support For Firewire Devices"),
     'games': _("Steam + PlayonLinux"),
     'gtk-play': _("Popular Games for Linux"),
     'qt-play': _("Popular Games for Linux"),
@@ -109,6 +111,7 @@ DESCRIPTIONS = {
     'vivaldi': _("Vivaldi is a free, fast web browser designed for power-users."),
     'flash': _("Freeware software normally used for multimedia."),
     'fonts': _("TrueType fonts from the Google Fonts project."),
+    'firewire': _("Linux Support For Firewire Devices"),
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
@@ -177,6 +180,11 @@ TOOLTIPS = {
                "pt-sans, roboto, sil-fonts, sortsmillgoudy, source-code-pro\n"
                "source-sans-pro, ubuntu-font-family, vollkorn, fira-mono\n"
                "fira-sans and lato."),
+    'firewire': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NEMO IS, IT IS ADVISED TO\n"
+                  "NOT ENABLE THIS FEATURE.\n"
+                  "That said, firewire is an alternative introduced by Apple to USB devices\n"
+                  "that offers a much faster data exchange rate. It is often used in cameras\n"
+                  "and other small devices."),
     'games': _("Steam is one of the most popular gaming clients that supports\n"
                "linux in technology and gaming, while PlayOnLinux\n"
                "is a very easy manager to setting up games to play\n"
