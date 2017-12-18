@@ -217,6 +217,11 @@
             <pkgname>pepper-flash</pkgname>
             <pkgname>flashplugin</pkgname>
         </feature>
+        <feature name="firewire">
+            <pkgname>dvgrab</pkgname>
+            <pkgname>libffado</pkgname>
+            <pkgname>libraw1394</pkgname>
+        </feature>
         <feature name="games">
             <pkgname>steam-native-runtime</pkgname>
             <pkgname>steam</pkgname>
