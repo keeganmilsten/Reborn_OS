@@ -47,6 +47,7 @@ ICON_NAMES = {
     'graphics': 'apps.com.pixlr',
     'gtk-play': 'applications-games',
     'qt-play': 'applications-games',
+    'maintenance': 'deepin-system-monitor',
     'movie': 'deepin-movie',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
@@ -61,6 +62,7 @@ ICON_NAMES = {
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
     'vlc': 'vlc',
+    'wallpapers': 'deepin-image-viewer',
     'opera': 'opera'}
 
 
@@ -85,6 +87,7 @@ TITLES = {
     'games': _("Steam + PlayonLinux"),
     'gtk-play': _("Popular Games for Linux"),
     'qt-play': _("Popular Games for Linux"),
+    'maintenance': _("Applications to Perform System Maintenance"),
     'movie': _("Common Video Editing Programs for Linux"),
     'graphics': _("Common Photo editing Programs for Linux"),
     'graphic_drivers': _("Graphic drivers (Proprietary)"),
@@ -97,6 +100,7 @@ TITLES = {
     'spotify': _("Spotify"),
     'visual': _("Visual Effects"),
     'vlc': _("VLC"),
+    'wallpapers': _("Wallpapers Cycler"),
     'nemo': _("Nemo File Manager"),
     'nautilus': _("Nautilus File Manager")}
 
@@ -116,6 +120,7 @@ DESCRIPTIONS = {
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'qt-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
+    'maintenance': _("Common Applications to Perform System Maintenance On Linux"),
     'movie': _("Common video editing programs for Linux"),
     'graphics': _("Common Photo editing Programs for Linux"),
     'lamp': _("Apache (or Nginx) + Mariadb + PHP installation and setup."),
@@ -130,6 +135,7 @@ DESCRIPTIONS = {
     'skype': _("A User Friendly Video Chat Tool Made By Microsoft"),
     'spotify': _("A widely popular music, podcast, and video streaming service"),
     'nemo': _("Default file manager for the Cinnamon desktop."),
+    'wallpapers': _("Wallpapers Cycler That Changes Wallpapers Every Day"),
     'nautilus': _("Default file manager for the Gnome desktop.")}
 
 TOOLTIPS = {
@@ -195,6 +201,15 @@ TOOLTIPS = {
     'qt-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                  "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                  "Mines, and Soduku - all tailored for a qt environemt"),
+    'maintenance': _("This option install some common applications used for\n"
+                     "system maintenance in Linux.\n"
+                     "Specificaly, this option installs Bleachbit, Timeshift, and Crashplan.\n"
+                     "BleachBit is a free and open-source disk space cleaner, privacy manager,\n"
+                     "and computer system optimizer. Whereas Bleachbit primarily cleans your system,\n"
+                     "Timeshift and Crashplan are preventative solutions to sudden losses\n"
+                     "of data. Timeshift enables you to easily backup your data locally\n"
+                     "while Crashplan syncs you data with the cloud in order to ensure that\n"
+                     "it will always be there when you need it."),
     'movie': _("Common video editing programs for Linux, such as Open Shot, KdenLive,\n"
                "Pitivi, Cinelerra, and Avidemux"),
     'graphics': _("Common Photo editing Programs for Linux, such as Gimp, GtThumb,\n"
@@ -245,6 +260,8 @@ TOOLTIPS = {
               "That said, Nemo is the default file manager for the Cinnamon desktop.\n"
               "It is praised for it's features, but does not compare to Konquerer,\n"
               "the KDE file manager."),
+    'wallpapers': _("Installs a program known as Variety, an easy way to automatically\n"
+                    "change your wallpaper from thousands of high-quality, free images each day."),
     'nautilus': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NAUTILUS IS, IT IS ADVISED TO\n"
               "NOT ENABLE THIS FEATURE.\n"
               "That said, Nautilus is the default file manager for the Gnome desktop.\n"
