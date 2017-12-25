@@ -70,11 +70,11 @@ LIBS = {
     'qt': ["kde", "lxqt"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "cups", "chromium", "dropbox", "firefox", "firewire", "opera", "vivaldi", "firewall", "flash", "games", "graphics", "gtk-play", "qt-play", "movie", "graphic_drivers", "lamp", "lts", "office", "power", "sshd", "skype", "spotify", "visual", "vlc", "nautilus", "nemo"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "maintenance", "cups", "chromium", "dropbox", "firefox", "firewire", "opera", "vivaldi", "firewall", "flash", "games", "graphics", "gtk-play", "qt-play", "movie", "graphic_drivers", "lamp", "lts", "office", "power", "sshd", "skype", "spotify", "visual", "vlc", "nautilus", "nemo", "wallpapers"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
-    'base': ["bluetooth", "chromium", "dropbox", "firefox", "firewire", "opera", "vivaldi", "firewall", "flash", "games", "graphic_drivers", "graphics", "office", "visual", "vlc", "nautilus", "nemo","qt-play", "movie", "gtk-play", "qt-play", "power", "skype", "spotify"],
+    'base': ["bluetooth", "chromium", "maintenance", "dropbox", "firefox", "firewire", "opera", "vivaldi", "firewall", "flash", "games", "graphic_drivers", "graphics", "office", "visual", "vlc", "nautilus", "nemo","qt-play", "movie", "gtk-play", "qt-play", "power", "skype", "spotify", "wallpapers"],
     'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
     'deepin': ["lamp", "visual", "qt-play"],
     'gnome': ["lamp", "visual", "nautilus", "qt-play"],
