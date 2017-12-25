@@ -51,7 +51,7 @@ if __debug__:
     def _(x): return x
 
 # There is a bug (I guess its a bug) where webkit2 renders local html files as plain text.
-SLIDES_URI = 'https://rebornos.wordpress.com'
+SLIDES_URI = 'https://www.youtube.com/embed/X4EY5SNeRfg?rel=0&autoplay=1&loop=1&version=3&playlist=X4EY5SNeRfg'
 
 
 class Slides(GtkBaseBox):
