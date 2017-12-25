@@ -268,9 +268,16 @@
             <pkgname>rawtherapee</pkgname>
             <pkgname>darktable</pkgname>
         </feature>
+        <feature name="maintenance">
+            <pkgname>bleachbit</pkgname>
+            <pkgname>timeshift</pkgname>
+            <pkgname>crashplan</pkgname>
+        </feature>
         <feature name="movie">
             <pkgname>openshot</pkgname>
             <pkgname>kdenlive</pkgname>
+            <pkgname>dvdauthor</pkgname>
+            <pkgname>frei0r-plugins</pkgname>
             <pkgname>pitivi</pkgname>
             <pkgname>cinelerra-cv</pkgname>
             <pkgname>avidemux-cli</pkgname>
@@ -320,9 +327,6 @@
             <pkgname>compton</pkgname>
             <pkgname>paranoid</pkgname>
         </feature>
-        <feature name="vlc">
-            <pkgname>vlc</pkgname>
-        </feature>
 	<feature name="nemo">
             <pkgname>nemo</pkgname>
             <pkgname>nemo-root</pkgname>
@@ -331,6 +335,12 @@
 	    <pkgname>nautilus</pkgname>
             <pkgname>nautilus-root</pkgname>
 	</feature>
+        <feature name="vlc">
+            <pkgname>vlc</pkgname>
+        </feature>
+        <feature name="wallpapers">
+            <pkgname>variety</pkgname>
+        </feature>
     </features>
 
     <net>
