@@ -337,6 +337,7 @@
 	</feature>
         <feature name="vlc">
             <pkgname>vlc</pkgname>
+            <pkgname>qt4</pkgname>
         </feature>
         <feature name="wallpapers">
             <pkgname>variety</pkgname>
