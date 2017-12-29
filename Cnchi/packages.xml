@@ -337,7 +337,7 @@
 	</feature>
         <feature name="vlc">
             <pkgname>vlc</pkgname>
-            <pkgname>qt4</pkgname>
+            <pkgname>phonon-qt4-vlc</pkgname>
         </feature>
         <feature name="wallpapers">
             <pkgname>variety</pkgname>
