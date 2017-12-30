@@ -21,7 +21,7 @@ sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 systemctl set-default graphical.target
-systemctl enable pacman-init.service choose-mirror.service
+systemctl -fq enable pacman-init.service
 
 # EXPERIMENTAL
 
@@ -43,7 +43,7 @@ systemctl enable pacman-init.service choose-mirror.service
         systemctl -fq enable ModemManager
         systemctl -fq enable upower
 
-        systemctl -fq enable lightdm
+        systemctl -fq enable sddm
         chmod +x /etc/lightdm/Xsession
        
         # Disable pamac if present
@@ -51,7 +51,7 @@ systemctl enable pacman-init.service choose-mirror.service
             systemctl -fq disable pamac pamac-cleancache.timer pamac-mirrorlist.timer
         fi
         # Enable systemd-timesyncd (ntp)
-systemctl -fq enable systemd-timesyncd
+	systemctl -fq enable systemd-timesyncd
 	
 	#Enable Repository Configuration
 	systemctl -fq enable internet.service
