@@ -95,6 +95,8 @@ transmission-gtk
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-user-dirs-gtk
+sddm-config-editor-git
+sddm-theme-gracilis-git
 
 
 
