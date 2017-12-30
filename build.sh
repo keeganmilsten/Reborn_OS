@@ -194,6 +194,12 @@ rm ${work_dir}/${arch}/airootfs/etc/lightdm/lightdm.conf
 echo "Copying correct lightdm.conf file over"
 cp ${script_path}/airootfs/etc/lightdm/lightdm.conf ${work_dir}/${arch}/airootfs/etc/lightdm/
 echo "DONE"
+#Use sddm.conf from local direcectory instead of default one
+echo "Removing unnecessary sddm.conf"
+rm ${work_dir}/${arch}/airootfs/etc/sddm.conf
+echo "Copying correct sddm.conf file over"
+cp ${script_path}/airootfs/etc/sddm.conf ${work_dir}/${arch}/airootfs/etc/
+echo "DONE"
 #Copy Antergos Mirrorlist
 echo "Setting up Antergos Mirrorlist"
 mkdir -p ${work_dir}/${arch}/airootfs/etc/pacman.d
