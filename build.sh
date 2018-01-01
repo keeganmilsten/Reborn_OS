@@ -251,6 +251,13 @@ rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/antergos/antergos-lo
 cp ${script_path}/Cnchi/antergos-logo-mini2.png ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/antergos/
 cp ${script_path}/Cnchi/20-intel.conf ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 cp ${script_path}/Cnchi/lightdm-webkit2-greeter.conf ${work_dir}/${arch}/airootfs/usr/share/cnchi/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/1.png
+cp ${script_path}/Cnchi/1.png ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/2.png
+cp ${script_path}/Cnchi/2.png ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/
+rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/3.png
+cp ${script_path}/Cnchi/3.png ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/images/slides/
+cp ${script_path}/Cnchi/sddm.conf ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 echo "DONE"
 }
 # Prepare kernel/initramfs ${install_dir}/boot/
