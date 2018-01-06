@@ -24,4 +24,6 @@ if [[ $LANG = '' ]]; then
 	export LANG=en_US.UTF-8
 fi
 
+screenfetch -t -w -D 'ARCH'
+
 path() ( IFS=: ; printf '%s\n' $PATH ; )
