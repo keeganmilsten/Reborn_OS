@@ -203,9 +203,9 @@ TOOLTIPS = {
                  "Mines, and Soduku - all tailored for a qt environemt"),
     'maintenance': _("This option install some common applications used for\n"
                      "system maintenance in Linux.\n"
-                     "Specificaly, this option installs Bleachbit, Timeshift, and Crashplan.\n"
+                     "Specificaly, this option installs Bleachbit, Stacer, Timeshift, and Crashplan.\n"
                      "BleachBit is a free and open-source disk space cleaner, privacy manager,\n"
-                     "and computer system optimizer. Whereas Bleachbit primarily cleans your system,\n"
+                     "and computer system optimizer. Whereas Bleachbit and Stacer both primarily clean your system,\n"
                      "Timeshift and Crashplan are preventative solutions to sudden losses\n"
                      "of data. Timeshift enables you to easily backup your data locally\n"
                      "while Crashplan syncs you data with the cloud in order to ensure that\n"
