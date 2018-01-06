@@ -278,6 +278,7 @@
             <pkgname>bleachbit</pkgname>
             <pkgname>timeshift</pkgname>
             <pkgname>crashplan</pkgname>
+            <pkgname>stacer</pkgname>
         </feature>
         <feature name="movie">
             <pkgname>openshot</pkgname>
