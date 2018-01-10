@@ -38,6 +38,7 @@ ICON_NAMES = {
     'cups': 'printer',
     'chromium': 'chromium',
     'dropbox': 'dropbox',
+    'email': 'thunderbird',
     'firefox': 'firefox',
     'firewall': 'network-server',
     'flash': 'flash',
@@ -77,6 +78,7 @@ TITLES = {
     'cups': _("Printing Support"),
     'chromium': _("Chromium Web Browser"),
     'dropbox': _("Dropbox"),
+    'email': _("Desktop Email Client"),
     'firefox': _("Firefox Web Browser"),
     'opera':_("Opera Web Browser"),
     'vivaldi': _("Vivaldi Web Browser"),
@@ -109,6 +111,7 @@ DESCRIPTIONS = {
     'aur': _("The AUR is a community-driven repository for Arch users."),
     'bluetooth': _("Enables your system to make wireless connections via Bluetooth."),
     'chromium': _("Open-source web browser from Google."),
+    'email': _("Installs Thunderbird as your Desktop Email Client"),
     'dropbox': _("Free file hosting service for Linux"),
     'firefox': _("A popular open-source graphical web browser from Mozilla."),
     'opera':_("Opera is an inovative, minimilistic web brower from Opera.Inc"),
@@ -154,6 +157,9 @@ TOOLTIPS = {
     'chromium': _("Chromium is an open-source browser project that aims to build a\n"
                   "safer, faster, and more stable way for all users to experience the web.\n"
                   "(this is the default)"),
+    'email': _("Thunderbird is one of the most common and stable desktop email clients\n"
+               "for Linux around. It is is a free, open source, cross-platform email, news,\n"
+               "RSS, and chat client developed by the Mozilla Foundation for you."),
     'dropbox': _("Dropbox is a free file hosting and synchronization service for Linux\n"
                  "that integrates fully into your file manager - all for free"),
     'firefox': _("Mozilla Firefox (known simply as Firefox) is a free and\n"
