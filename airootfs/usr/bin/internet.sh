@@ -1,3 +1,4 @@
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout '0' && gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout '0'
 wget --spider www.google.com
 if [ "$?" = 0 ]; then
   sudo pacman -Syy
