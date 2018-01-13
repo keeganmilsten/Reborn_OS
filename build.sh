@@ -175,7 +175,7 @@ make_cnchi_git() {
 
 make_fixes() {
 	# Remove Antergos gsettings file
-	rm ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas/90_deepin-default-gsettings.gschema.override
+#	rm ${work_dir}/${arch}/airootfs/usr/share/glib-2.0/schemas/90_deepin-default-gsettings.gschema.override
 	echo "ANTERGOS GSETTINGS REMOVED"
         # Setup gsettings if gsettings folder exists
         if [ -d ${script_path}/gsettings ]; then
@@ -215,12 +215,12 @@ rm ${work_dir}/${arch}/airootfs/etc/pacman.conf
 cp ${script_path}/pacman.conf ${work_dir}/${arch}/airootfs/etc/
 echo "DONE"
 #Editting Cnchi
-echo "Moving Cnchi files over"
+echo "Moving Cnchi files over..."
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/packages.xml
 cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/pacman.tmpl
-rm ${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop
 cp ${script_path}/Cnchi/pacman.tmpl ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
+rm ${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/features_info.py
 cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/pages/features.py
