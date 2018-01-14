@@ -8,3 +8,6 @@ icon-theme='HALO'
 
 [org.gnome.desktop.background]
 picture-uri='file:///usr/share/backgrounds/gnome/Bokeh_Tails.jpg'
+
+[com.solus-project.icon-tasklist]
+pinned-launchers=['org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop', 'chromium.desktop']
