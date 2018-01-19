@@ -296,7 +296,6 @@
         </feature>
         <feature name="spotify">
             <pkgname>spotify</pkgname>
-            <pkgname>spotify-adkiller</pkgname>
             <pkgname>blockify</pkgname>
         </feature>
         <feature name="lamp">
