@@ -8,3 +8,5 @@ if [ "$?" = 0 ]; then
   sudo pacman -Syy
 else exec /home/$USER/.config/autostart/internet.sh
 fi
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
