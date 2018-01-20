@@ -416,6 +416,9 @@ if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} sudo pacman -Rdd cinnamon-cosmic-reborn --noconfirm
 fi
 
+    # Enable Flatpaks in Gnome-Software
+    chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
