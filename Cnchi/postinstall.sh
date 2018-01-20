@@ -285,14 +285,6 @@ postinstall() {
         set_xorg_touchpad
     fi
 
-    # Remove Cosmic packages
-    if [[ deepin = "${CN_DESKTOP}" ]]; then
-       chroot ${CN_DESTDIR} sudo pacman -Rdd deepin-cosmic-reborn
-    fi
-    if [[ gnome = "${CN_DESKTOP}" ]]; then
-       chroot ${CN_DESTDIR} sudo pacman -Rdd gnome-cosmic-reborn
-    fi
-
     # Fix ugly styles for Qt applications when running under GTK-based desktops and Qt 5.7+
     if [[ kde != "${CN_DESKTOP}" && lxqt != "${CN_DESKTOP}" ]]; then
         mkdir -p "${CN_DESTDIR}/home/${CN_USER_NAME}/.config/qt5ct" "${CN_DESTDIR}/etc/skel/qt5ct"
@@ -348,45 +340,48 @@ postinstall() {
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
         chroot ${CN_DESTDIR} sudo pacman -Rdd deepin-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     fi
 
     if [[ gnome = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
         chroot ${CN_DESTDIR} sudo pacman -Rdd gnome-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     fi
 
     if [[ kde = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd kde-cosmic-reborn --noconfirm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
 
     fi
 
     if [[ budgie = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
         chroot ${CN_DESTDIR} sudo pacman -Rdd budgie-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd i3-cosmic-reborn --noconfirm
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd enlightenment-cosmic-reborn --noconfirm
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd lxqt-cosmic-reborn --noconfirm
     fi
 
@@ -400,25 +395,25 @@ postinstall() {
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd mate-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd xfce-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
-        cp /etc/sddm.conf ${CN_DESTDIR}/etc/
+        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd cinnamon-cosmic-reborn --noconfirm
+        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 fi
 
-    # Enable Flatpaks in Gnome-Software
-    chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
