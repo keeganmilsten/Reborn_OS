@@ -3,6 +3,7 @@ echo "Correcting file permissions"
 chmod +x ${work_dir}/Cnchi/postinstall.sh
 chmod +x ${work_dir}/Cnchi/10_antergos
 chmod +x ${work_dir}/Cnchi/pkcon.sh
+chmod +x ${work_dir}/Cnchi/pkcon2.sh
 chmod +x ${work_dir}/Cnchi/flatpak.sh
 chmod +x ${work_dir}/build.sh
 chmod +x ${work_dir}/translations.sh
