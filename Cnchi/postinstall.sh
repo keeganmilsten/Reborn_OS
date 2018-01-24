@@ -340,19 +340,32 @@ postinstall() {
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
         chroot ${CN_DESTDIR} sudo pacman -Rdd deepin-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [[ gnome = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
         chroot ${CN_DESTDIR} sudo pacman -Rdd gnome-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [[ kde = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd kde-cosmic-reborn --noconfirm
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
@@ -364,25 +377,44 @@ postinstall() {
     if [[ budgie = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
         chroot ${CN_DESTDIR} sudo pacman -Rdd budgie-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd i3-cosmic-reborn --noconfirm
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd enlightenment-cosmic-reborn --noconfirm
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd lxqt-cosmic-reborn --noconfirm
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
@@ -391,27 +423,44 @@ postinstall() {
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
         chroot ${CN_DESTDIR} systemctl -fq enable lxdm
         chroot ${CN_DESTDIR} sudo pacman -Rdd openbox-cosmic-reborn --noconfirm
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd mate-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd xfce-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         chroot ${CN_DESTDIR} sudo pacman -Rdd cinnamon-cosmic-reborn --noconfirm
-        chroot ${CN_DESTDIR} sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
 fi
 
     # Copy pacman.conf file over
