@@ -33,6 +33,7 @@
 # in desktop_info file instead of here.
 
 ICON_NAMES = {
+    'a11y': 'preferences-desktop-accessibility',
     'aur': 'system-software-install',
     'bluetooth': 'bluetooth',
     'cups': 'printer',
@@ -46,17 +47,17 @@ ICON_NAMES = {
     'firewire': 'drive-harddisk-ieee1394',
     'games': 'applications-games',
 #    'graphics': 'apps.com.pixlr',
-    'graphics': 'applications-graphics',
+    'graphics': 'accessories-painting',
     'gtk-play': 'applications-games',
     'qt-play': 'applications-games',
-    'maintenance': 'deepin-system-monitor',
-    'movie': 'deepin-movie',
+    'maintenance': 'baobab',
+    'movie': 'artemanufrij.screencast',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
     'nemo': 'system-file-manager',
     'nautilus': 'system-file-manager',
-    'office': 'accessories-text-editor',
+    'office': 'libreoffice-writer',
     'power': 'battery-full-charged',
     'sshd': 'gnome-mime-x-directory-smb-share',
     'spotify': 'spotify-client',
@@ -64,8 +65,9 @@ ICON_NAMES = {
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
     'vlc': 'vlc',
-    'wallpapers': 'deepin-image-viewer',
+    'wallpapers': 'background',
     'opera': 'opera'}
+
 
 
 # See http://docs.python.org/2/library/gettext.html "22.1.3.4. Deferred translations"
