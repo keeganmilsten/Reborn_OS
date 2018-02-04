@@ -32,6 +32,7 @@
 # Note: As each desktop has its own features, these are listed
 # in desktop_info file instead of here.
 
+
 ICON_NAMES = {
     'a11y': 'preferences-desktop-accessibility',
     'aur': 'system-software-install',
@@ -69,7 +70,6 @@ ICON_NAMES = {
     'opera': 'opera'}
 
 
-
 # See http://docs.python.org/2/library/gettext.html "22.1.3.4. Deferred translations"
 def _(message):
     return message
@@ -92,6 +92,7 @@ TITLES = {
     'games': _("Steam + PlayonLinux"),
     'gtk-play': _("Popular Games for Linux"),
     'qt-play': _("Popular Games for Linux"),
+    'hardinfo': _("Hardware Analysis"),
     'maintenance': _("Applications to Perform System Maintenance"),
     'movie': _("Common Video Editing Programs for Linux"),
     'graphics': _("Common Photo editing Programs for Linux"),
@@ -125,6 +126,7 @@ DESCRIPTIONS = {
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
+    'hardinfo': _("Easy application for extensive hardware anaylysis"),
     'qt-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'maintenance': _("Common Applications to Perform System Maintenance On Linux"),
     'movie': _("Common video editing programs for Linux"),
@@ -207,6 +209,9 @@ TOOLTIPS = {
     'gtk-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                   "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                   "Mines, and Soduku - all tailored for a gtk environemt"),
+    'hardinfo': _("Simple application for hardware analysis and system benchmarking.\n"
+                  "Through this, you can easily view all of your system specs without\n"
+                  "having to revert to the commandline."),
     'qt-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                  "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                  "Mines, and Soduku - all tailored for a qt environemt"),
