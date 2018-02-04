@@ -250,6 +250,9 @@
             <pkgname>gnome-sudoku</pkgname>
             <pkgname>mahjong</pkgname>
         </feature>
+        <feature name="hardinfo">
+            <pkgname>hardinfo</pkgname>
+        </feature>
         <feature name="qt-play">
             <pkgname>0ad</pkgname>
             <pkgname>megaglest</pkgname>
