@@ -31,9 +31,9 @@ Please check that you have 5GB (or more) of free harddisk space in your root par
 ```
 sudo pacman -S arch-install-scripts cpio dosfstools libisoburn mkinitcpio-nfs-utils make patch squashfs-tools wget lynx
 ```
-2. Clone the repository:
+2. Clone the repository recursively:
 ```
-git clone https://github.com/keeganmilsten/Reborn-OS
+git clone https://github.com/keeganmilsten/Reborn-OS.git --recursive
 ```
 3. Fix file permissions in order to successfully build the ISO:
 ```
