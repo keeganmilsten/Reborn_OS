@@ -9,6 +9,7 @@ if [ "$?" = 0 ]; then
   reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 if [ ! -z $(grep "eu" "etc/pacman.d/mirrorlist") ]; then 
   sudo cp /usr/bin/cnchi/pacman.conf /etc/
+  sudo mv /usr/bin/cnchi/pacman2.tmpl /usr/bin/cnchi/data/pacman.tmpl
 fi
 else exec /home/$USER/.config/autostart/internet.sh
 fi
