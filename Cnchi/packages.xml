@@ -250,9 +250,6 @@
             <pkgname>gnome-sudoku</pkgname>
             <pkgname>mahjong</pkgname>
         </feature>
-        <feature name="hardinfo">
-            <pkgname>hardinfo</pkgname>
-        </feature>
         <feature name="qt-play">
             <pkgname>0ad</pkgname>
             <pkgname>megaglest</pkgname>
@@ -277,10 +274,12 @@
             <pkgname>rawtherapee</pkgname>
             <pkgname>darktable</pkgname>
         </feature>
+        <feature name="hardinfo">
+            <pkgname>hardinfo</pkgname>
+        </feature>
         <feature name="maintenance">
             <pkgname>bleachbit</pkgname>
             <pkgname>timeshift</pkgname>
-            <pkgname>crashplan</pkgname>
             <pkgname>stacer</pkgname>
         </feature>
         <feature name="movie">
@@ -299,7 +298,9 @@
         </feature>
         <feature name="spotify">
             <pkgname>spotify</pkgname>
-            <pkgname>blockify</pkgname>
+        </feature>
+        <feature name="email">
+            <pkgname>thunderbird</pkgname>
         </feature>
         <feature name="lamp">
             <pkgname>apache</pkgname>
@@ -343,6 +344,9 @@
 	<feature name="nautilus">
 	    <pkgname>nautilus</pkgname>
             <pkgname>nautilus-root</pkgname>
+        </feature>
+        <feature name="nixnote">
+            <pkgname>nixnote2</pkgname>
 	</feature>
         <feature name="vlc">
             <pkgname>vlc</pkgname>
@@ -350,6 +354,11 @@
         </feature>
         <feature name="wallpapers">
             <pkgname>variety</pkgname>
+        </feature>
+        <feature name="wine">
+            <pkgname>wine</pkgname>
+            <pkgname>winetricks</pkgname>
+            <pkgname>playonlinux</pkgname>
         </feature>
     </features>
 
