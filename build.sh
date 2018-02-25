@@ -267,6 +267,7 @@ cp ${script_path}/Cnchi/pkcon.sh ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 cp ${script_path}/Cnchi/pkcon2.sh ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 cp ${script_path}/Cnchi/flatpak2.desktop ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 cp ${script_path}/Cnchi/flatpak.desktop ${work_dir}/${arch}/airootfs/usr/share/cnchi/
+cp ${script_path}/Cnchi/pacman.conf ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 
 echo "DONE"
 }
