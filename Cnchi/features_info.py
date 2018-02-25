@@ -50,6 +50,7 @@ ICON_NAMES = {
 #    'graphics': 'apps.com.pixlr',
     'graphics': 'accessories-painting',
     'gtk-play': 'applications-games',
+    'hardinfo': 'hardinfo',
     'qt-play': 'applications-games',
     'maintenance': 'baobab',
     'movie': 'artemanufrij.screencast',
@@ -58,15 +59,17 @@ ICON_NAMES = {
     'lts': 'applications-accessories',
     'nemo': 'system-file-manager',
     'nautilus': 'system-file-manager',
+    'nixnote': 'evernote',
     'office': 'libreoffice-writer',
     'power': 'battery-full-charged',
     'sshd': 'gnome-mime-x-directory-smb-share',
     'spotify': 'spotify-client',
-    'skype': 'skype',
+#    'skype': 'skype',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
     'vlc': 'vlc',
     'wallpapers': 'background',
+    'wine': 'wine',
     'opera': 'opera'}
 
 
@@ -102,12 +105,14 @@ TITLES = {
     'office': _("LibreOffice"),
     'power': _("Power Saving"),
     'sshd': _("Windows sharing SMB"),
-    'skype': _("Skype"),
+#    'skype': _("Skype"),
     'spotify': _("Spotify"),
     'visual': _("Visual Effects"),
     'vlc': _("VLC"),
     'wallpapers': _("Wallpapers Cycler"),
+    'wine': _("Run Windows Programs on Linux"),
     'nemo': _("Nemo File Manager"),
+    'nixnote': _("Evernote For Linux"),
     'nautilus': _("Nautilus File Manager")}
 
 DESCRIPTIONS = {
@@ -140,10 +145,12 @@ DESCRIPTIONS = {
     'lts': _("Long term support (LTS) Linux kernel and modules."),
     'power': _("Power Saving Tools Geared Specifically for Laptops"),
     'sshd': _("Provides client access to shared files and printers."),
-    'skype': _("A User Friendly Video Chat Tool Made By Microsoft"),
+ #   'skype': _("A User Friendly Video Chat Tool Made By Microsoft"),
     'spotify': _("A widely popular music, podcast, and video streaming service"),
     'nemo': _("Default file manager for the Cinnamon desktop."),
     'wallpapers': _("Wallpapers Cycler That Changes Wallpapers Every Day"),
+    'wine': _("Run Common Windows Programs on Linux Easily"),
+    'nixnote': _("An Opensource implementation of Evernote for Linux"),
     'nautilus': _("Default file manager for the Gnome desktop.")}
 
 TOOLTIPS = {
@@ -217,7 +224,7 @@ TOOLTIPS = {
                  "Mines, and Soduku - all tailored for a qt environemt"),
     'maintenance': _("This option install some common applications used for\n"
                      "system maintenance in Linux.\n"
-                     "Specificaly, this option installs Bleachbit, Stacer, Timeshift, and Crashplan.\n"
+                     "Specificaly, this option installs Bleachbit, Stacer, and Timeshift.\n"
                      "BleachBit is a free and open-source disk space cleaner, privacy manager,\n"
                      "and computer system optimizer. Whereas Bleachbit and Stacer both primarily clean your system,\n"
                      "Timeshift and Crashplan are preventative solutions to sudden losses\n"
@@ -252,10 +259,10 @@ TOOLTIPS = {
                "at acceptable levels"),
     'sshd': _("Most usage of SMB involves computers running Microsoft Windows.\n"
              "Use this option to be able to browse SMB shares from your computer."),
-    'skype': _("Skype is a user-friendly video chat tool made by Microsoft for all ages.\n"
-               "While it's Linux support often drags behind the latest version,\n"
-               "it is still widely popular and well-known, allowing you to converse\n"
-               "with the ones you love"),
+#    'skype': _("Skype is a user-friendly video chat tool made by Microsoft for all ages.\n"
+#               "While it's Linux support often drags behind the latest version,\n"
+#               "it is still widely popular and well-known, allowing you to converse\n"
+#               "with the ones you love"),
     'spotify': _("Spotify is a widely popular music, podcast, and video streaming service.\n"
                  "It offers milions of songs and sound tracks, all available for free.\n"
                  "However, a paid subscription is required to download the songs and listen to them\n"
@@ -274,8 +281,16 @@ TOOLTIPS = {
               "That said, Nemo is the default file manager for the Cinnamon desktop.\n"
               "It is praised for it's features, but does not compare to Konquerer,\n"
               "the KDE file manager."),
+    'nixnote': _("Nixnote, (formerly Nevernote) is an opensource client for Evernote,\n"
+                 "allowing you to track your digital life in a single, convenient place.\n"
+                 "NOTE: an Evernote account is required for cloud synchronization."),
     'wallpapers': _("Installs a program known as Variety, an easy way to automatically\n"
                     "change your wallpaper from thousands of high-quality, free images each day."),
+    'wine': _("Easily run several Windows programs on Linux - safely. Wine offers a simple,\n"
+              "non-technical method of installing Windows software. Simply donwload the desired\n"
+              ".exe file like you normally would for Windows, and then right click to run using\n"
+              "Wine. It's as easy as that."
+              "NOTE: NOT ALL PROGRAMS WILL WORK WITH WINE, ALTHOUGH THE MAJORITY DO"),
     'nautilus': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NAUTILUS IS, IT IS ADVISED TO\n"
               "NOT ENABLE THIS FEATURE.\n"
               "That said, Nautilus is the default file manager for the Gnome desktop.\n"
