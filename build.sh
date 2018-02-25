@@ -220,6 +220,7 @@ rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/packages.xml
 cp ${script_path}/Cnchi/packages.xml ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/pacman.tmpl
 cp ${script_path}/Cnchi/pacman.tmpl ${work_dir}/${arch}/airootfs/usr/share/cnchi/data/
+cp ${script_path}/Cnchi/pacman2.tmpl ${work_dir}/${arch}/airootfs/usr/share/cnchi/
 rm ${work_dir}/${arch}/airootfs/usr/share/applications/cnchi.desktop
 rm ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/features_info.py
 cp ${script_path}/Cnchi/features_info.py ${work_dir}/${arch}/airootfs/usr/share/cnchi/src/
