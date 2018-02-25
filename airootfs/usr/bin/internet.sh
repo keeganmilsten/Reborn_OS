@@ -6,7 +6,9 @@ if [ "$?" = 0 ]; then
   sudo pacman-key --populate archlinux antergos
   sudo pacman-key --refresh-keys
   sudo pacman -Syy
+  reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+if [ ! -z $(grep "eu" "etc/pacman.d/mirrorlist") ]; then 
+  sudo cp /usr/bin/cnchi/pacman.conf /etc/
+fi
 else exec /home/$USER/.config/autostart/internet.sh
 fi
-
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
