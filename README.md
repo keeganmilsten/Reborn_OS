@@ -38,6 +38,7 @@ git clone https://github.com/keeganmilsten/Reborn-OS.git --recursive
 3. Fix file permissions in order to successfully build the ISO:
 ```
 chmod +x /home/$USER/Reborn-OS/run.sh
+cd /home/$USER/Reborn-OS/
 sudo /home/$USER/Reborn-OS/run.sh
 ```
 4. Install mkarchiso and create an `out` folder by running:
