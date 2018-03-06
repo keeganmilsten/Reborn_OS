@@ -344,7 +344,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [[ gnome = "${CN_DESKTOP}" ]]; then
@@ -354,7 +355,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [[ kde = "${CN_DESKTOP}" ]]; then
@@ -365,7 +367,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/pantheon-files" ]; then
@@ -381,7 +384,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [[ i3 = "${CN_DESKTOP}" ]]; then
@@ -392,7 +396,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
@@ -403,7 +408,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
@@ -414,7 +420,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [ -f "${CN_DESTDIR}/usr/bin/lxsession" ]; then
@@ -427,7 +434,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
     if [[ mate = "${CN_DESKTOP}" ]]; then
@@ -438,7 +446,8 @@ postinstall() {
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
     fi
 
 if [[ xfce = "${CN_DESKTOP}" ]]; then
@@ -449,7 +458,8 @@ if [[ xfce = "${CN_DESKTOP}" ]]; then
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
 fi
 
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
@@ -460,12 +470,20 @@ if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/flatpak2.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
 fi
 
     # Copy pacman.conf file over
     rm ${CN_DESTDIR}/etc/pacman.conf
     cp /etc/pacman.conf ${CN_DESTDIR}/etc/
+
+    #Refresh Databases
+    chroot ${CN_DESTDIR} sudo pacman -Syy --noconfirm
+    chroot ${CN_DESTDIR} sudo pacman-key --init
+    chroot ${CN_DESTDIR} sudo pacman-key --populate archlinux antergos aurarchlinux
+    chroot ${CN_DESTDIR} sudo pacman-key --refresh-keys
+    chroot ${CN_DESTDIR} sudo pacman -Syy --noconfirm
 
     # Ensure user permissions are set in /home
     chroot "${CN_DESTDIR}" chown -R "${CN_USER_NAME}:users" "/home/${CN_USER_NAME}"
