@@ -9,6 +9,7 @@
                 <pkgname>linux-firmware</pkgname>
                 <pkgname>base</pkgname>
                 <pkgname>base-devel</pkgname>
+                <pkgname>aurarchlinux-keyring</pkgname>
             </packages>
         </edition>
 
@@ -281,6 +282,7 @@
             <pkgname>bleachbit</pkgname>
             <pkgname>timeshift</pkgname>
             <pkgname>stacer</pkgname>
+            <pkgname>reborn-recovery</pkgname>
         </feature>
         <feature name="movie">
             <pkgname>openshot</pkgname>
@@ -292,9 +294,7 @@
             <pkgname>avidemux-cli</pkgname>
         </feature>
         <feature name="skype">
-            <pkgname>skype</pkgname>
-            <pkgname>skype-call-recorder</pkgname>
-            <pkgname>skypeforlinux-bin</pkgname>
+            <pkgname>skypeforlinux-stable-bin</pkgname>
         </feature>
         <feature name="spotify">
             <pkgname>spotify</pkgname>
