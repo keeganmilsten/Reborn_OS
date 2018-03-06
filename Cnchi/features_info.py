@@ -123,7 +123,7 @@ DESCRIPTIONS = {
     'email': _("Installs Thunderbird as your Desktop Email Client"),
     'dropbox': _("Free file hosting service for Linux"),
     'firefox': _("A popular open-source graphical web browser from Mozilla."),
-    'opera':_("Opera is an inovative, minimilistic web brower from Opera.Inc"),
+    'opera':_("Opera is an innovative, minimalistic web browser from Opera.Inc"),
     'vivaldi': _("Vivaldi is a free, fast web browser designed for power-users."),
     'flash': _("Freeware software normally used for multimedia."),
     'fonts': _("TrueType fonts from the Google Fonts project."),
@@ -131,7 +131,7 @@ DESCRIPTIONS = {
     'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
-    'hardinfo': _("Easy application for extensive hardware anaylysis"),
+    'hardinfo': _("Easy application for extensive hardware analysis"),
     'qt-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'maintenance': _("Common Applications to Perform System Maintenance On Linux"),
     'movie': _("Common video editing programs for Linux"),
@@ -182,7 +182,7 @@ TOOLTIPS = {
                  "anticipated web standards.  Enable this option to install Firefox\n"
                  "instead of Chromium"),
     'opera':_("Opera is a freeware, cross-platform web browser developed by\n"
-              "Opera.Inc. The browser is aimed at conventinal internet users\n"
+              "Opera.Inc. The browser is aimed at conventional internet users\n"
               "and those who enjoy simplicity"),
     'vivaldi': _("Vivaldi is a freeware, cross-platform web browser developed by\n"
                  "Vivaldi Technologies. It was officially launched on April 12, 2016.\n"
@@ -224,13 +224,13 @@ TOOLTIPS = {
                  "Mines, and Soduku - all tailored for a qt environemt"),
     'maintenance': _("This option install some common applications used for\n"
                      "system maintenance in Linux.\n"
-                     "Specificaly, this option installs Bleachbit, Stacer, and Timeshift.\n"
+                     "Specificaly, this option installs Bleachbit, Stacer, Timeshift, and Reborn Recovery.\n"
                      "BleachBit is a free and open-source disk space cleaner, privacy manager,\n"
                      "and computer system optimizer. Whereas Bleachbit and Stacer both primarily clean your system,\n"
-                     "Timeshift and Crashplan are preventative solutions to sudden losses\n"
+                     "Timeshift and Reborn Recovery are preventative solutions to sudden losses\n"
                      "of data. Timeshift enables you to easily backup your data locally\n"
-                     "while Crashplan syncs you data with the cloud in order to ensure that\n"
-                     "it will always be there when you need it."),
+                     "while Reborn Recovery allows you to save a list of all your installed\n"
+                     "programs in a file so that you can reinstall them later."),
     'movie': _("Common video editing programs for Linux, such as Open Shot, KdenLive,\n"
                "Pitivi, Cinelerra, and Avidemux"),
     'graphics': _("Common Photo editing Programs for Linux, such as Gimp, GtThumb,\n"
@@ -254,7 +254,7 @@ TOOLTIPS = {
                 "needs: Writer, Calc, Impress, Draw, Math and Base."),
     'power': _("Two programs are installed through this, namely TLP and Thermald.\n"
                "TLP will automatically adjust your laptop to optimize your battery\n"
-               "performance in the background without interferring with your daily use at all,\n"
+               "performance in the background without interfering with your daily use at all,\n"
                "and Thermald will conveniently ensure that your fans and CPU both remain\n"
                "at acceptable levels"),
     'sshd': _("Most usage of SMB involves computers running Microsoft Windows.\n"
@@ -264,7 +264,7 @@ TOOLTIPS = {
 #               "it is still widely popular and well-known, allowing you to converse\n"
 #               "with the ones you love"),
     'spotify': _("Spotify is a widely popular music, podcast, and video streaming service.\n"
-                 "It offers milions of songs and sound tracks, all available for free.\n"
+                 "It offers millions of songs and sound tracks, all available for free.\n"
                  "However, a paid subscription is required to download the songs and listen to them\n"
                  "offline."),
     'visual': _("Compton is a lightweight, standalone composite manager,\n"
@@ -287,9 +287,9 @@ TOOLTIPS = {
     'wallpapers': _("Installs a program known as Variety, an easy way to automatically\n"
                     "change your wallpaper from thousands of high-quality, free images each day."),
     'wine': _("Easily run several Windows programs on Linux - safely. Wine offers a simple,\n"
-              "non-technical method of installing Windows software. Simply donwload the desired\n"
+              "non-technical method of installing Windows software. Simply download the desired\n"
               ".exe file like you normally would for Windows, and then right click to run using\n"
-              "Wine. It's as easy as that."
+              "Wine. It's as easy as that.\n"
               "NOTE: NOT ALL PROGRAMS WILL WORK WITH WINE, ALTHOUGH THE MAJORITY DO"),
     'nautilus': _("NOTE: IF YOU ARE UNSURE EXACTLY OF WHAT NAUTILUS IS, IT IS ADVISED TO\n"
               "NOT ENABLE THIS FEATURE.\n"
